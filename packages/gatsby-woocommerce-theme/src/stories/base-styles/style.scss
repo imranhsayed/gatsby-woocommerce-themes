@@ -1,0 +1,88 @@
+@import "../../sass/essentials";
+
+.gb-storybook-section-title {
+	border-bottom: 1px solid $gray;
+	padding-bottom: 10px;
+	margin-top: 50px;
+
+	&.gb-storybook-section-title--first {
+		margin-top: 0;
+	}
+}
+
+.gb-storybook-colors {
+	padding: 20px 40px;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	li {
+		margin-right: 40px;
+		text-align: center;
+	}
+}
+
+.gb-storybook-colors__color {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin-bottom: 10px;
+	border: 1px solid $gray;
+}
+
+.gb-storybook-colors__color-code {
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+
+/*==============================
+          Typography
+===============================*/
+
+.gb-storybook-typography {
+	padding: 20px;
+}
+
+.gb-storybook-typography__columns {
+	max-width: 80%;
+	display: flex;
+	justify-content: space-between;
+
+	> div {
+		padding-right: 30px;
+	}
+}
+
+/*==============================
+          Elements
+===============================*/
+
+.gb-storybook-elements {
+	padding: 20px;
+}
+
+/*==============================
+          Storybook styles
+===============================*/
+
+.sb-show-errordisplay {
+	code, pre {
+		background: transparent;
+	}
+}
+
+.text-left {
+	text-align: left;
+
+	&.no-list {
+		text-align: left;
+	}
+}
+
+.blank-list {
+	height: 30px;
+}

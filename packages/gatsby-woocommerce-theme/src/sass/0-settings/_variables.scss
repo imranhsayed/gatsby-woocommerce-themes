@@ -1,0 +1,14 @@
+// mq breakpoints.
+$mq-breakpoints: (
+	small: 600px,
+	medium: 768px,
+	large: 1024px,
+	xlarge: 1240px
+) !default;
+
+$tablet: 768px;
+
+//$mq-show-breakpoints: (small, medium, large, xlarge);
+
+$container-padding: 20px;
+$site-width: 1280px;

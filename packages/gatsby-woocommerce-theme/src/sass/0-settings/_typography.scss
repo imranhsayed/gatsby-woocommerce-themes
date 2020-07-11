@@ -1,0 +1,123 @@
+// Global theme font.
+$font__primary: 'Lato'; // @todo Add font fallback.
+
+// System fonts
+// @see @see https://www.cssfontstack.com/
+$font__secondary_arial: Arial, Helvetica Neue, Helvetica, sans-serif;
+$font__secondary_times_new_roman: TimesNewRoman, Times New Roman, Times, Baskerville, Georgia, serif;
+$font__secondary_futura: Futura, Trebuchet MS, Arial, sans-serif;
+$font__secondary_impact: Impact, Haettenschweiler, Franklin Gothic Bold, Charcoal, Helvetica Inserat, Bitstream Vera Sans Bold, Arial Black, sans serif;
+
+// Global code font
+$font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+
+/*==============================
+          Font Sizes
+===============================*/
+
+$body-text: (
+	'xxxxl': (
+		'small': (
+			font-size: 80px,
+			line-height: normal
+		),
+		'medium': (
+			font-size: 96px,
+			line-height: normal
+		),
+	),
+	'xxxl': (
+		'small': (
+			font-size: 40px,
+			line-height: normal
+		),
+		'medium': (
+			font-size: 85px,
+			line-height: normal
+		),
+	),
+	'xxl': (
+		'small': (
+			font-size: 40px,
+			line-height: normal
+		),
+		'medium': (
+			font-size: 58px,
+			line-height: normal
+		),
+	),
+	'xl': (
+		'small': (
+			font-size: 25px,
+			line-height: normal
+		),
+		'medium': (
+			font-size: 40px,
+			line-height: normal
+		),
+	),
+	'l': (
+		'small': (
+			font-size: 25px,
+			line-height: normal
+		),
+		'medium': (
+			font-size: 30px,
+			line-height: normal
+		),
+	),
+	'm': (
+		'small': (
+			font-size: 20px,
+			line-height: normal
+		),
+		'medium': (
+			font-size: 25px,
+			line-height: normal
+		),
+	),
+	's': (
+		'small': (
+			font-size: 20px,
+			line-height: normal
+		),
+	),
+	'body': (
+		'small': (
+				font-size: 16px,
+				line-height: normal
+		),
+		'medium': (
+			font-size: 18px,
+			line-height: normal
+		),
+	),
+	'xs': (
+		'small': (
+			font-size: 16px,
+			line-height: normal
+		),
+	),
+	'xxs': (
+		'small': (
+			font-size: 12px,
+			line-height: normal
+		),
+		'medium': (
+			font-size: 15px,
+			line-height: normal
+		),
+	),
+	'xxxs': (
+		'small': (
+			font-size: 13px,
+			line-height: normal
+		),
+	),
+	'xxxxs': (
+		'small': (
+			font-size: 11px,
+			line-height: normal
+		),
+	),
+);

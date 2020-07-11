@@ -1,0 +1,99 @@
+html {
+	box-sizing: border-box;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	color: $black;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* stylelint-disable */
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+/* stylelint-enable */
+
+body {
+	@include body-text( body );
+	background-color: $color__body;
+	font-family: $font__primary;
+	margin: 0;
+}
+
+b, strong {
+	font-weight: 700;
+}
+
+hr {
+	margin: 20px 0;
+}
+
+figcaption {
+	color: rgba( 0, 0, 0, 0.5 );
+	@include body-text( 'xxs' );
+}
+
+abbr, acronym {
+	text-decoration: none;
+}
+
+code, kbd, tt, var {
+	background: rgba(0, 0, 0, 0.03);
+	padding: 1px 3px;
+	font-weight: bold;
+}
+
+code {
+	padding: 1px 5px;
+	color: inherit;
+	font-weight: normal;
+	background-color: #f6f8fa;
+}
+
+pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f6f8fa;
+	border-radius: 3px;
+}
+
+table {
+	border-collapse: collapse;
+
+	td, th {
+		border: 1px solid $gray;
+		padding: 10px 15px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+h1 {
+	@include body-text( xxl );
+}
+
+h2 {
+	@include body-text( xl );
+}
+
+h3 {
+	@include body-text( l );
+}
+
+h4 {
+	@include body-text( m );
+}
+
+h5 {
+	@include body-text( s );
+}
+
+h6 {
+	@include body-text( body );
+}

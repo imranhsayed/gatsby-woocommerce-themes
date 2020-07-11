@@ -1,0 +1,61 @@
+// Essentials.
+@import "0-settings/settings";
+@import "1-tools/tools";
+@import '~sass-mq';
+@import "2-generic/generic";
+
+body {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+button:focus {
+	outline: none;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+	min-height: calc(100vh - 74px - 100px);
+}
+
+.main-container {
+	min-height: 400px;
+}
+
+.wrapper {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	@media only screen and ( min-width: $tablet ) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.loader {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
