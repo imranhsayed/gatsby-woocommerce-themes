@@ -1,0 +1,17 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  taxRate(id: $id) {
+    city
+    compound
+    country
+    id
+    name
+    order
+    postcode
+    priority
+    rate
+    rateId
+    shipping
+    state
+    __typename
+  }
+}

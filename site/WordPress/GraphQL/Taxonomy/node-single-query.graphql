@@ -1,0 +1,28 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  taxonomy(id: $id) {
+    connectedContentTypes(first: 100) {
+      nodes {
+        id
+      }
+    }
+    description
+    graphqlPluralName
+    graphqlSingleName
+    hierarchical
+    id
+    label
+    name
+    public
+    restBase
+    restControllerClass
+    showCloud
+    showInAdminColumn
+    showInGraphql
+    showInMenu
+    showInNavMenus
+    showInQuickEdit
+    showInRest
+    showUi
+    __typename
+  }
+}

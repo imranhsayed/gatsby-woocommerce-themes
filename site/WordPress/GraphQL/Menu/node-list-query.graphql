@@ -1,0 +1,22 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  menus(first: $first, after: $after) {
+    nodes {
+      count
+      databaseId
+      id
+      locations
+      menuItems(first: 100) {
+        nodes {
+          id
+        }
+      }
+      name
+      slug
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

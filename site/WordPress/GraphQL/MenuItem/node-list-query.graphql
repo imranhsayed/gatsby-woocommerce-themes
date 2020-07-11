@@ -1,0 +1,40 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  menuItems(first: $first, after: $after) {
+    nodes {
+      childItems(first: 100) {
+        nodes {
+          id
+        }
+      }
+      connectedNode {
+        node {
+          id
+        }
+      }
+      cssClasses
+      databaseId
+      description
+      id
+      label
+      linkRelationship
+      locations
+      menu {
+        node {
+          id
+        }
+      }
+      order
+      parentDatabaseId
+      parentId
+      path
+      target
+      title
+      url
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

@@ -1,0 +1,16 @@
+query PREVIEW_QUERY($id: ID!) {
+  menu(id: $id, idType: ID, asPreview: true) {
+    count
+    databaseId
+    id
+    locations
+    menuItems(first: 100) {
+      nodes {
+        id
+      }
+    }
+    name
+    slug
+    __typename
+  }
+}

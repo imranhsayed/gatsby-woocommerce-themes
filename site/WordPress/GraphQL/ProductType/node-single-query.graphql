@@ -1,0 +1,20 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  productType(id: $id) {
+    count
+    databaseId
+    description
+    id
+    link
+    name
+    slug
+    taxonomy {
+      node {
+        id
+      }
+    }
+    termGroupId
+    termTaxonomyId
+    uri
+    __typename
+  }
+}

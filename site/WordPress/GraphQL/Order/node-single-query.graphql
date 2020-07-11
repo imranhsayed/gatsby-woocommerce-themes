@@ -1,0 +1,351 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  order(id: $id) {
+    billing {
+      address1
+      address2
+      city
+      company
+      email
+      firstName
+      lastName
+      phone
+      postcode
+      state
+    }
+    cartHash
+    cartTax
+    contentType {
+      node {
+        id
+      }
+    }
+    couponLines(first: 100) {
+      nodes {
+        code
+        coupon {
+          id
+        }
+        discount
+        discountTax
+        itemId
+        metaData {
+          id
+          key
+          value
+        }
+        orderId
+      }
+    }
+    createdVia
+    currency
+    customer {
+      id
+    }
+    customerIpAddress
+    customerNote
+    customerUserAgent
+    date
+    dateCompleted
+    datePaid
+    discountTax
+    discountTotal
+    downloadableItems(first: 100) {
+      nodes {
+        accessExpires
+        download {
+          allowedFileType
+          downloadId
+          file
+          fileExists
+          fileExt
+          filePathType
+          fileType
+          name
+        }
+        downloadId
+        downloadsRemaining
+        name
+        product {
+          id
+        }
+        url
+      }
+    }
+    feeLines(first: 100) {
+      nodes {
+        amount
+        itemId
+        metaData {
+          id
+          key
+          value
+        }
+        name
+        orderId
+        taxes {
+          amount
+          subtotal
+          taxLine {
+            isCompound
+            itemId
+            label
+            metaData {
+              id
+              key
+              value
+            }
+            orderId
+            rateCode
+            shippingTaxTotal
+            taxRate {
+              id
+            }
+            taxTotal
+          }
+          taxLineId
+          total
+        }
+        total
+        totalTax
+      }
+    }
+    hasBillingAddress
+    hasDownloadableItem
+    hasShippingAddress
+    id
+    isDownloadPermitted
+    lineItems(first: 100) {
+      nodes {
+        itemDownloads {
+          allowedFileType
+          downloadId
+          file
+          fileExists
+          fileExt
+          filePathType
+          fileType
+          name
+        }
+        itemId
+        metaData {
+          id
+          key
+          value
+        }
+        orderId
+        product {
+          id
+        }
+        productId
+        quantity
+        subtotal
+        subtotalTax
+        taxes {
+          amount
+          subtotal
+          taxLine {
+            isCompound
+            itemId
+            label
+            metaData {
+              id
+              key
+              value
+            }
+            orderId
+            rateCode
+            shippingTaxTotal
+            taxRate {
+              id
+            }
+            taxTotal
+          }
+          taxLineId
+          total
+        }
+        total
+        totalTax
+        variation {
+          attributes(first: 100) {
+            nodes {
+              attributeId
+              id
+              name
+              value
+            }
+          }
+          backordersAllowed
+          contentType {
+            node {
+              id
+            }
+          }
+          date
+          dateOnSaleFrom
+          dateOnSaleTo
+          description
+          downloadExpiry
+          downloadLimit
+          downloadable
+          downloads {
+            allowedFileType
+            downloadId
+            file
+            fileExists
+            fileExt
+            filePathType
+            fileType
+            name
+          }
+          hasAttributes
+          height
+          id
+          image {
+            id
+            sourceUrl
+          }
+          length
+          menuOrder
+          metaData {
+            id
+            key
+            value
+          }
+          modified
+          name
+          onSale
+          wpParent: parent {
+            id
+          }
+          price
+          purchasable
+          purchaseNote
+          regularPrice
+          salePrice
+          shippingClass
+          shippingClasses(first: 100) {
+            nodes {
+              id
+            }
+          }
+          sku
+          status
+          stockQuantity
+          variationId
+          virtual
+          visibleProducts(first: 100) {
+            nodes {
+              id
+            }
+          }
+          weight
+          width
+        }
+        variationId
+      }
+    }
+    metaData {
+      id
+      key
+      value
+    }
+    modified
+    needsPayment
+    needsProcessing
+    needsShippingAddress
+    orderId
+    orderKey
+    orderNumber
+    orderVersion
+    wpParent: parent {
+      id
+    }
+    paymentMethod
+    paymentMethodTitle
+    pricesIncludeTax
+    refunds(first: 100) {
+      nodes {
+        id
+      }
+    }
+    shipping {
+      address1
+      address2
+      city
+      company
+      email
+      firstName
+      lastName
+      phone
+      postcode
+      state
+    }
+    shippingAddressMapUrl
+    shippingLines(first: 100) {
+      nodes {
+        itemId
+        metaData {
+          id
+          key
+          value
+        }
+        methodTitle
+        orderId
+        shippingMethod {
+          id
+        }
+        taxes {
+          amount
+          subtotal
+          taxLine {
+            isCompound
+            itemId
+            label
+            metaData {
+              id
+              key
+              value
+            }
+            orderId
+            rateCode
+            shippingTaxTotal
+            taxRate {
+              id
+            }
+            taxTotal
+          }
+          taxLineId
+          total
+        }
+        total
+        totalTax
+      }
+    }
+    shippingTax
+    shippingTotal
+    subtotal
+    taxLines(first: 100) {
+      nodes {
+        isCompound
+        itemId
+        label
+        metaData {
+          id
+          key
+          value
+        }
+        orderId
+        rateCode
+        shippingTaxTotal
+        taxRate {
+          id
+        }
+        taxTotal
+      }
+    }
+    total
+    totalTax
+    transactionId
+    __typename
+  }
+}

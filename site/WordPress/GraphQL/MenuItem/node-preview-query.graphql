@@ -1,0 +1,34 @@
+query PREVIEW_QUERY($id: ID!) {
+  menuItem(id: $id, idType: ID, asPreview: true) {
+    childItems(first: 100) {
+      nodes {
+        id
+      }
+    }
+    connectedNode {
+      node {
+        id
+      }
+    }
+    cssClasses
+    databaseId
+    description
+    id
+    label
+    linkRelationship
+    locations
+    menu {
+      node {
+        id
+      }
+    }
+    order
+    parentDatabaseId
+    parentId
+    path
+    target
+    title
+    url
+    __typename
+  }
+}

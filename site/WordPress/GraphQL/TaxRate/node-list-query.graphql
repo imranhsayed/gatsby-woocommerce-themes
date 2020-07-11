@@ -1,0 +1,23 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  taxRates(first: $first, after: $after) {
+    nodes {
+      city
+      compound
+      country
+      id
+      name
+      order
+      postcode
+      priority
+      rate
+      rateId
+      shipping
+      state
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

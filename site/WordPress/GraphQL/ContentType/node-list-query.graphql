@@ -1,0 +1,71 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  contentTypes(first: $first, after: $after) {
+    nodes {
+      canExport
+      connectedTaxonomies(first: 100) {
+        nodes {
+          id
+        }
+      }
+      contentNodes(first: 100) {
+        nodes {
+          id
+        }
+      }
+      deleteWithUser
+      description
+      excludeFromSearch
+      graphqlPluralName
+      graphqlSingleName
+      hasArchive
+      hierarchical
+      id
+      label
+      labels {
+        addNew
+        addNewItem
+        allItems
+        archives
+        attributes
+        editItem
+        featuredImage
+        filterItemsList
+        insertIntoItem
+        itemsList
+        itemsListNavigation
+        menuName
+        name
+        newItem
+        notFound
+        notFoundInTrash
+        parentItemColon
+        removeFeaturedImage
+        searchItems
+        setFeaturedImage
+        singularName
+        uploadedToThisItem
+        useFeaturedImage
+        viewItem
+        viewItems
+      }
+      menuIcon
+      menuPosition
+      name
+      public
+      publiclyQueryable
+      restBase
+      restControllerClass
+      showInAdminBar
+      showInGraphql
+      showInMenu
+      showInNavMenus
+      showInRest
+      showUi
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

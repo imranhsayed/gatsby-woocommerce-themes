@@ -1,0 +1,58 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  coupon(id: $id) {
+    amount
+    code
+    contentType {
+      node {
+        id
+      }
+    }
+    couponId
+    date
+    dateExpiry
+    description
+    emailRestrictions
+    excludeSaleItems
+    excludedProductCategories(first: 100) {
+      nodes {
+        id
+      }
+    }
+    excludedProducts(first: 100) {
+      nodes {
+        id
+      }
+    }
+    freeShipping
+    id
+    individualUse
+    limitUsageToXItems
+    maximumAmount
+    metaData {
+      id
+      key
+      value
+    }
+    minimumAmount
+    modified
+    productCategories(first: 100) {
+      nodes {
+        id
+      }
+    }
+    products(first: 100) {
+      nodes {
+        id
+      }
+    }
+    usageCount
+    usageLimit
+    usageLimitPerUser
+    usedBy(first: 100) {
+      nodes {
+        id
+      }
+    }
+    __typename
+  }
+}

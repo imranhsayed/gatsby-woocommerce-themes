@@ -1,0 +1,9 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  shippingMethod(id: $id) {
+    description
+    id
+    methodId
+    title
+    __typename
+  }
+}

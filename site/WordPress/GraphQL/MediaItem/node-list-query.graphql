@@ -1,0 +1,119 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  mediaItems(first: $first, after: $after, where: { parent: null }) {
+    nodes {
+      altText
+      ancestors(first: 100) {
+        nodes {
+          id
+        }
+      }
+      author {
+        node {
+          id
+        }
+      }
+      authorDatabaseId
+      authorId
+      caption
+      wpChildren: children(first: 100) {
+        nodes {
+          id
+        }
+      }
+      commentCount
+      commentStatus
+      comments(first: 100) {
+        nodes {
+          id
+        }
+      }
+      contentType {
+        node {
+          id
+        }
+      }
+      databaseId
+      date
+      dateGmt
+      description
+      desiredSlug
+      enclosure
+      guid
+      id
+      lastEditedBy {
+        node {
+          id
+        }
+      }
+      link
+      mediaDetails {
+        file
+        height
+        meta {
+          aperture
+          camera
+          caption
+          copyright
+          createdTimestamp
+          credit
+          focalLength
+          iso
+          keywords
+          orientation
+          shutterSpeed
+          title
+        }
+        sizes {
+          file
+          height
+          mimeType
+          name
+          sourceUrl
+          width
+        }
+        width
+      }
+      mediaItemUrl
+      mediaType
+      mimeType
+      modified
+      modifiedGmt
+      wpParent: parent {
+        node {
+          id
+        }
+      }
+      parentDatabaseId
+      parentId
+      sizes
+      slug
+      sourceUrl
+      srcSet
+      status
+      template {
+        __typename
+        ... on DefaultTemplate {
+          templateName
+        }
+        ... on CoverTemplateTemplate {
+          templateName
+        }
+        ... on FullWidthTemplateTemplate {
+          templateName
+        }
+      }
+      terms(first: 100) {
+        nodes {
+          id
+        }
+      }
+      title
+      uri
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}

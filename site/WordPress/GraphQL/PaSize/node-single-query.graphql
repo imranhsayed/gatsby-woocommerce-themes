@@ -1,0 +1,103 @@
+query SINGLE_CONTENT_QUERY($id: ID!) {
+  paSize(id: $id) {
+    count
+    databaseId
+    description
+    id
+    link
+    name
+    products(first: 100) {
+      nodes {
+        id
+      }
+    }
+    slug
+    taxonomy {
+      node {
+        id
+      }
+    }
+    termGroupId
+    termTaxonomyId
+    uri
+    variations(first: 100) {
+      nodes {
+        attributes(first: 100) {
+          nodes {
+            attributeId
+            id
+            name
+            value
+          }
+        }
+        backordersAllowed
+        contentType {
+          node {
+            id
+          }
+        }
+        date
+        dateOnSaleFrom
+        dateOnSaleTo
+        description
+        downloadExpiry
+        downloadLimit
+        downloadable
+        downloads {
+          allowedFileType
+          downloadId
+          file
+          fileExists
+          fileExt
+          filePathType
+          fileType
+          name
+        }
+        hasAttributes
+        height
+        id
+        image {
+          id
+          sourceUrl
+        }
+        length
+        menuOrder
+        metaData {
+          id
+          key
+          value
+        }
+        modified
+        name
+        onSale
+        wpParent: parent {
+          id
+        }
+        price
+        purchasable
+        purchaseNote
+        regularPrice
+        salePrice
+        shippingClass
+        shippingClasses(first: 100) {
+          nodes {
+            id
+          }
+        }
+        sku
+        status
+        stockQuantity
+        variationId
+        virtual
+        visibleProducts(first: 100) {
+          nodes {
+            id
+          }
+        }
+        weight
+        width
+      }
+    }
+    __typename
+  }
+}

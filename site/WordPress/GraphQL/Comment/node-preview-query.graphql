@@ -1,0 +1,35 @@
+query PREVIEW_QUERY($id: ID!) {
+  comment(id: $id, idType: ID, asPreview: true) {
+    agent
+    approved
+    author {
+      node {
+        id
+      }
+    }
+    authorIp
+    commentedOn {
+      node {
+        id
+      }
+    }
+    content
+    databaseId
+    date
+    dateGmt
+    id
+    karma
+    wpParent: parent {
+      node {
+        id
+      }
+    }
+    replies(first: 100) {
+      nodes {
+        id
+      }
+    }
+    type
+    __typename
+  }
+}

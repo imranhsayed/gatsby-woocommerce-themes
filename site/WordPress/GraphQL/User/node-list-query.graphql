@@ -1,0 +1,62 @@
+query NODE_LIST_QUERY($first: Int!, $after: String) {
+  users(first: $first, after: $after) {
+    nodes {
+      avatar {
+        default
+        extraAttr
+        forceDefault
+        foundAvatar
+        height
+        rating
+        scheme
+        size
+        url
+        width
+      }
+      capKey
+      capabilities
+      comments(first: 100) {
+        nodes {
+          id
+        }
+      }
+      databaseId
+      description
+      email
+      extraCapabilities
+      firstName
+      id
+      lastName
+      locale
+      mediaItems(first: 100) {
+        nodes {
+          id
+          sourceUrl
+        }
+      }
+      name
+      nicename
+      nickname
+      pages(first: 100) {
+        nodes {
+          id
+        }
+      }
+      posts(first: 100) {
+        nodes {
+          id
+        }
+      }
+      registeredDate
+      slug
+      uri
+      url
+      username
+      __typename
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+  }
+}
