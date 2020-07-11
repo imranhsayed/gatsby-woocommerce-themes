@@ -56,7 +56,9 @@ typings/
 
 # gatsby files
 .cache/
+.wordpress-cache
 public
+WordPress/GraphQL
 
 # Mac files
 .DS_Store

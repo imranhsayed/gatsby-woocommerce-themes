@@ -1,9 +1,0 @@
-query PREVIEW_QUERY($id: ID!) {
-  shippingMethod(id: $id, idType: ID, asPreview: true) {
-    description
-    id
-    methodId
-    title
-    __typename
-  }
-}

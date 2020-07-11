@@ -57,6 +57,8 @@ typings/
 # gatsby files
 .cache/
 public
+.wordpress-cache
+WordPress/GraphQL
 
 # Mac files
 .DS_Store
@@ -87,6 +89,5 @@ Thumbs.db
 
 # Other
 .cache
-.env
 
 .vercel
