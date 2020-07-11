@@ -3199,6 +3199,11 @@
   dependencies:
     "@babel/runtime" "^7.9.2"
 
+"@wordpress/base-styles@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@wordpress/base-styles/-/base-styles-2.0.0.tgz#0b3428df2af8deb406c8ec7dd2c6c2d10f6056e1"
+  integrity sha512-l0/j0+nVBvCtd/PFj/g6J2R8XuVLLRCNV2jSlnf0SPuswBZ2NYPvCLmf/OZ1Nw/c2O+Erdvq8IdYvXOObewqxQ==
+
 "@wordpress/blob@^2.9.0":
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/@wordpress/blob/-/blob-2.9.0.tgz#6453418a897431c54921eff03f67d21e373ced8d"
@@ -8948,11 +8953,6 @@ gatsby-plugin-google-tagmanager@^2.3.11:
   integrity sha512-i3tUFxuTp7CKU1cM4V7uuEcJdI/7lQRB5d02blm08dFv1GDg/nZpuBM03OTXjWec3Y6GEw7N8aiYSJuA0/OrlQ==
   dependencies:
     "@babel/runtime" "^7.10.3"
-
-gatsby-plugin-graphql-image@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-graphql-image/-/gatsby-plugin-graphql-image-1.0.1.tgz#29632a854d87e4f6a6669c007bd4ef651a228faa"
-  integrity sha512-9MsOtI2hfqUAFfyxpiftIvMBU9OW0t+f1i1k+XfNt8wv9gclq57xVQONdV1LAXqasIJ9yQh48m77FWL7g0uPhQ==
 
 gatsby-plugin-manifest@^2.4.18:
   version "2.4.18"
