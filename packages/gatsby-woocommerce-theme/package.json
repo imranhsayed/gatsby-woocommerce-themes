@@ -29,11 +29,11 @@
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
+    "@wordpress/base-styles": "^2.0.0",
     "@wordpress/block-library": "^2.22.0",
     "apollo-boost": "^0.4.9",
     "classnames": "^2.2.6",
     "gatsby-plugin-google-tagmanager": "^2.3.11",
-    "gatsby-plugin-graphql-image": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.18",
     "gatsby-plugin-offline": "^3.2.17",
     "gatsby-plugin-react-helmet": "^3.3.10",
