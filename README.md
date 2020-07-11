@@ -1,4 +1,4 @@
-## 🎨 [Gatsby WooCommerce themes](https://www.npmjs.com/package/gatsby-wordpress-theme-phoenix)
+## 🎨 [Gatsby WooCommerce themes](https://www.npmjs.com/package/gatsby-wooocommerce-theme)
 [![Project Status: Active.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 - A Gatsby theme for WooCommerce, using Decoupled Architecture.
@@ -29,7 +29,7 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 
 ## 🌐 Live Demo
 
-- [Demo on Netlify](https://gatsby-wordpress-theme-phoenix.netlify.app)
+- [Demo on Netlify](https://gatsby-wooocommerce-theme.netlify.app)
 - [Demo on Vercel](https://gatsby-wordpress-themes.imranhsayed.now.sh/)
 
 ![](demos/home-page-demo.png)
@@ -47,17 +47,13 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 `SITE_URL=https://example.com`
 
 ### WordPress Setup
-1. Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
+1. Download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
 
-OR,
-
-a. Clone the WordPress plugin [Headless CMS](https://github.com/imranhsayed/headless-cms) in your WordPress
-plugin directory and activate it.
-
-b. Clone and activate [wp-graphql](https://github.com/wp-graphql/wp-graphql) -test on ( v0.8.3 ) in WordPress plugin directory.
-c. Clone and activate [wp-graphiql](https://github.com/wp-graphql/wp-graphiql) in WordPress plugin directory.
-d. Clone and activate [wp-graphql-acf](https://github.com/wp-graphql/wp-graphql-acf) in WordPress plugin directory.
-e. Install and activate [ACF WordPress plugin](https://wordpress.org/plugins/advanced-custom-fields/) in the WordPress.
+a. [Headless CMS](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/headless-cms.zip)
+b. [wp-graphql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql.zip) - tested on ( v1.0.0 )
+c. [wp-graphiql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphiql.zip)
+d. [wp-graphql-woocommerce](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-woocommerce.zip)
+e. [wp-gatsby](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-gatsby.zip)
 
 2. - Set Header menu as `HCMS Header Menu`
    
@@ -95,7 +91,7 @@ npm run build    # When ready for production.
 
 For Storybook:
 
-* `cd package/gatsby-wordpress-theme-phoenix`
+* `cd package/gatsby-wooocommerce-theme`
 * `npm run storybook`
 
 ![](demos/storybook.png)
@@ -105,10 +101,10 @@ For Storybook:
 `yarn workspace site add package-name`
 `yarn workspace site remove package-name`
 
-### :package: Adding/Removing a new package to gatsby-wordpress-theme-phoenix folder
+### :package: Adding/Removing a new package to gatsby-wooocommerce-theme folder
 
-`yarn workspace gatsby-wordpress-theme-phoenix add package-name`
-`yarn workspace gatsby-wordpress-theme-phoenix remove package-name`
+`yarn workspace gatsby-wooocommerce-theme add package-name`
+`yarn workspace gatsby-wooocommerce-theme remove package-name`
 
 ## 🧐 What's inside?
 
@@ -182,4 +178,4 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ### Theme on npm
 
-[gatsby-wordpress-theme-phoenix](https://www.npmjs.com/package/gatsby-wordpress-theme-phoenix)
+[gatsby-wooocommerce-theme](https://www.npmjs.com/package/gatsby-wooocommerce-theme)
