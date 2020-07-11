@@ -7,36 +7,17 @@
 
 This theme uses `gatsby-source-wordpress@v4 BETA`
 
-<a href="https://youtu.be/nYXL1KKjKrc" target="_blank">
-<img src="https://codeytek.com/woo/wp-content/uploads/2020/06/Phoenix.jpg" alt="gatsby theme phoenix hero image" />
-</a>
-
-### [Video Demo](https://youtu.be/nYXL1KKjKrc)
-
 *** 👨‍💻 Please star my repo to support my work 🙏 ***
 
 ## 🔥 Features
 1. Uses React with Gatsby ( Blazing Fast )
 2. PWA ( Works Offline )
 3. Image Optimization ( blur effect )
-4. ACF
-5. GraphQL ( with wp-graphql on WordPress )
-6. Blog Page with Pagination
-7. Offline Search Feature
-8. Categories, Archive Page, Custom Home Page
-9. Custom Widgets, Menus
-10. WooCommerce store
-11. Google Analytics feature
-12. Sitemap
-13. Robot.txt
-14. Yoast SEO supported.
-
-## 🌐 Live Demo
-
-- [Demo on Netlify](https://gatsby-wooocommerce-theme.netlify.app)
-- [Demo on Vercel](https://gatsby-wordpress-themes.imranhsayed.now.sh/)
-
-![](demos/home-page-demo.png)
+4. GraphQL ( with wp-graphql on WordPress )
+5. Custom Widgets, Menus
+6. WooCommerce store
+7. Google Analytics feature
+8. Yoast SEO supported.
 
 ## 👨‍💻 Maintainer
 
@@ -48,9 +29,9 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 
 ### Gatsby Setup
 * Rename `.env-example` file to `.env` and add your WordPress SITE_URL in `site` directory : 
-`SITE_URL=https://example.com`
-`GATSBY_SITE_URL=https://example.com`
-`GOOGLE_TAGMANAGER_ID=xxx`
+- `SITE_URL=https://example.com`
+- `GATSBY_SITE_URL=https://example.com`
+- `GOOGLE_TAGMANAGER_ID=xxx`
 
 ### WordPress Setup
 1. Download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
@@ -183,8 +164,3 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 * output directory: `site/public`
 * development command: `npm run dev` 
 * root directory: `/`
-
-
-### Theme on npm
-
-[gatsby-wooocommerce-theme](https://www.npmjs.com/package/gatsby-wooocommerce-theme)
