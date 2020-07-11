@@ -26,6 +26,10 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 8. Categories, Archive Page, Custom Home Page
 9. Custom Widgets, Menus
 10. WooCommerce store
+11. Google Analytics feature
+12. Sitemap
+13. Robot.txt
+14. Yoast SEO supported.
 
 ## 🌐 Live Demo
 
@@ -45,6 +49,8 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 ### Gatsby Setup
 * Rename `.env-example` file to `.env` and add your WordPress SITE_URL in `site` directory : 
 `SITE_URL=https://example.com`
+`GATSBY_SITE_URL=https://example.com`
+`GOOGLE_TAGMANAGER_ID=xxx`
 
 ### WordPress Setup
 1. Download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
