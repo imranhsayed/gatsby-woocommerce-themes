@@ -1,10 +1,17 @@
-module.exports = ({ wordPressUrl }) => ({
+module.exports = ({ wordPressUrl, gatsbySiteUrl, googleTagManagerId }) => ({
 	siteMetadata: {
 		title: `Gatsby WooCommerce Theme`,
 		description: `Gatsby WooCommerce Theme`,
 		author: `@imranhsayed`,
 	},
 	plugins: [
+		{
+			resolve: "gatsby-plugin-google-tagmanager",
+			options: {
+				id: googleTagManagerId,
+				includeInDevelopment: false,
+			},
+		},
 		`gatsby-plugin-react-helmet`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
@@ -40,6 +47,14 @@ module.exports = ({ wordPressUrl }) => ({
 					},
 				},
 			},
+		},
+		{
+			resolve: 'gatsby-plugin-robots-txt',
+			options: {
+				host: gatsbySiteUrl,
+				sitemap: `${ gatsbySiteUrl }/sitemap.xml`,
+				policy: [{ userAgent: '*', allow: ['/'] }]
+			}
 		},
 		{
 			resolve: `gatsby-plugin-manifest`,

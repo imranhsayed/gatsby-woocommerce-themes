@@ -1,4 +1,4 @@
-## 🎨 Gatsby WordPress themes
+## 🎨 Gatsby WooCommerce theme
 [![Project Status: Active.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 A Gatsby theme for WordPress, using Decoupled Architecture.
@@ -23,6 +23,11 @@ Backend in WordPress.
 7. Offline Search Feature
 8. Categories, Archive Page, Custom Home Page
 9. Custom Widgets, Menus
+10. WooCommerce store
+11. Google Analytics feature
+12. Sitemap
+13. Robot.txt
+14. Yoast SEO supported.
 
 
 ## 👨‍💻 Maintainer
@@ -49,7 +54,7 @@ Backend in WordPress.
 1. Installation: 
 `npm i gatsby-wordpress-theme-phoenix`
 
-2. Add the following configuration to your `gatsby-config.js` and put your WordPress Site URL in `wordPressUrl` e.g. `https://example.com`
+2. Add the following configuration to your `gatsby-config.js` and put wordPressUrl, gatsbySiteUrl and googleTagManagerId.
 
 ```javascript
 module.exports = {
@@ -58,7 +63,9 @@ module.exports = {
 		{
 		resolve: "gatsby-wordpress-theme-phoenix",
 		options: {
-			wordPressUrl: 'xxxx'
+			wordPressUrl: 'https://example.com',
+			gatsbySiteUrl: `https://example.com`,
+			googleTagManagerId: `xxxx`
 		}
 	} ]
 };
@@ -66,17 +73,15 @@ module.exports = {
 
 ### WordPress Site Setup
 
-1. Upload and activate all the plugins from [wordpress/plugins](https://github.com/imranhsayed/gatsby-wordpress-themes/tree/master/wordpress/plugins), into your WordPress Site.
+1. Download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
 
-OR,
-
-a. Clone the WordPress plugin [Headless CMS](https://github.com/imranhsayed/headless-cms) in your WordPress
-plugin directory and activate it.
-
-b. Clone and activate [wp-graphql](https://github.com/wp-graphql/wp-graphql) -test on ( v0.8.3 ) in WordPress plugin directory.
-c. Clone and activate [wp-graphiql](https://github.com/wp-graphql/wp-graphiql) in WordPress plugin directory.
-d. Clone and activate [wp-graphql-acf](https://github.com/wp-graphql/wp-graphql-acf) in WordPress plugin directory.
-e. Install and activate [ACF WordPress plugin](https://wordpress.org/plugins/advanced-custom-fields/) in the WordPress.
+a. [Headless CMS](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/headless-cms.zip)
+b. [wp-graphql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql.zip) - tested on ( v1.0.0 )
+c. [wp-graphiql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphiql.zip)
+d. [wp-graphql-woocommerce](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-woocommerce.zip)
+e. [wp-gatsby](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-gatsby.zip)
+f. [Yoast-SEO](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wordpress-seo.14.5.zip)
+g. [wp-graphql-yoast-seo](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-yoast-seo.zip)
 
 2. 
    * Set Header menu as `HCMS Header Menu`
