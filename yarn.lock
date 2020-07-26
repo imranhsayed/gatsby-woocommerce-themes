@@ -8900,7 +8900,7 @@ gatsby-graphiql-explorer@^0.4.11:
   dependencies:
     "@babel/runtime" "^7.10.3"
 
-gatsby-image@^2.4.5:
+gatsby-image@^2.4.13:
   version "2.4.13"
   resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.4.13.tgz#21ea2d062952406aba3d34c0bc45752df6b8a554"
   integrity sha512-j9FIH+EUY6oWQdcNr5Xb87VGsdT/dztqB0wKkMqboIIqPoK/Zdzvd2cUbLIYVOI9zOSsFNDoVsHqe/M0bfu4HA==
@@ -8939,7 +8939,7 @@ gatsby-page-utils@^0.2.17:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-catch-links@^2.3.2:
+gatsby-plugin-catch-links@^2.3.11:
   version "2.3.11"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-2.3.11.tgz#6a61a126a2ffcc3b155a1647123eb069a0b9e5d6"
   integrity sha512-30oNCe85evOmyEQ4THwfV0Uokv0GVQv+VpR6ztabLDF78J3p3yFQNQhtcyXPjHrLU2EeuWutSZYk3v1etdh9Hw==
@@ -9145,10 +9145,10 @@ gatsby-source-filesystem@^2.3.19:
     valid-url "^1.0.9"
     xstate "^4.11.0"
 
-gatsby-source-wordpress-experimental@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress-experimental/-/gatsby-source-wordpress-experimental-1.0.4.tgz#17ae37bae913c0008516b460d06b52049eb589b0"
-  integrity sha512-CW62lAA96oGTok80lriNe1YcfNwijnHOucE21WaQDIe1ScI+lN3+uib140EP4+s24cLIBckLzmK5XopZCJB9Lw==
+gatsby-source-wordpress-experimental@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-wordpress-experimental/-/gatsby-source-wordpress-experimental-1.1.1.tgz#0024c618d64bd2caeef2ceb24460075cf2472210"
+  integrity sha512-44P1N4IvAsflwcexVFUrrBrHlvQ9mfTuEyGhRMJYrjaTbqN1/NZcXLmVlS4Q6YUTTZbOn8Yx6nlQ+oxDQwZXng==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.10.1"
     "@babel/plugin-proposal-private-methods" "^7.10.1"
@@ -9166,9 +9166,8 @@ gatsby-source-wordpress-experimental@^1.0.4:
     dumper.js "^1.3.1"
     execall "^2.0.0"
     fast-json-stable-stringify "^2.1.0"
-    gatsby-image "^2.4.5"
-    gatsby-plugin-catch-links "^2.3.2"
-    gatsby-transformer-sharp "^2.5.10"
+    gatsby-image "^2.4.13"
+    gatsby-plugin-catch-links "^2.3.11"
     glob "^7.1.6"
     graphql-query-compress "^1.2.2"
     node-fetch "^2.6.0"
@@ -9195,7 +9194,7 @@ gatsby-telemetry@^1.3.19:
     node-fetch "2.6.0"
     uuid "3.4.0"
 
-gatsby-transformer-sharp@^2.5.10, gatsby-transformer-sharp@^2.5.11:
+gatsby-transformer-sharp@^2.5.11:
   version "2.5.11"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.5.11.tgz#fb671090b5aaaa009db754217bdafcd4704a62e0"
   integrity sha512-YPfZqJhJoQxQ0d/PUnAChPMm3RLcFSS6m0RgJl8Mh/Q8k15oZIDK82oBX2dCvKcfGKCq5ReT1gmwZJKXxt/vTw==
