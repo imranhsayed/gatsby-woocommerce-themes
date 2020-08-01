@@ -1,0 +1,101 @@
+@import "../../../sass/essentials";
+
+.search-form {
+  width: 100%;
+  max-width: 750px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  .search-results {
+    padding-top: 36px;
+    color: $black;
+    width: 100%;
+    max-width: 750px;
+    margin: auto;
+    text-align: left;
+    margin-top: -34px;
+    background: #e8f0fd;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 35px 0;
+    font-size: 24px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1;
+
+    li {
+      &:first-child {
+        border-top: 1px solid #bbb;
+        padding-top: 6px;
+      }
+      &:last-child {
+        padding-bottom: 6px;
+      }
+    }
+
+    a {
+      display: block;
+      padding: 6px 25px;
+    }
+
+    a:hover {
+      transition: 0.3s;
+      background: #b6e0eb;
+    }
+  }
+
+  .search-input {
+    width: 100%;
+    max-width: 750px;
+    background: #e8f0fd;
+    padding: 20px 25px;
+    color: $black;
+    border: none;
+    border-radius: 50px;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    &:focus {
+      outline: none;
+      background: #e8f0fd;
+      color: $black;
+      &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $black;
+        opacity: 1; /* Firefox */
+      }
+
+      &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $black;
+      }
+
+      &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $black;
+      }
+    }
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $black;
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: $black;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: $black;
+    }
+  }
+}

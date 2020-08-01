@@ -70,6 +70,7 @@ query GET_FRONT_PAGE {
         }
         ... on WpGroupProduct {
           id
+          name
           products {
             nodes {
               ... on WpSimpleProduct {
@@ -85,36 +86,6 @@ query GET_FRONT_PAGE {
   }
 }
 `;
-
-// module.exports = async ( { actions, graphql } ) => {
-//
-// 	const { createPage } = actions;
-// 	return graphql( GET_FRONT_PAGE ).then( ( { data } ) => {
-//
-// 		const { products, categories } = data;
-//
-//
-// 		let allTheProducts = [];
-// 		products.edges && products.edges.map( product => {
-//
-// 			// Push the categories data in form of an array, to make it searchable
-// 			let productsData = product;
-// 			productsData.categoriesData = [];
-//
-// 			productsData.node.productCategories.nodes.map( category => {
-// 				productsData.categoriesData.push( category.name );
-// 			} );
-//
-// 			allTheProducts.push( productsData );
-//
-// 		} );
-//
-// 		console.log( JSON.stringify( allTheProducts, null, 4 ) );
-//
-// 		process.exit();
-// 	} )
-//
-// };
 
 module.exports = async ( { actions, graphql } ) => {
 
@@ -133,10 +104,10 @@ module.exports = async ( { actions, graphql } ) => {
 				products.edges && products.edges.map( product => {
 
 					// Push the categories data in form of an array, to make it searchable
-					let productsData = product;
+					let productsData = product.node;
 					productsData.categoriesData = [];
 
-					productsData.node.productCategories.nodes.map( category => {
+					productsData.productCategories.nodes.map( category => {
 						productsData.categoriesData.push( category.name );
 					} );
 
