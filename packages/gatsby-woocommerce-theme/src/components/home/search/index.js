@@ -9,8 +9,6 @@ const Search = props => {
     engine,
   } = props;
 
-  console.warn( 'posts', posts );
-
   const backgroundURL = '';
   const placeholderText = 'Search...'
 

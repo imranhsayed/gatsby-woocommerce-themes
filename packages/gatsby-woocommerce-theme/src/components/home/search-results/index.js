@@ -4,8 +4,6 @@ import Link from 'gatsby-link';
 
 const SearchResults = ( { queryResults } ) => {
 
-	console.warn( 'queryResults', queryResults );
-
 	if ( isEmpty( queryResults ) ) {
 		return null;
 	}
