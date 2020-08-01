@@ -33,6 +33,7 @@
     "@wordpress/block-library": "^2.22.0",
     "apollo-boost": "^0.4.9",
     "classnames": "^2.2.6",
+    "foundation-sites": "^6.6.3",
     "gatsby-link": "^2.4.13",
     "gatsby-plugin-google-tagmanager": "^2.3.11",
     "gatsby-plugin-manifest": "^2.4.18",
