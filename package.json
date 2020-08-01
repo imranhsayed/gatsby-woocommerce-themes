@@ -10,10 +10,10 @@
   ],
   "scripts": {
     "dev": "yarn workspace site dev",
-	"dev:clean": "yarn workspace site dev:clean",
+    "dev:clean": "yarn workspace site dev:clean",
     "build": "yarn workspace site build",
-	"build:clean": "yarn workspace site build:clean",
-	"serve": "yarn workspace site serve",
+    "build:clean": "yarn workspace site build:clean",
+    "serve": "yarn workspace site serve",
     "clean": "yarn workspace site clean"
   },
   "repository": {
@@ -21,11 +21,11 @@
     "url": "git+https://github.com/imranhsayed/gatsby-woocommerce-themes.git"
   },
   "keywords": [
-	"gatsby",
-	"gatsby-plugin",
-	"gatsby-theme",
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-theme",
     "gatsby-woocommerce-theme",
-	"woocommerce",
+    "woocommerce",
     "wordpress",
     "react",
     "javascript"
@@ -35,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/imranhsayed/gatsby-woocommerce-themes/issues"
   },
-  "homepage": "https://github.com/imranhsayed/gatsby-woocommerce-themes#readme"
+  "homepage": "https://github.com/imranhsayed/gatsby-woocommerce-themes#readme",
+  "dependencies": {}
 }
