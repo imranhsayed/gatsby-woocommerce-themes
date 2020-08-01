@@ -1,3 +1,8 @@
-const FrontPage = () => <div>dron</div>
+const FrontPage = ( props ) => {
+	
+	console.warn( 'props', props );
+	
+	return 'hello';
+}
 
 export default FrontPage;

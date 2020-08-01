@@ -86,32 +86,93 @@ query GET_FRONT_PAGE {
 }
 `;
 
+// module.exports = async ( { actions, graphql } ) => {
+//
+// 	const { createPage } = actions;
+// 	return graphql( GET_FRONT_PAGE ).then( ( { data } ) => {
+//
+// 		const { products, categories } = data;
+//
+//
+// 		let allTheProducts = [];
+// 		products.edges && products.edges.map( product => {
+//
+// 			// Push the categories data in form of an array, to make it searchable
+// 			let productsData = product;
+// 			productsData.categoriesData = [];
+//
+// 			productsData.node.productCategories.nodes.map( category => {
+// 				productsData.categoriesData.push( category.name );
+// 			} );
+//
+// 			allTheProducts.push( productsData );
+//
+// 		} );
+//
+// 		console.log( JSON.stringify( allTheProducts, null, 4 ) );
+//
+// 		process.exit();
+// 	} )
+//
+// };
+
 module.exports = async ( { actions, graphql } ) => {
 
 	const { createPage } = actions;
-	return graphql( GET_FRONT_PAGE ).then( ( { data } ) => {
 
-		const { products, categories } = data;
+	const fetchPosts = async () => {
+
+		// Do query to get home page data.
+		return await graphql( GET_FRONT_PAGE )
+			.then( ( { data } ) => {
+
+				const { products, categories } = data;
 
 
-		let allTheProducts = [];
-		products.edges && products.edges.map( product => {
+				let allTheProducts = [];
+				products.edges && products.edges.map( product => {
 
-			// Push the categories data in form of an array, to make it searchable
-			let productsData = product;
-			productsData.categoriesData = [];
+					// Push the categories data in form of an array, to make it searchable
+					let productsData = product;
+					productsData.categoriesData = [];
 
-			productsData.node.productCategories.nodes.map( category => {
-				productsData.categoriesData.push( category.name );
+					productsData.node.productCategories.nodes.map( category => {
+						productsData.categoriesData.push( category.name );
+					} );
+
+					allTheProducts.push( productsData );
+
+				} );
+
+				return {  categories: categories, allProducts: allTheProducts };
 			} );
 
-			allTheProducts.push( productsData );
 
+	};
+
+	// When the above fetchPosts is resolved, then create page and pass the data as pageContext to the page template.
+	await fetchPosts().then( ( { categories, allProducts } ) => {
+
+		createPage( {
+			path: `/`,
+			component: slash( frontPageTemplate ),
+			context: {
+				categories,
+				allProducts,
+				postSearchData: {
+					allPosts: allProducts,
+					options: {
+						indexStrategy: `Prefix match`,
+						searchSanitizer: `Lower Case`,
+						TitleIndex: true,
+						AuthorIndex: true,
+						CategoryIndex: true,
+						SearchByTerm: true,
+					},
+				},
+			},
 		} );
 
-		console.log( JSON.stringify( allTheProducts, null, 4 ) );
-
-		process.exit();
 	} )
 
 };
