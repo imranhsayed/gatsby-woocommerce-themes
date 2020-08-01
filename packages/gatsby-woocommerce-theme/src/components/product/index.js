@@ -12,13 +12,13 @@ const Product = ( props ) => {
 	return (
 		// @TODO Need to handle Group products differently.
 		! isEmpty( product ) && 'GroupProduct' !== product.nodeType ? (
-			<div className="columns large-4 medium-6 small-12">
+			<div className="site-columns columns large-4 medium-6 small-12">
 				<h3 className="card-header text-center">
 					{ product.name ? product.name : '' }
 				</h3>
 
 				<Link
-					to="/"
+					to={ product.link }
 				>
 					{ !isEmpty( product.image ) ? (
 						<img src={ product.image.sourceUrl } alt="Product image"/>
