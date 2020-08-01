@@ -10,14 +10,14 @@ import PropTypes from "prop-types"
 import './../../sass/common.scss';
 
 import Header from "../header";
-// import Footer from "../footer";
+import Footer from "../footer";
 
-const Layout = ( { children, data }) => {
+const Layout = ( { children }) => {
   return (
     <>
-      <Header data={ data }/>
+      <Header/>
 	    <main className="main-container">{children}</main>
-	  {/*<Footer data={ data }/>*/}
+	  <Footer/>
     </>
   )
 }

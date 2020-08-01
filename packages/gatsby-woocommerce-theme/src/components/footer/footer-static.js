@@ -8,13 +8,18 @@ import PropTypes from "prop-types";
 import React from "react";
 
 const Footer = ( { data } ) => {
-	const { footer: { copyrightText, socialLinks, sidebarOne, sidebarTwo }, footerMenuItems } = data.HWGraphQL;
+	const {
+		      wp: {
+			      footer: { copyrightText, socialLinks, sidebarOne, sidebarTwo }
+		      },
+		      footerMenuItems
+	      } = data;
 
 	const staticSocialLink = [
-		{ iconName: 'facebook', iconUrl: 'https://facebook.com/codeytek'  },
-		{ iconName: 'twitter', iconUrl: 'https://twitter.com/codeytek'  },
-		{ iconName: 'instagram', iconUrl: 'https://www.instagram.com/codeytek_academy'  },
-		{ iconName: 'youtube', iconUrl: 'https://youtube.com/ImranSayedDev'  },
+		{ iconName: 'facebook', iconUrl: 'https://facebook.com/codeytek' },
+		{ iconName: 'twitter', iconUrl: 'https://twitter.com/codeytek' },
+		{ iconName: 'instagram', iconUrl: 'https://www.instagram.com/codeytek_academy' },
+		{ iconName: 'youtube', iconUrl: 'https://youtube.com/ImranSayedDev' },
 	];
 
 	const socialLinksData = socialLinks.length ? socialLinks : staticSocialLink;
@@ -23,36 +28,39 @@ const Footer = ( { data } ) => {
 		<footer className="footer">
 
 			<div className="wrapper">
-				{/*Top section*/}
+				{/*Top section*/ }
 				<div className="footer__top">
-					{ sidebarOne ? <div  dangerouslySetInnerHTML={ { __html: sidebarOne } } className="footer__sidebar-one footer-widget"/> : null }
-					{ sidebarTwo ? <div  dangerouslySetInnerHTML={ { __html: sidebarTwo } } className="footer__sidebar-two footer-widget"/> : null }
+					{ sidebarOne ? <div dangerouslySetInnerHTML={ { __html: sidebarOne } }
+					                    className="footer__sidebar-one footer-widget"/> : null }
+					{ sidebarTwo ? <div dangerouslySetInnerHTML={ { __html: sidebarTwo } }
+					                    className="footer__sidebar-two footer-widget"/> : null }
 
 					{
 						footerMenuItems.edges.length ? (
 							<div className="footer-menu-items footer-widget">
 								<h6>About the site</h6>
 								<ul>
-									{ footerMenuItems.edges.map( menu  => (
-										<li key={ menu.node.menuItemId }>
+									{ footerMenuItems.edges.map( menu => (
+										<li key={ menu.node.databaseId }>
 											<Link
 												className="header-nav__menu-link"
-												to={ normalizePath( menu.node.url )  }
+												to={ normalizePath( menu.node.url ) }
 											>
 												<span> > </span>
 												{ menu.node.label }
 											</Link>
 										</li>
-									)) }
+									) ) }
 								</ul>
 							</div>
 						) : ''
 					}
 				</div>
 
-				{/*	Bottom section*/}
+				{/*	Bottom section*/ }
 				<div className="footer__bottom">
-					{ copyrightText ? <div className="copyright-text">{ copyrightText }</div> : <div className="copyright-text">Codeytek Academy 2020</div> }
+					{ copyrightText ? <div className="copyright-text">{ copyrightText }</div> :
+						<div className="copyright-text">Codeytek Academy 2020</div> }
 					{
 						socialLinksData.length ?
 							<ul className="social-links">

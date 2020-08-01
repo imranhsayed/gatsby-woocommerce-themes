@@ -1,92 +1,59 @@
 export default {
-	'header': {
-		'siteLogoUrl': '',
-		'siteTagLine': 'Formerly Spot.IM',
-		'siteTitle': 'OpenWeb'
-	},
-	'headerMenuItems': {
-		"edges": [
-			{
-				"node": {
-					"id": "bmF2X21lbnVfaXRlbTozODI=",
-					"menuItemId": 382,
-					"label": "About",
-					"url": "https://codeytek.com/headless-cms/about/",
-					"childItems": {
-						"edges": []
-					}
-				}
-			},
-			{
-				"node": {
-					"id": "bmF2X21lbnVfaXRlbTozODA=",
-					"menuItemId": 380,
-					"label": "Special Journeys",
-					"url": "https://codeytek.com/headless-cms/special-journey/",
-					"childItems": {
-						"edges": []
-					}
-				}
-			},
-			{
-				"node": {
-					"id": "bmF2X21lbnVfaXRlbTozODQ=",
-					"menuItemId": 384,
-					"label": "Contact",
-					"url": "https://codeytek.com/headless-cms/contact/",
-					"childItems": {
-						"edges": []
-					}
-				}
-			},
-			{
-				"node": {
-					"id": "bmF2X21lbnVfaXRlbTozODM=",
-					"menuItemId": 383,
-					"label": "Enquiry",
-					"url": "https://codeytek.com/headless-cms/enquiry/",
-					"childItems": {
-						"edges": []
-					}
-				}
-			},
-			{
-				"node": {
-					"id": "bmF2X21lbnVfaXRlbTozODU=",
-					"menuItemId": 385,
-					"label": "Inspiration",
-					"url": "https://codeytek.com/headless-cms/inspiration/",
-					"childItems": {
-						"edges": [
-							{
-								"node": {
-									"menuItemId": 381,
-									"label": "Memories",
-									"url": "https://codeytek.com/headless-cms/memories/"
-								}
-							},
-							{
-								"node": {
-									"menuItemId": 387,
-									"label": "Child Two",
-									"url": "https://codeytek.com/headless-cms/child-two/"
-								}
-							}
-						]
-					}
-				}
-			},
-			{
-				"node": {
-					"id": "bmF2X21lbnVfaXRlbTozOTk=",
-					"menuItemId": 399,
-					"label": "Blog",
-					"url": "https://codeytek.com/headless-cms/blog/",
-					"childItems": {
-						"edges": []
-					}
-				}
+	"data": {
+		"wp": {
+			"header": {
+				"siteLogoUrl": "https://codeytek.com/wordpress_woo/wp-content/uploads/2020/08/cropped-logo.png",
+				"siteTagLine": "Just another WordPress site",
+				"siteTitle": "Gatsby WooCommerce",
+				"favicon": "https://codeytek.com/wordpress_woo/wp-content/uploads/2020/08/cropped-logo-1.png"
 			}
-		]
-	},
-};
+		},
+		"headerMenuItems": {
+			"edges": [
+				{
+					"node": {
+						"id": "bmF2X21lbnVfaXRlbToyNTg=",
+						"databaseId": 258,
+						"title": null,
+						"url": "/products/",
+						"label": "Products",
+						"childItems": {
+							"nodes": []
+						}
+					}
+				},
+				{
+					"node": {
+						"id": "bmF2X21lbnVfaXRlbToyNTc=",
+						"databaseId": 257,
+						"title": null,
+						"url": "/about/",
+						"label": "About",
+						"childItems": {
+							"nodes": [
+								{
+									"id": "bmF2X21lbnVfaXRlbToyNTY=",
+									"databaseId": 256,
+									"label": "Contact us",
+									"url": "/contact-us/"
+								}
+							]
+						}
+					}
+				},
+				{
+					"node": {
+						"id": "bmF2X21lbnVfaXRlbToyNTY=",
+						"databaseId": 256,
+						"title": null,
+						"url": "/contact-us/",
+						"label": "Contact us",
+						"childItems": {
+							"nodes": []
+						}
+					}
+				}
+			]
+		}
+	}
+}
