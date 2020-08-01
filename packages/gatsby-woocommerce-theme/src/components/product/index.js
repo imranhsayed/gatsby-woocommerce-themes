@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 // import AddToCartButton from '../components/cart/AddToCartButton';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { isEmpty } from 'lodash';
 
 const productImagePlaceholder = 'https://via.placeholder.com/434';
@@ -21,7 +22,13 @@ const Product = ( props ) => {
 					to={ product.link }
 				>
 					{ !isEmpty( product.image ) ? (
-						<img src={ product.image.sourceUrl } alt="Product image"/>
+						<LazyLoadImage
+							alt={product.image.altText ? product.image.altText : '' }
+							height="383"
+							src={product.image.sourceUrl} // use normal <img> attributes as props
+							width="383"
+						/>
+
 					) : !isEmpty( productImagePlaceholder ) ? (
 						<img
 							src={ productImagePlaceholder }
