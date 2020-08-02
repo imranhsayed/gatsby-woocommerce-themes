@@ -53,7 +53,7 @@ class ClientSearch extends Component {
 			      indexByCategory,
 		      } = this.state;
 
-		const { posts } = this.props;
+		const { products } = this.props;
 
 		const dataToSearch = new JsSearch.Search( "id" );
 
@@ -97,7 +97,7 @@ class ClientSearch extends Component {
 			dataToSearch.addIndex( "categoriesData" )
 		}
 
-		dataToSearch.addDocuments( posts ) // adds the data to be searched
+		dataToSearch.addDocuments( products ) // adds the data to be searched
 
 		this.setState( { search: dataToSearch, isLoading: false } )
 	}

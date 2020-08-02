@@ -9,7 +9,7 @@ const FrontPage = ( props ) => {
 	const {
 		      pageContext: {
 		      	 allProducts,
-			      postSearchData: { allPosts, options }
+			      postSearchData: { products, options }
 		      }
 	      } = props;
 
@@ -18,7 +18,7 @@ const FrontPage = ( props ) => {
 			{
 				! isEmpty( props.pageContext ) ? (
 					<>
-						<Search posts={ allPosts } engine={ options }/>
+						<Search products={ products } engine={ options }/>
 						<Products products={ allProducts }/>
 					</>
 				) : (

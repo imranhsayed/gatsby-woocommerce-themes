@@ -6,18 +6,19 @@ import '../../../images/search-background.png';
 
 const Search = props => {
 	const {
-		      posts,
+		      products,
 		      engine,
 	      } = props;
+
 	const placeholderText = 'Search...'
 
-	return !isEmpty( props.posts ) ? (
+	return !isEmpty( props.products ) ? (
 		<div
 			className="search-section"
 		>
 			{/* Search */ }
 			<ClientSearch
-				posts={ posts }
+				products={ products }
 				engine={ engine }
 				placeholder={ placeholderText }
 			/>

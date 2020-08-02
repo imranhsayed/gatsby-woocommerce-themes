@@ -131,7 +131,7 @@ module.exports = async ( { actions, graphql } ) => {
 				categories,
 				allProducts,
 				postSearchData: {
-					allPosts: allProducts,
+					products: allProducts,
 					options: {
 						indexStrategy: `Prefix match`,
 						searchSanitizer: `Lower Case`,
