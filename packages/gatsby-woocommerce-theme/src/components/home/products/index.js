@@ -9,6 +9,7 @@ const Products = ( props ) => {
 	const [activePage, setActivePage]           = useState( 1 );
 	const [currentProducts, setCurrentProducts] = useState( null );
 	const productsPerPage                       = 6;
+	const pageRange                             = 10;
 
 	/**
 	 * Whenever the products length changes,
@@ -63,7 +64,7 @@ const Products = ( props ) => {
 					activePage={ activePage }
 					itemsCountPerPage={ productsPerPage }
 					totalItemsCount={ products.length }
-					pageRangeDisplayed={ 10 }
+					pageRangeDisplayed={ pageRange }
 					onChange={ handlePageChange }
 				/>
 			</div>
