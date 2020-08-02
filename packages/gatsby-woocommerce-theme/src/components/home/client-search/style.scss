@@ -11,11 +11,11 @@
   left: 0;
 
   .search-results {
-    padding-top: 36px;
     color: $black;
     width: 100%;
     max-width: 750px;
-    margin: auto;
+    margin-left: auto;
+	margin-right: auto;
     text-align: left;
     margin-top: -34px;
     background: #e8f0fd;

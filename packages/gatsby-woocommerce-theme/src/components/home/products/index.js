@@ -55,7 +55,6 @@ const Products = ( props ) => {
 
 	return (
 		<div className="container">
-			<h2 className="heading">Products</h2>
 			<div className="product-container row">
 				{ currentProducts.map( ( product ) => <Product key={ product.id } product={ product }/> ) }
 			</div>

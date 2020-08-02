@@ -1,0 +1,16 @@
+.categories-list-wrap {
+	width: 100%;
+	margin-top: 100px;
+	display: flex;
+
+	.categories-list {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.categories-link {
+		display: inline-block;
+		padding: 16px;
+	}
+}

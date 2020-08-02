@@ -7,6 +7,7 @@ import '../../../images/search-background.png';
 const Search = props => {
 	const {
 		      products,
+		      categories,
 		      engine,
 	      } = props;
 
@@ -19,6 +20,7 @@ const Search = props => {
 			{/* Search */ }
 			<ClientSearch
 				products={ products }
+				categories={ categories }
 				engine={ engine }
 				placeholder={ placeholderText }
 			/>

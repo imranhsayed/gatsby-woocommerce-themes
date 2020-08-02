@@ -7,6 +7,7 @@ const FrontPage = ( props ) => {
 
 	const {
 		      pageContext: {
+			      categories,
 			      postSearchData: { products, options }
 		      }
 	      } = props;
@@ -16,7 +17,11 @@ const FrontPage = ( props ) => {
 			{
 				! isEmpty( props.pageContext ) ? (
 					<>
-						<Search products={ products } engine={ options }/>
+						<Search
+							products={ products }
+							engine={ options }
+							categories={ categories }
+						/>
 					</>
 				) : (
 					<div>Something went wrong</div>
