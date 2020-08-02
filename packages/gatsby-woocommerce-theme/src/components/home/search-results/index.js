@@ -1,21 +1,21 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
-import Link from 'gatsby-link';
+import Products from "../products";
+import './style.scss';
 
-const SearchResults = ( { queryResults } ) => {
+const SearchResults = ( { queryResults, allProducts } ) => {
 
-	if ( isEmpty( queryResults ) ) {
+	if ( isEmpty( queryResults ) && isEmpty( allProducts ) ) {
 		return null;
 	}
 
+	// If search results are not available show all products.
+	const productsToBeDisplayed = ! isEmpty( queryResults ) ? queryResults : allProducts;
+
 	return (
-		<ul className="search-results">
-			{ queryResults.map( post => (
-				<li key={ post.id }>
-					<Link to={ post.link }><span dangerouslySetInnerHTML={{ __html: post.name }}/></Link>
-				</li>
-			) ) }
-		</ul>
+		<div className="search-results">
+			<Products products={ productsToBeDisplayed }/>
+		</div>
 	);
 };
 
