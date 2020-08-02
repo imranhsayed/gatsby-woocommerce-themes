@@ -11,13 +11,11 @@ const Product = ( props ) => {
 
 	const { product } = props;
 
-	// console.warn( product.image.mediaDetails.sizes[ 0 ] );
-	// return null;
 
-
-	let imgSrcUrl   = !isEmpty( product.image ) && ( null !== product.image.mediaDetails.sizes[ 0 ].sourceUrl ) ? product.image.mediaDetails.sizes[ 0 ].sourceUrl : '';
-	const imgWidth  = !isEmpty( product.image ) && ( !isEmpty( product.image.mediaDetails.sizes ) ) ? product.image.mediaDetails.sizes[ 0 ].width : 450;
-	const imgHeight = !isEmpty( product.image ) && ( !isEmpty( product.image.mediaDetails.sizes ) ) ? product.image.mediaDetails.sizes[ 0 ].height : 450;
+	const hasImagesSizes = !isEmpty( product.image ) && ( !isEmpty( product.image.mediaDetails.sizes ) );
+	const imgSrcUrl   = hasImagesSizes ? product.image.mediaDetails.sizes[ 0 ].sourceUrl : '';
+	const imgWidth  = hasImagesSizes ? product.image.mediaDetails.sizes[ 0 ].width : 450;
+	const imgHeight = hasImagesSizes ? product.image.mediaDetails.sizes[ 0 ].height : 450;
 
 	return (
 		// @TODO Need to handle Group products differently.

@@ -26,7 +26,7 @@ const Header = ( { data } ) => {
 						<img className="site-brand__logo" src={ siteLogoURL } width="68" height="55"
 						     alt="header logo"/>
 					</Link>
-					<div>
+					<div className="site-brand__content">
 						<h2 className="screen-reader-text site-brand__title">{ siteTitle }</h2>
 						<p className="site-brand__description">{ siteTagLine }</p>
 					</div>

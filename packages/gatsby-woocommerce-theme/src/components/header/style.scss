@@ -26,6 +26,11 @@
 .site-brand {
 	display: flex;
 	align-items: center;
+
+	.site-brand__content {
+		width: 300px;
+		margin-left: 10px;
+	}
 }
 
 // Menu
