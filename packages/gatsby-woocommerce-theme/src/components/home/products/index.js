@@ -48,8 +48,6 @@ const Products = ( props ) => {
 		setActivePage( pageNumber )
 	};
 
-	console.error( 'currentProd', currentProducts );
-
 	if ( null === currentProducts ) {
 		return null;
 	}
@@ -58,7 +56,7 @@ const Products = ( props ) => {
 		<div className="container">
 			<h2 className="heading">Products</h2>
 			<div className="product-container row">
-				{ currentProducts.map( ( product, index ) => {
+				{ currentProducts.map( ( product ) => {
 
 					return <Product key={ product.id } product={ product }/>;
 				} ) }
