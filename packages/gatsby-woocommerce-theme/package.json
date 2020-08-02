@@ -50,6 +50,7 @@
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react-helmet": "^6.1.0",
+    "react-js-pagination": "^3.0.3",
     "react-lazy-load-image-component": "^1.5.0",
     "react-responsive": "^8.1.0",
     "sass-mq": "^5.0.1"

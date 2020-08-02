@@ -14,10 +14,11 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 2. PWA ( Works Offline )
 3. Image Optimization ( blur effect )
 4. GraphQL ( with wp-graphql on WordPress )
-5. Custom Widgets, Menus
+5. Custom Widgets, Menus, Social elements.
 6. WooCommerce store
 7. Google Analytics feature
 8. Yoast SEO supported.
+9. Product Search ( even works offline )
 
 ## 👨‍💻 Maintainer
 
