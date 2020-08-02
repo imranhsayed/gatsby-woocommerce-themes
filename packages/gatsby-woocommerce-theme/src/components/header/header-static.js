@@ -18,8 +18,6 @@ const Header = ( { data } ) => {
 	      } = data;
 	const siteLogoURL = siteLogoUrl ? siteLogoUrl : defaultSiteLogoUrl;
 
-	console.warn( 'data', headerMenuItems );
-
 	return (
 		<header className="site-header-container container">
 			<div className="site-header">

@@ -10,9 +10,17 @@ const Product = ( props ) => {
 
 	const { product } = props;
 
+	// console.warn( product.image.mediaDetails.sizes[ 0 ] );
+	// return null;
+
+
+	let imgSrcUrl   = !isEmpty( product.image ) && ( null !== product.image.mediaDetails.sizes[ 0 ].sourceUrl ) ? product.image.mediaDetails.sizes[ 0 ].sourceUrl : '';
+	const imgWidth  = !isEmpty( product.image ) && ( !isEmpty( product.image.mediaDetails.sizes ) ) ? product.image.mediaDetails.sizes[ 0 ].width : 450;
+	const imgHeight = !isEmpty( product.image ) && ( !isEmpty( product.image.mediaDetails.sizes ) ) ? product.image.mediaDetails.sizes[ 0 ].height : 450;
+
 	return (
 		// @TODO Need to handle Group products differently.
-		! isEmpty( product ) && 'GroupProduct' !== product.nodeType ? (
+		!isEmpty( product ) && 'GroupProduct' !== product.nodeType ? (
 			<div className="site-columns columns large-4 medium-6 small-12">
 				<h3 className="card-header text-center">
 					{ product.name ? product.name : '' }
@@ -23,22 +31,24 @@ const Product = ( props ) => {
 				>
 					{ !isEmpty( product.image ) ? (
 						<LazyLoadImage
-							alt={product.image.altText ? product.image.altText : '' }
-							height="383"
-							src={product.image.sourceUrl} // use normal <img> attributes as props
-							width="383"
+							alt={ product.image.altText ? product.image.altText : '' }
+							height={ imgWidth }
+							src={ imgSrcUrl } // use normal <img> attributes as props
+							width={ imgHeight }
 						/>
 
 					) : !isEmpty( productImagePlaceholder ) ? (
-						<img
+						<LazyLoadImage
+							alt="default"
+							height="450"
 							src={ productImagePlaceholder }
-							alt="Placeholder product image"
+							width="450"
 						/>
 					) : null }
 				</Link>
 				<div className="card-body text-center">
 					<h6 className="card-subtitle mb-3">{ product.price }</h6>
-					{/*<AddToCartButton product={ product }/>*/}
+					{/*<AddToCartButton product={ product }/>*/ }
 				</div>
 			</div>
 		) : (

@@ -10,8 +10,6 @@ const Products = ( props ) => {
 		return null;
 	}
 
-	console.warn( 'pro', products.length );
-
 	return (
 		<div className="container">
 			<h2 className="heading">Products</h2>
