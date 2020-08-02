@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 // import AddToCartButton from '../components/cart/AddToCartButton';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import { isEmpty } from 'lodash';
 
 const productImagePlaceholder = 'https://via.placeholder.com/434';
@@ -35,6 +36,7 @@ const Product = ( props ) => {
 							height={ imgWidth }
 							src={ imgSrcUrl } // use normal <img> attributes as props
 							width={ imgHeight }
+							effect="blur"
 						/>
 
 					) : !isEmpty( productImagePlaceholder ) ? (
@@ -43,6 +45,7 @@ const Product = ( props ) => {
 							height="450"
 							src={ productImagePlaceholder }
 							width="450"
+							effect="blur"
 						/>
 					) : null }
 				</Link>
