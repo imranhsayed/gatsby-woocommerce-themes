@@ -16,7 +16,7 @@ class ClientSearch extends Component {
 		searchQuery: "",
 		selectedStrategy: "",
 		selectedSanitizer: "",
-	}
+	};
 
 	/**
 	 * React lifecycle method that will inject the data into the state.
@@ -106,8 +106,8 @@ class ClientSearch extends Component {
 	 * in which the results will be added to the state
 	 */
 	searchData   = e => {
-		const { search }  = this.state
-		const queryResult = search.search( e.target.value )
+		const { search }  = this.state;
+		const queryResult = search.search( e.target.value );
 		this.setState( { searchQuery: e.target.value, searchResults: queryResult } )
 	}
 	handleSubmit = e => {
@@ -115,8 +115,8 @@ class ClientSearch extends Component {
 	}
 
 	render() {
-		const { searchResults, searchQuery } = this.state
-		const { placeholder }                = this.props
+		const { searchResults, searchQuery } = this.state;
+		const { placeholder }                = this.props;
 
 		const queryResults = searchResults;
 
@@ -135,8 +135,8 @@ class ClientSearch extends Component {
 						placeholder={ placeholder }
 						autoComplete="off" // removes the autosearch suggestions
 					/>
-					<SearchResults queryResults={ queryResults }/>
 				</form>
+				<SearchResults queryResults={ queryResults } allProducts={ this.props.products }/>
 			</>
 		)
 	}

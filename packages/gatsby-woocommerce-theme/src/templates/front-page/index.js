@@ -19,7 +19,7 @@ const FrontPage = ( props ) => {
 				! isEmpty( props.pageContext ) ? (
 					<>
 						<Search products={ products } engine={ options }/>
-						<Products products={ allProducts }/>
+						{/*<Products products={ allProducts }/>*/}
 					</>
 				) : (
 					<div>Something went wrong</div>
