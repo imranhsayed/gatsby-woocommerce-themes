@@ -4,6 +4,9 @@
 @import '~sass-mq';
 @import "2-generic/generic";
 
+// Foundation.
+@import "2-generic/foundations";
+
 body {
 	overflow-y: auto;
 	overflow-x: hidden;

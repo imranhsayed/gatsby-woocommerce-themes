@@ -1,0 +1,220 @@
+@import "../../fonts/fonts.css";
+@import "../../sass/essentials";
+@import './../../sass/vendor/hamburger/hamburgers.scss';
+
+.site-header-container {
+	padding-right: 5px;
+
+	@include mq( medium ) {
+		padding-right: $container-padding;
+	}
+}
+
+.site-header {
+	padding-top: 12px;
+	padding-bottom: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+
+	@include mq( medium ) {
+		align-items: center;
+	}
+}
+
+.site-brand {
+	display: flex;
+	align-items: center;
+
+	.site-brand__content {
+		width: 300px;
+		margin-left: 10px;
+	}
+}
+
+// Menu
+.header-nav {
+
+	display: flex;
+	position: absolute;
+	top: 70px;
+	right: -104vw;
+	transition: 0.3s all;
+	background-color: $white;
+	height: calc(100vh - 80px);
+	border-top: 1px solid $color__border;
+	width: 100vw;
+	z-index: 10;
+
+	&.menu-visible {
+		right: -4px;
+
+		@include mq( $from: medium, $until: large ) {
+			right: -4px;
+		}
+	}
+
+	@include mq( large ) {
+		align-items: center;
+		justify-content: flex-end;
+		display: flex;
+		position: static;
+		top: 0;
+		height: auto;
+		border: none;
+	}
+
+	.header-nav__wrap {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		@include mq( large ) {
+			flex-direction: row;
+			align-items: center;
+			width: auto;
+		}
+	}
+
+	// Main menu list
+	.header-nav__menu-item {
+		padding: 4px 16px;
+		color: #757575;
+		position: relative;
+		border: 1px solid $color__border;
+		transition: 0.3s;
+
+		@include mq( $until: large  ) {
+			svg {
+				display: none;
+			}
+		}
+
+		.header-nav__toggle-menu-btn {
+			padding-left: 3px;
+			margin-top: -6px;
+		}
+
+		&.menu-has-children .header-nav__toggle-menu-btn::after {
+			content: "+";
+			position: absolute;
+			right: 10px;
+			width: 25px;
+			text-align: center;
+			vertical-align: middle;
+			top: 10px;
+			font-size: 20px;
+			cursor: pointer;
+
+			@include mq( large ) {
+				content: "";
+			}
+		}
+
+		&.child-menu-open .header-nav__toggle-menu-btn::after {
+			content: "-";
+		}
+
+		@include mq( large ) {
+			border: none;
+		}
+
+		&:last-child {
+			border: 2px solid $color__menu-border;
+			border-radius: 45px;
+			width: 100px;
+			text-align: center;
+			vertical-align: middle;
+			margin: 16px 0 0 16px;
+
+			@include mq( large ) {
+				margin: 0;
+				margin-left: 13px;
+			}
+
+			a {
+				padding: 4px 0;
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		&:hover .header-nav__submenu {
+			display: block;
+		}
+
+		// Main Menu link
+		.header-nav__menu-link {
+			display: flex;
+			padding: 10px;
+			color: $color__text;
+			white-space: nowrap;
+
+			@include mq( large ) {
+				display: inline-block;
+				padding: 0;
+			}
+		}
+	}
+
+	// Submenu
+	.header-nav__submenu {
+		background-color: $white;
+		z-index: 1;
+		padding-left: 10px;
+
+		// For slide down effect in mobile
+		overflow: hidden;
+		max-height: 0;
+		-webkit-transition: max-height 500ms ease;
+		-moz-transition: max-height 500ms ease;
+		-o-transition: max-height 500ms ease;
+		transition: max-height 500ms ease;
+
+		// When the submenu is open.
+		&.child-menu-open {
+			max-height: 150px;
+		}
+
+		@include mq( large ) {
+			position: absolute;
+			display: none;
+			top: 30px;
+			left: 0;
+			width: 200px;
+			border: 1px solid $color__border;
+			box-shadow: 2px 2px 2px $color__box-shadow;
+			padding: 10px;
+			overflow: visible;
+			max-height: 300px;
+		}
+
+		& > li {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		// Submenu Menu link
+		.header-nav__submenu-link {
+			display: block;
+			padding: 5px;
+			color: $color__text;
+
+			@include mq( large ) {
+				display: inline-block;
+				padding: 0;
+			}
+		}
+	}
+}
+
+.header-nav__menu-btn {
+	@include mq( large ) {
+		display: none;
+	}
+}
+
+.mobile-menu-open {
+	//position: fixed;
+}

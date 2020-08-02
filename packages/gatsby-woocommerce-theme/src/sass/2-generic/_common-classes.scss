@@ -91,3 +91,26 @@ button {
 	color: $white;
 	border: none;
 }
+
+.heading {
+	padding-left: 10px;
+}
+
+
+.pagination {
+	margin-bottom: 42px;
+
+	li {
+		display: inline-block;
+		a {
+			padding: 16px;
+			border: 1px solid gray;
+			display: inline-block;
+		}
+	}
+
+	.active {
+		font-weight: 800;
+		background: cornflowerblue;
+	}
+}
