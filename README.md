@@ -5,6 +5,8 @@
 - Front end in React
 - Backend in WordPress.
 
+[Demo Site](https://gatsby-woocommerce-theme.netlify.app/)
+
 This theme uses `gatsby-source-wordpress@v4 BETA`
 
 *** 👨‍💻 Please star my repo to support my work 🙏 ***
@@ -18,7 +20,9 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 6. WooCommerce store
 7. Google Analytics feature
 8. Yoast SEO supported.
-9. Product Search ( even works offline )
+9. Product Search with pagination ( even works offline ) 
+10.Product pagination
+11. Archive pages.
 
 ## 👨‍💻 Maintainer
 
