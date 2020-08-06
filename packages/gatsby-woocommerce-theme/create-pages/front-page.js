@@ -1,6 +1,6 @@
 const { slash }         = require( `gatsby-core-utils` );
 const frontPageTemplate = require.resolve( `../src/templates/front-page/index.js` );
-const { AllProductsFragment } = require('./fragements/products')
+const { AllProductsFragment } = require('./fragements/products/index.js');
 
 // Get all the front page data.
 const GET_FRONT_PAGE = `
@@ -11,81 +11,19 @@ query GET_FRONT_PAGE {
       name
       uri
       image {
-        id
-        altText
-        caption
-        sourceUrl
-        mediaDetails {
-          sizes {
-            height
-            width
-            name
-            sourceUrl
-          }
-        }
+        ...ImageFragment
       }
     }
   }
-  products:allWpProduct(limit: 100) {
+  products: allWpProduct(limit: 100) {
     edges {
       node {
-        id
-        productId
-        nodeType
-        link
-        image {
-          id
-          altText
-          caption
-          sourceUrl
-          mediaDetails {
-            sizes {
-              height
-              width
-              name
-              sourceUrl
-            }
-          }
-        }
-        productCategories {
-          nodes {
-            id
-            name
-          }
-        }
-        ... on WpSimpleProduct {
-          id
-          name
-          price
-        }
-        ... on WpVariableProduct {
-          id
-          name
-          price
-        }
-        ... on WpExternalProduct {
-          id
-          name
-          price
-          externalUrl
-        }
-        ... on WpGroupProduct {
-          id
-          name
-          products {
-            nodes {
-              ... on WpSimpleProduct {
-                id
-                name
-                price
-              }
-            }
-          }
-        }
+      ...AllProductsFragment
       }
     }
   }
 }
+${ AllProductsFragment }
 `;
 
 module.exports = async ( { actions, graphql } ) => {
@@ -99,7 +37,6 @@ module.exports = async ( { actions, graphql } ) => {
 			.then( ( { data } ) => {
 
 				const { products, categories } = data;
-
 
 				let allTheProducts = [];
 				products.edges && products.edges.map( product => {

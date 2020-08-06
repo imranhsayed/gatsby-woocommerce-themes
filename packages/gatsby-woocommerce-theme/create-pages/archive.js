@@ -1,7 +1,7 @@
 const { slash }         = require( `gatsby-core-utils` );
 const frontPageTemplate = require.resolve( `../src/templates/front-page/index.js` );
 
-// Get all the front page data.
+// Get all the archive page data.
 const GET_FRONT_PAGE = `
 query GET_FRONT_PAGE {
   categories: allWpProductCategory(limit: 5) {

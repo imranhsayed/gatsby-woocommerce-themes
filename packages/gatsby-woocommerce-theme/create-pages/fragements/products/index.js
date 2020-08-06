@@ -1,25 +1,14 @@
+const { ImageFragment } = require('../image/index.js');
+
 const AllProductsFragment = `
-fragment AllProductsFragment on allWpProduct(limit: 100) {
-    edges {
-      node {
+fragment AllProductsFragment on WpProduct {
         id
         productId
         nodeType
         link
         image {
-          id
-          altText
-          caption
-          sourceUrl
-          mediaDetails {
-            sizes {
-              height
-              width
-              name
-              sourceUrl
-            }
-          }
-        }
+		  ...ImageFragment
+		}
         productCategories {
           nodes {
             id
@@ -56,8 +45,7 @@ fragment AllProductsFragment on allWpProduct(limit: 100) {
           }
         }
       }
-    }
-  }
+      ${ ImageFragment }
 `;
 
 module.exports.AllProductsFragment = AllProductsFragment;
