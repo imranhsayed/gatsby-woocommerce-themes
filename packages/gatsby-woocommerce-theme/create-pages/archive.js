@@ -1,6 +1,5 @@
 const { slash }         = require( `gatsby-core-utils` );
 const frontPageTemplate = require.resolve( `../src/templates/front-page/index.js` );
-const { AllProductsFragment } = require('./fragements/products')
 
 // Get all the front page data.
 const GET_FRONT_PAGE = `
