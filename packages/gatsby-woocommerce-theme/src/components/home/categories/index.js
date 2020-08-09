@@ -12,8 +12,6 @@ const Categories = ( props ) => {
 		return null;
 	}
 
-	console.warn( 'category', category );
-
 	return (
 		<div className="categories-list-wrap">
 			{ categories.nodes.length ? (

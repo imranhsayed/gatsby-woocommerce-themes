@@ -67,7 +67,6 @@ module.exports = async ( { actions, graphql } ) => {
 
 	// When the above fetchPosts is resolved, then create page and pass the data as pageContext to the page template.
 	await fetchPosts().then( ( { categories, allProducts } ) => {
-		// console.log(JSON.stringify(categories, null, 4))
 
 		categories.nodes.length && categories.nodes.map( ( category ) => {
 
