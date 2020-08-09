@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import * as JsSearch from "js-search"
 import "./style.scss"
 import SearchResults from "../search-results"
+import Categories from "../categories";
 
 class ClientSearch extends Component {
 	state = {
@@ -116,7 +117,7 @@ class ClientSearch extends Component {
 
 	render() {
 		const { searchResults, searchQuery } = this.state;
-		const { placeholder }                = this.props;
+		const { placeholder, categories, category, initialProducts } = this.props;
 
 		const queryResults = searchResults;
 
@@ -136,7 +137,8 @@ class ClientSearch extends Component {
 						autoComplete="off" // removes the autosearch suggestions
 					/>
 				</form>
-				<SearchResults queryResults={ queryResults } allProducts={ this.props.products }/>
+				<Categories categories={ categories } category={ category }/>
+				<SearchResults queryResults={ queryResults } initialProducts={ initialProducts }/>
 			</>
 		)
 	}

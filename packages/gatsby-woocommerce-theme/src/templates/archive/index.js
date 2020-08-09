@@ -3,7 +3,7 @@ import Search from "../../components/home/search";
 import { isEmpty } from 'lodash';
 import Layout from "../../components/layout";
 
-const FrontPage = ( props ) => {
+const ArchivePage = ( props ) => {
 
 	const {
 		      pageContext: {
@@ -20,7 +20,7 @@ const FrontPage = ( props ) => {
 					<>
 						<Search
 							products={ products }
-							initialProducts={ products }
+							initialProducts={ category.products.nodes }
 							engine={ options }
 							category={ category }
 							categories={ categories }
@@ -33,5 +33,5 @@ const FrontPage = ( props ) => {
 		</Layout>
 	)
 };
-export default FrontPage;
+export default ArchivePage;
 

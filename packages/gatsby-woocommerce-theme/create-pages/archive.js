@@ -1,17 +1,22 @@
 const { slash }         = require( `gatsby-core-utils` );
-const frontPageTemplate = require.resolve( `../src/templates/front-page/index.js` );
+const frontPageTemplate = require.resolve( `../src/templates/archive/index.js` );
 const { ProductsFragment } = require('./fragements/products/index.js');
 
 // Get all the front page data.
-const GET_FRONT_PAGE = `
-query GET_FRONT_PAGE {
-  categories: allWpProductCategory(limit: 5) {
+const GET_ARCHIVES = `
+query GET_ARCHIVES {
+  categories: allWpProductCategory(limit: 100) {
     nodes {
       id
       name
       uri
       image {
         ...ImageFragment
+      }
+      products {
+        nodes {
+        ...ProductsFragment
+       }
       }
     }
   }
@@ -33,8 +38,9 @@ module.exports = async ( { actions, graphql } ) => {
 	const fetchPosts = async () => {
 
 		// Do query to get home page data.
-		return await graphql( GET_FRONT_PAGE )
+		return await graphql( GET_ARCHIVES )
 			.then( ( { data } ) => {
+
 
 				const { products, categories } = data;
 
@@ -61,27 +67,35 @@ module.exports = async ( { actions, graphql } ) => {
 
 	// When the above fetchPosts is resolved, then create page and pass the data as pageContext to the page template.
 	await fetchPosts().then( ( { categories, allProducts } ) => {
+		// console.log(JSON.stringify(categories, null, 4))
 
-		createPage( {
-			path: `/`,
-			component: slash( frontPageTemplate ),
-			context: {
-				categories,
-				allProducts,
-				category: 'all',
-				postSearchData: {
-					products: allProducts,
-					options: {
-						indexStrategy: `Prefix match`,
-						searchSanitizer: `Lower Case`,
-						TitleIndex: true,
-						AuthorIndex: true,
-						CategoryIndex: true,
-						SearchByTerm: true,
+		categories.nodes.length && categories.nodes.map( ( category ) => {
+
+			const productsData = category.products.length ? category.products.nodes : [];
+
+			createPage( {
+				path: category.uri,
+				component: slash( frontPageTemplate ),
+				context: {
+					categories,
+					allProducts,
+					category,
+					postSearchData: {
+						products: allProducts,
+						options: {
+							indexStrategy: `Prefix match`,
+							searchSanitizer: `Lower Case`,
+							TitleIndex: true,
+							AuthorIndex: true,
+							CategoryIndex: true,
+							SearchByTerm: true,
+						},
 					},
 				},
-			},
-		} );
+			} );
+		});
+
+
 
 	} )
 

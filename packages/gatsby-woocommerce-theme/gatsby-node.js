@@ -1,10 +1,11 @@
-
-const createFrontPage = require( './create-pages/front-page' );
 const path = require( 'path' );
+const createFrontPage = require( './create-pages/front-page' );
+const createArchivePages = require( './create-pages/archive' );
 
 // Create all pages.
 exports.createPages = async ( { actions, graphql } ) => {
 	await createFrontPage( { actions, graphql } );
+	await createArchivePages( { actions, graphql } );
 };
 
 /**
