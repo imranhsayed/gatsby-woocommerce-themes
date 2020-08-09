@@ -117,7 +117,7 @@ class ClientSearch extends Component {
 
 	render() {
 		const { searchResults, searchQuery } = this.state;
-		const { placeholder }                = this.props;
+		const { placeholder, categories, category, initialProducts } = this.props;
 
 		const queryResults = searchResults;
 
@@ -137,8 +137,8 @@ class ClientSearch extends Component {
 						autoComplete="off" // removes the autosearch suggestions
 					/>
 				</form>
-				<Categories categories={ this.props.categories }/>
-				<SearchResults queryResults={ queryResults } allProducts={ this.props.products }/>
+				<Categories categories={ categories } category={ category }/>
+				<SearchResults queryResults={ queryResults } initialProducts={ initialProducts }/>
 			</>
 		)
 	}

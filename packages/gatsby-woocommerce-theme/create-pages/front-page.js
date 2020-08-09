@@ -1,6 +1,6 @@
 const { slash }         = require( `gatsby-core-utils` );
 const frontPageTemplate = require.resolve( `../src/templates/front-page/index.js` );
-const { AllProductsFragment } = require('./fragements/products/index.js');
+const { ProductsFragment } = require('./fragements/products/index.js');
 
 // Get all the front page data.
 const GET_FRONT_PAGE = `
@@ -18,12 +18,12 @@ query GET_FRONT_PAGE {
   products: allWpProduct(limit: 100) {
     edges {
       node {
-      ...AllProductsFragment
+      ...ProductsFragment
       }
     }
   }
 }
-${ AllProductsFragment }
+${ ProductsFragment }
 `;
 
 module.exports = async ( { actions, graphql } ) => {
@@ -68,6 +68,7 @@ module.exports = async ( { actions, graphql } ) => {
 			context: {
 				categories,
 				allProducts,
+				category: 'all',
 				postSearchData: {
 					products: allProducts,
 					options: {

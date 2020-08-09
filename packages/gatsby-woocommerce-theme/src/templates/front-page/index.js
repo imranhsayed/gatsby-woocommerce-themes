@@ -8,6 +8,7 @@ const FrontPage = ( props ) => {
 	const {
 		      pageContext: {
 			      categories,
+			      category,
 			      postSearchData: { products, options }
 		      }
 	      } = props;
@@ -19,7 +20,9 @@ const FrontPage = ( props ) => {
 					<>
 						<Search
 							products={ products }
+							initialProducts={ products }
 							engine={ options }
+							category={ category }
 							categories={ categories }
 						/>
 					</>

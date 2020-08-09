@@ -1,3 +1,4 @@
+@import "../../../sass/0-settings/colors";
 .categories-list-wrap {
 	width: 100%;
 	margin-top: 100px;
@@ -12,5 +13,12 @@
 	.categories-link {
 		display: inline-block;
 		padding: 16px;
+		transition: 0.3s;
+
+		&.active,
+		&:hover {
+			text-decoration: underline;
+			color: $color__secondary;
+		}
 	}
 }

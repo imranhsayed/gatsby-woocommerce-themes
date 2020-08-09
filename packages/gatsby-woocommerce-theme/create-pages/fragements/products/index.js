@@ -1,7 +1,7 @@
 const { ImageFragment } = require('../image/index.js');
 
-const AllProductsFragment = `
-fragment AllProductsFragment on WpProduct {
+const ProductsFragment = `
+fragment ProductsFragment on WpProduct {
         id
         productId
         nodeType
@@ -48,4 +48,4 @@ fragment AllProductsFragment on WpProduct {
       ${ ImageFragment }
 `;
 
-module.exports.AllProductsFragment = AllProductsFragment;
+module.exports.ProductsFragment = ProductsFragment;
