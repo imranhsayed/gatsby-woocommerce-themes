@@ -38,6 +38,9 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 - `GATSBY_SITE_URL=https://example.com`
 - `GOOGLE_TAGMANAGER_ID=xxx`
 
+### Client config. 
+rename client-config-example.js in packages/gatsby-woocommerce-theme directory to client-config.js and add your WordPress Site URL. 
+
 ### WordPress Setup
 1. Download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
 

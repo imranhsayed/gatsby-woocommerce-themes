@@ -54,6 +54,8 @@ typings/
 # dotenv environment variable files
 .env
 
+client-config.js
+
 # gatsby files
 .cache/
 public
