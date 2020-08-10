@@ -32,6 +32,7 @@
     "@wordpress/base-styles": "^2.0.0",
     "@wordpress/block-library": "^2.22.0",
     "classnames": "^2.2.6",
+    "cross-fetch": "^3.0.5",
     "foundation-sites": "^6.6.3",
     "gatsby-link": "^2.4.13",
     "gatsby-plugin-google-tagmanager": "^2.3.11",
@@ -47,14 +48,14 @@
     "isomorphic-fetch": "^2.2.1",
     "js-search": "^2.0.0",
     "lodash": "^4.17.19",
-    "node-fetch": "^2.6.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react-helmet": "^6.1.0",
     "react-js-pagination": "^3.0.3",
     "react-lazy-load-image-component": "^1.5.0",
     "react-responsive": "^8.1.0",
-    "sass-mq": "^5.0.1"
+    "sass-mq": "^5.0.1",
+    "uuid": "^8.3.0"
   },
   "peerDependencies": {
     "gatsby": "^2.21.33",

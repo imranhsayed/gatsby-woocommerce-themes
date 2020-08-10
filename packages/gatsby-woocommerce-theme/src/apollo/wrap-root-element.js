@@ -8,7 +8,7 @@ import { ApolloProvider } from '@apollo/client';
 /**
  * Internal dependencies.
  */
-import client from './client';
+import { client } from './client';
 
 /**
  * Root Element which is a wrapper to the app.

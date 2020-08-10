@@ -4,7 +4,7 @@
 import { siteURL } from '../../client-config';
 
 
-import fetch from 'node-fetch';
+import fetch from 'isomorphic-fetch';
 import { ApolloClient, createHttpLink, InMemoryCache, ApolloLink } from '@apollo/client';
 
 /**
@@ -65,14 +65,10 @@ export const afterware = new ApolloLink( ( operation, forward ) => {
 } );
 
 // Apollo GraphQL client.
-const client = new ApolloClient({
+export const client = new ApolloClient({
 	link: middleware.concat( afterware.concat( createHttpLink({
 		uri: `${siteURL}/graphql`,
 		fetch: fetch
 	}) ) ),
-	// TODO Take a look at re-implementing fragments?
-	//cache: new InMemoryCache( { introspectionQueryResultData  } ),
 	cache: new InMemoryCache(),
 });
-
-export default client;

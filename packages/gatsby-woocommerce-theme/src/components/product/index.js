@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-// import AddToCartButton from '../components/cart/AddToCartButton';
+import AddToCartButton from '../cart/AddToCartButton';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { isEmpty } from 'lodash';
@@ -49,7 +49,7 @@ const Product = ( props ) => {
 				</Link>
 				<div className="card-body text-center">
 					<h6 className="card-subtitle mb-3">{ product.price }</h6>
-					{/*<AddToCartButton product={ product }/>*/ }
+					<AddToCartButton product={ product }/>
 				</div>
 			</div>
 		) : (
