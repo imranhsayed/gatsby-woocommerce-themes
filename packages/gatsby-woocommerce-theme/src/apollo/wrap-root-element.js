@@ -1,9 +1,9 @@
-
 /**
  * External dependencies.
  */
 import React from 'react';
 import { ApolloProvider } from '@apollo/client';
+import { AppProvider } from "../components/context/AppContext";
 
 /**
  * Internal dependencies.
@@ -18,5 +18,7 @@ import { client } from './client';
  * @return {*}
  */
 export const wrapRootElement = ( { element } ) => (
-	<ApolloProvider client={ client }>{ element }</ApolloProvider>
+	<AppProvider>
+		<ApolloProvider client={ client }>{ element }</ApolloProvider>
+	</AppProvider>
 );
