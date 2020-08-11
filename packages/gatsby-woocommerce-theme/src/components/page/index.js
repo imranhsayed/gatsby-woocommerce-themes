@@ -11,7 +11,7 @@ const Page = ( props ) => {
 
 	console.warn( data );
 
-	const hasImagesSizes = !isEmpty( data.featuredImage.node ) && ( !isEmpty( data.featuredImage.node.mediaDetails.sizes ) );
+	const hasImagesSizes = null !== data.featuredImage && !isEmpty( data.featuredImage.node ) && ( !isEmpty( data.featuredImage.node.mediaDetails.sizes ) );
 	const imgSrcUrl   = hasImagesSizes ? data.featuredImage.node.mediaDetails.sizes[ 0 ].sourceUrl : '';
 	const imgWidth  = hasImagesSizes ? data.featuredImage.node.mediaDetails.sizes[ 0 ].width : 450;
 	const imgHeight = hasImagesSizes ? data.featuredImage.node.mediaDetails.sizes[ 0 ].height : 450;
