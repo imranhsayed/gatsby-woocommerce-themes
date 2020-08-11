@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import { useQuery, useMutation } from '@apollo/client';
-import { AppContext } from "../context/AppContext";
-import { addFirstProduct, getFormattedCart, updateCart } from "../../utils/functions";
+import { AppContext } from "../../context/AppContext";
+import { addFirstProduct, getFormattedCart, updateCart } from "../../../utils/functions";
 import  Link from 'gatsby-link';
 import { v4 } from 'uuid';
-import GET_CART from "../../queries/get-cart";
-import ADD_TO_CART from "../../mutations/add-to-cart";
+import GET_CART from "../../../queries/get-cart";
+import ADD_TO_CART from "../../../mutations/add-to-cart";
 
 const AddToCart = ( props ) => {
 
@@ -64,7 +64,6 @@ const AddToCart = ( props ) => {
 	} );
 
 	const handleAddToCartClick = () => {
-		// handleAddToCartLocalStorage();
 		setRequestError( null );
 		addToCart();
 	};

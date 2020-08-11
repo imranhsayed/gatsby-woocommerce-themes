@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'gatsby-link';
-import AddToCartButton from '../cart/AddToCartButton';
+import AddToCartButton from '../cart/add-to-cart-button';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { isEmpty } from 'lodash';

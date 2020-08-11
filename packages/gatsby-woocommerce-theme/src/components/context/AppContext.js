@@ -11,13 +11,9 @@ export const AppProvider = ( props ) => {
 
 	useEffect( () => {
 
-		if ( process.browser ) {
-
-			let cartData = localStorage.getItem( 'woo-next-cart' );
-			cartData = null !== cartData ? JSON.parse( cartData ) : '';
-			setCart( cartData );
-
-		}
+		let cartData = localStorage.getItem( 'woo-next-cart' );
+		cartData = null !== cartData ? JSON.parse( cartData ) : '';
+		setCart( cartData );
 
 	}, [] );
 
