@@ -5,7 +5,6 @@ const MyAccount = () => {
 	return (
 		<Layout>
 			My Account.
-			<iframe src="https://codeytek.com/wordpress_woo/my-account/" height="100%" width="45%"/>
 		</Layout>
 	)
 };
