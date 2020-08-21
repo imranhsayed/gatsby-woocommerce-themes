@@ -109,6 +109,7 @@ const CartItemsContainer = () => {
 					<h1 className="mt-5 woo-next-cart-heading">Cart</h1>
 					<table className="table table-hover">
 						<thead>
+						{ /* eslint-disable */ }
 						<tr className="woo-next-cart-head-container">
 							<th className="woo-next-cart-heading-el" scope="col"/>
 							<th className="woo-next-cart-heading-el" scope="col"/>

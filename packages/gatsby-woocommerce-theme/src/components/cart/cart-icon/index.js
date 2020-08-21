@@ -16,7 +16,7 @@ const CartIcon = () => {
 					<div className="woo-next-cart-wrap">
 						{ totalPrice ? <span className="woo-next-cart-price mr-2">{ totalPrice }</span> : '' }
 						<span className="woo-next-cart-icon-container">
-							🛒
+							<span role="img" aria-label="cart-icon">🛒</span>
 							{ productsCount ? <span className="woo-next-cart-count">{ productsCount }</span> : '' }
 						</span>
 					</div>

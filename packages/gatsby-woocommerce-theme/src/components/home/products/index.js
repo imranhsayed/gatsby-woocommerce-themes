@@ -25,15 +25,14 @@ const Products = ( props ) => {
 		setActivePage( activePage );
 
 		/* eslint-disable */
-		setProductsToBeDisplayed( activePage * productsPerPage );
-		/* eslint-enable */
+		setProductsToBeDisplayed( activePage * productsPerPage ); /* eslint-disable no-alert, no-console */
+
 
 	}, [products.length] );
 
 	useEffect( () => {
 		/* eslint-disable */
 		setProductsToBeDisplayed( activePage * productsPerPage );
-		/* eslint-enable */
 	}, [activePage] );
 
 	/**

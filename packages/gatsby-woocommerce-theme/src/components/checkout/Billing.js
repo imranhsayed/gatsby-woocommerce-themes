@@ -40,7 +40,7 @@ const Billing = ( { input, handleOnChange } ) => {
 					Country
 					<abbr className="required" title="required">*</abbr>
 				</label>
-				/* eslint-disable */
+				{ /* eslint-disable */ }
 				<select onChange={ handleOnChange } value={ input.country } name="country" className="form-control woo-next-checkout-input" id="country-select">
 					<option value="">Select a country...</option>
 					{ countryList.length && (
@@ -49,7 +49,6 @@ const Billing = ( { input, handleOnChange } ) => {
 						) )
 					) }
 				</select>
-				/* eslint-enable */
 				<Error errors={ input.errors } fieldName={ 'country' }/>
 			</div>
 			{/* Street Address */}

@@ -10,6 +10,7 @@ const YourOrder = ( { cart } ) => {
 					{/*Product Listing*/}
 					<table className="table table-hover">
 						<thead>
+						{ /* eslint-disable */ }
 						<tr className="woo-next-cart-head-container">
 							<th className="woo-next-cart-heading-el"/>
 							<th className="woo-next-cart-heading-el">Product</th>

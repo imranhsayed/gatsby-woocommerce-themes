@@ -61,6 +61,7 @@ const CartItem = ( {
 		<tr className="woo-next-cart-item" key={ item.productId }>
 			<th className="woo-next-cart-element woo-next-cart-el-close">
 				{/* Remove item */}
+				{ /* eslint-disable */ }
 				<span className="woo-next-cart-close-icon"
 				      onClick={ ( event ) => handleRemoveProductClick( event, item.cartKey, products ) }>
 					<i className="fa fa-times-circle">✖</i>

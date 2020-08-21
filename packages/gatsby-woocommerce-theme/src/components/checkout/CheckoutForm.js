@@ -128,7 +128,6 @@ const CheckoutForm = () => {
 			// Call the checkout mutation when the value for orderData changes/updates.
 			/* eslint-disable */
 			checkout();
-			/* eslint-enable */
 		}
 
 	}, [ orderData ] );
