@@ -1,8 +1,8 @@
-## 🎨 [Gatsby WooCommerce themes](https://www.npmjs.com/package/gatsby-wooocommerce-theme)
+## 🎨 [Gatsby WooCommerce themes](https://gatsby-woocommerce-theme.netlify.app/)
 [![Project Status: Active.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-![Stars](https://img.shields.io/github/stars/imranhsayed/woo-next?label=%E2%AD%90%20Stars)
-![Forks](https://img.shields.io/github/forks/imranhsayed/woo-next?color=%23ff69b4)
-![Contributors](https://img.shields.io/github/contributors/imranhsayed/woo-next?color=blue)
+![Stars](https://img.shields.io/github/stars/imranhsayed/gatsby-woocommerce-themes?label=%E2%AD%90%20Stars)
+![Forks](https://img.shields.io/github/forks/imranhsayed/gatsby-woocommerce-themes?color=%23ff69b4)
+![Contributors](https://img.shields.io/github/contributors/imranhsayed/gatsby-woocommerce-themes?color=blue)
 ![Follow](https://img.shields.io/github/followers/imranhsayed?label=Please%20follow%20%20to%20support%20my%20work%20%F0%9F%99%8F&style=social)
 
 - A Gatsby theme for WooCommerce, using Decoupled Architecture.
