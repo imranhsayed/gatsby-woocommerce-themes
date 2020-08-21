@@ -1,14 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react';
-import Billing from "./Billing";
-import YourOrder from "./YourOrder";
-import PaymentModes from "./PaymentModes";
-import { AppContext } from "../context/AppContext";
-import validateAndSanitizeCheckoutForm from '../../validator/checkout';
+import Billing from "../billing";
+import YourOrder from "../your-order";
+import PaymentModes from "../payment-mode";
+import { AppContext } from "../../context/AppContext";
+import validateAndSanitizeCheckoutForm from '../../../validator/checkout';
 import { useMutation, useQuery } from '@apollo/client';
-import { getFormattedCart, createCheckoutData } from "../../utils/functions";
-import OrderSuccess from "./OrderSucess";
-import GET_CART from "../../queries/get-cart";
-import CHECKOUT_MUTATION from "../../mutations/checkout";
+import { getFormattedCart, createCheckoutData } from "../../../utils/functions";
+import OrderSuccess from "../order-success";
+import GET_CART from "../../../queries/get-cart";
+import CHECKOUT_MUTATION from "../../../mutations/checkout";
 
 const CheckoutForm = () => {
 
@@ -38,10 +38,10 @@ const CheckoutForm = () => {
 		address2: 'Station Road',
 		city: 'Pune',
 		state: 'Maharastra',
-		country: 'ID',
+		country: 'IN',
 		postcode: '400298',
 		phone: '9959338989',
-		email: 'imran@gmail.com',
+		email: 'codeytek.academy@gmail.com',
 		company: 'Tech',
 		createAccount: false,
 		orderNotes: '',
@@ -115,6 +115,7 @@ const CheckoutForm = () => {
 
 		if ( 'createAccount' === event.target.name ) {
 			const newState = { ...input, [event.target.name]: ! input.createAccount };
+			console.warn( 'newState', newState );
 			setInput( newState );
 		} else {
 			const newState = { ...input, [event.target.name]: event.target.value };

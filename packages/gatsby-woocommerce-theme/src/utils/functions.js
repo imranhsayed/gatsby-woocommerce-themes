@@ -324,7 +324,10 @@ export const getFormattedCart = (data) => {
 export const createCheckoutData = (order) => {
 	const checkoutData = {
 		clientMutationId: v4(),
-
+		account: {
+			username: "ImranSayedDev",
+			password: "%e[M]q.Z^cYLdNd!=>Sh]M"
+		},
 		billing: {
 			firstName: order.firstName,
 			lastName: order.lastName,

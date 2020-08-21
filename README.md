@@ -72,7 +72,14 @@ g. [wp-graphql-yoast-seo](https://github.com/imranhsayed/gatsby-woocommerce-them
 8. Setup WooCommerce:
 * Make sure WooCommerce Plugin is active in WordPress and the payment modes have been set from its settings.
 * You can also import default wooCommerce products that come with wooCommerce Plugin for development ( if you don't have any products in your WordPress install ) `WP Dashboard > Tools > Import > WooCommerce products(CSV)`: The WooCommerce default products csv file is available at wp-content/plugins/woocommerce/sample-data/sample_products.csv
-    
+
+9. To load the my account page in iframe make sure you . For example for apache you add that to .htaccess:
+Take reference from this [article](https://www.a2hosting.in/kb/developer-corner/configuring-frames-with-the-x-frame-options-header)
+```php
+<IfModule mod_headers.c>
+	Header always unset X-Frame-Options
+</IfModule>
+```
 
 ## 🚀 Development
 

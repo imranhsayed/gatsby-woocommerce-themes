@@ -1,7 +1,7 @@
 import React from 'react';
-import CheckoutCartItem from "./CheckoutCartItem";
+import CheckoutCartItem from "../checkout-cart-item";
 
-const YourOrder = ( { cart } ) => {
+const Index = ( { cart } ) => {
 
 	return (
 		<>
@@ -42,4 +42,4 @@ const YourOrder = ( { cart } ) => {
 	)
 };
 
-export default YourOrder;
+export default Index;

@@ -24,6 +24,24 @@ module.exports = ({ wordPressUrl, gatsbySiteUrl, googleTagManagerId }) => ({
 			},
 		},
 		{
+			resolve: 'gatsby-plugin-netlify',
+			options: {
+				headers: {
+					'/*': [
+						"Content-Security-Policy: frame-ancestors 'self' https://*.codeytek.com/",
+						"X-Frame-Options: ALLOW-FROM https://codeytek.com/",
+					]
+				},
+				mergeSecurityHeaders: true,
+				transformHeaders: (headers, path) => {
+					// Strip out predefined X-Frame-Options: DENY-header
+					return (path === '/*')
+						? headers.filter(h => h.split(': ')[1].indexOf('DENY') === -1)
+						: headers;
+				}
+			}
+		},
+		{
 			resolve: `gatsby-source-wordpress-experimental`,
 			options: {
 				url: `${ wordPressUrl }/graphql`,
@@ -59,7 +77,7 @@ module.exports = ({ wordPressUrl, gatsbySiteUrl, googleTagManagerId }) => ({
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `Gatsby WordPress Theme`,
+				name: `Gatsby WooCommerce Theme`,
 				short_name: `Phoenix`,
 				start_url: `/`,
 				background_color: `#eaeaea`,
