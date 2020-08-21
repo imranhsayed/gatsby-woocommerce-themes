@@ -41,7 +41,7 @@ const CheckoutForm = () => {
 		country: 'IN',
 		postcode: '400298',
 		phone: '9959338989',
-		email: 'codeytek.academy@gmail.com',
+		email: 'codeytek@gmail.com',
 		company: 'Tech',
 		createAccount: false,
 		orderNotes: '',
