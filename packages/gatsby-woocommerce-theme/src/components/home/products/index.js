@@ -23,12 +23,17 @@ const Products = ( props ) => {
 	useEffect( () => {
 		const activePage = 1;
 		setActivePage( activePage );
+
+		/* eslint-disable */
 		setProductsToBeDisplayed( activePage * productsPerPage );
+		/* eslint-enable */
 
 	}, [products.length] );
 
 	useEffect( () => {
+		/* eslint-disable */
 		setProductsToBeDisplayed( activePage * productsPerPage );
+		/* eslint-enable */
 	}, [activePage] );
 
 	/**

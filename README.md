@@ -1,5 +1,9 @@
 ## 🎨 [Gatsby WooCommerce themes](https://www.npmjs.com/package/gatsby-wooocommerce-theme)
-[![Project Status: WIP – Initial development is in progress.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![Project Status: Active.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+![Stars](https://img.shields.io/github/stars/imranhsayed/woo-next?label=%E2%AD%90%20Stars)
+![Forks](https://img.shields.io/github/forks/imranhsayed/woo-next?color=%23ff69b4)
+![Contributors](https://img.shields.io/github/contributors/imranhsayed/woo-next?color=blue)
+![Follow](https://img.shields.io/github/followers/imranhsayed?label=Please%20follow%20%20to%20support%20my%20work%20%F0%9F%99%8F&style=social)
 
 - A Gatsby theme for WooCommerce, using Decoupled Architecture.
 - Front end in React
@@ -64,16 +68,11 @@ g. [wp-graphql-yoast-seo](https://github.com/imranhsayed/gatsby-woocommerce-them
 4. Import all the ACF data from `wordpress/acf-data` json file of this repo, into WordPress by going to WordPress Dashboard > Custom Fields > Tools > Import
 5. Create a Home Page ( if there isn't one already )and make sure you have a home page and Location rule is set to Home page.
 ![](demos/acf-home-screenshot.png)
-6. Add the ACF required data on the Home page from WordPress Dashboard. 
 7. If isn't already set your site title, description and logo from WordPress customizer.
+8. Setup WooCommerce:
+* Make sure WooCommerce Plugin is active in WordPress and the payment modes have been set from its settings.
+* You can also import default wooCommerce products that come with wooCommerce Plugin for development ( if you don't have any products in your WordPress install ) `WP Dashboard > Tools > Import > WooCommerce products(CSV)`: The WooCommerce default products csv file is available at wp-content/plugins/woocommerce/sample-data/sample_products.csv
     
-**Open the source code and start editing!**
-
-`npm run dev`
-
-Your site is now running at `http://localhost:8000`!
-
-_Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
 ## 🚀 Development
 
@@ -84,6 +83,11 @@ yarn install      # Run this for the first time.
 npm run dev      # During development.
 npm run build    # When ready for production.
 ```
+
+** For development **
+Your site is now running at `http://localhost:8000`!
+
+_Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data.
 
 ### 📕 Storybook:
 

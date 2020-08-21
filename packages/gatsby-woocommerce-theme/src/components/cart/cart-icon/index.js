@@ -6,7 +6,7 @@ import './style.scss';
 const CartIcon = () => {
 
 	const [ cart ] = useContext( AppContext );
-	console.warn( 'cart', cart );
+
 	const productsCount = ( null !== cart && Object.keys( cart ).length ) ? cart.totalProductsCount : '';
 	const totalPrice = ( null !== cart && Object.keys( cart ).length ) ? cart.totalProductsPrice : '';
 

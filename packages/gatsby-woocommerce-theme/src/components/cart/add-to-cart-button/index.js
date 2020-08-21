@@ -74,8 +74,8 @@ const AddToCart = ( props ) => {
 			{addToCartLoading && <p>Adding to Cart...</p>}
 
 			{/*	Check if its an external product then put its external buy link */}
-			{ "ExternalProduct" === product.__typename ? (
-					<a href={ product.externalUrl } target="_blank" className="btn btn-secondary">Buy</a>
+			{ "ExternalProduct" === product.nodeType ? (
+					<a href={ product.externalUrl } target="_blank" className="btn btn-secondary"><button>Buy</button></a>
 				) :
 				<button onClick={ handleAddToCartClick } className="btn btn-secondary">Add to cart</button>
 			}

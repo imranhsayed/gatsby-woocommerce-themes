@@ -1,7 +1,7 @@
 import Link from 'gatsby-link';
 import React, { useContext, useState } from 'react';
 import { AppContext } from "../../context/AppContext";
-import { getFormattedCart, getUpdatedItems, removeItemFromCart } from '../../../utils/functions';
+import { getFormattedCart, getUpdatedItems } from '../../../utils/functions';
 import CartItem from "../cart-item";
 import { v4 } from 'uuid';
 import { useMutation, useQuery } from '@apollo/client';
@@ -16,7 +16,7 @@ const CartItemsContainer = () => {
 	const [requestError, setRequestError] = useState( null );
 
 	// Get Cart Data.
-	const { loading, error, data, refetch } = useQuery( GET_CART, {
+	const { data, refetch } = useQuery( GET_CART, {
 		notifyOnNetworkStatusChange: true,
 		onCompleted: () => {
 
@@ -32,7 +32,7 @@ const CartItemsContainer = () => {
 	} );
 
 	// Update Cart Mutation.
-	const [updateCart, { data: updateCartResponse, loading: updateCartProcessing, error: updateCartError }] = useMutation( UPDATE_CART, {
+	const [updateCart, { loading: updateCartProcessing }] = useMutation( UPDATE_CART, {
 		onCompleted: () => {
 			refetch();
 		},
@@ -44,7 +44,7 @@ const CartItemsContainer = () => {
 	} );
 
 	// Update Cart Mutation.
-	const [clearCart, { data: clearCartRes, loading: clearCartProcessing, error: clearCartError }] = useMutation( CLEAR_CART_MUTATION, {
+	const [clearCart, { loading: clearCartProcessing }] = useMutation( CLEAR_CART_MUTATION, {
 		onCompleted: () => {
 			refetch();
 		},
@@ -162,7 +162,7 @@ const CartItemsContainer = () => {
 								</tr>
 								</tbody>
 							</table>
-							<Link href="/checkout">
+							<Link to="/checkout">
 								<button className="btn btn-secondary woo-next-large-black-btn">
 									<span className="woo-next-cart-checkout-txt">Proceed to Checkout</span>
 									<i className="fas fa-long-arrow-alt-right"/>
@@ -174,7 +174,7 @@ const CartItemsContainer = () => {
 			) : (
 				<div className="container mt-5">
 					<h2>No items in the cart</h2>
-					<Link href="/">
+					<Link to="/">
 						<button className="btn btn-secondary woo-next-large-black-btn">
 							<span className="woo-next-cart-checkout-txt">Add New Products</span>
 							<i className="fas fa-long-arrow-alt-right"/>
