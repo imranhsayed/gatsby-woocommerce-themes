@@ -8,9 +8,7 @@ const iframe = '<iframe width="100%" height="600" src="' + siteURL + '/my-accoun
 const MyAccount = () => {
 	return (
 		<Layout>
-			<div
-				dangerouslySetInnerHTML={{ __html: iframe }}
-			/>
+			<div dangerouslySetInnerHTML={{ __html: iframe }} />
 		</Layout>
 	)
 };

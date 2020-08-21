@@ -1,7 +1,7 @@
 import React from 'react';
-import Error from "./Error";
+import Error from "../error";
 
-const PaymentModes = ( { input, handleOnChange } ) => {
+const Index = ( { input, handleOnChange } ) => {
 	return (
 		<div className="mt-3">
 			<Error errors={ input.errors } fieldName={ 'paymentMethod' }/>
@@ -29,7 +29,7 @@ const PaymentModes = ( { input, handleOnChange } ) => {
 			{/*Pay with Stripe*/}
 			<div className="form-check woo-next-payment-input-container mt-2">
 				<label className="form-check-label">
-					<input onChange={ handleOnChange } value="cod" className="form-check-input" name="paymentMethod" type="radio"/>
+					<input onChange={ handleOnChange } value="cod" className="form-check-input" name="paymentMethod" type="radio" checked="true"/>
 					<span className="woo-next-payment-content">Cash on Delivery</span>
 				</label>
 			</div>
@@ -53,4 +53,4 @@ const PaymentModes = ( { input, handleOnChange } ) => {
 	);
 };
 
-export default PaymentModes;
+export default Index;

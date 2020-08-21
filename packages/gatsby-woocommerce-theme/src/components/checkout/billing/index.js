@@ -113,14 +113,14 @@ const Billing = ( { input, handleOnChange } ) => {
 				</div>
 			</div>
 			{/*	@TODO Create an Account */}
-			{/*<div className="form-check">*/}
-			{/*	<label className="form-check-label">*/}
-			{/*		<input onChange={ handleOnChange } className="form-check-input" name="createAccount" type="checkbox"/>*/}
-			{/*			Create an account?*/}
-			{/*	</label>*/}
-			{/*</div>*/}
-			{/*<h2 className="mt-4 mb-4">Additional Information</h2>*/}
+			<div className="form-check">
+				<label className="form-check-label">
+					<input onChange={ handleOnChange } className="form-check-input" name="createAccount" type="checkbox"/>
+						Create an account?
+				</label>
+			</div>
 			{/* @TODO Order Notes */}
+			{/*<h2 className="mt-4 mb-4">Additional Information</h2>*/}
 			{/*<div className="form-group">*/}
 			{/*	<label htmlFor="order-notes">Order Notes</label>*/}
 			{/*	<textarea onChange={ handleOnChange } defaultValue={ input.orderNotes } name="orderNotes" className="form-control woo-next-checkout-textarea" id="order-notes" rows="4"/>*/}

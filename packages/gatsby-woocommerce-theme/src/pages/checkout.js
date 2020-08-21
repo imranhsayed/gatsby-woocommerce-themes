@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from "../components/layout";
-import CheckoutForm from "../components/checkout/CheckoutForm";
+import CheckoutForm from "../components/checkout/checkout-form";
 
 const Checkout = () => (
 	<Layout>
