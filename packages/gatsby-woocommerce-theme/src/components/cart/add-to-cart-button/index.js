@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useQuery, useMutation } from '@apollo/client';
 import { AppContext } from "../../context/AppContext";
-import { addFirstProduct, getFormattedCart, updateCart } from "../../../utils/functions";
+import { getFormattedCart } from "../../../utils/functions";
 import  Link from 'gatsby-link';
 import { v4 } from 'uuid';
 import GET_CART from "../../../queries/get-cart";
@@ -16,13 +16,14 @@ const AddToCart = ( props ) => {
 		productId: product.productId,
 	};
 
+	/* eslint-disable */
 	const [ cart, setCart ] = useContext( AppContext );
 	const [ showViewCart, setShowViewCart ] = useState( false );
 	const [ requestError, setRequestError ] = useState( null );
 
 
 	// Get Cart Data.
-	const { loading, error, data, refetch } = useQuery( GET_CART, {
+	const { data, refetch } = useQuery( GET_CART, {
 		      notifyOnNetworkStatusChange: true,
 		      onCompleted: () => {
 			      // console.warn( 'completed GET_CART' );
@@ -42,8 +43,6 @@ const AddToCart = ( props ) => {
 			input: productQryInput,
 		},
 		onCompleted: () => {
-			// console.warn( 'completed ADD_TO_CART' );
-
 			// If error.
 			if ( addToCartError ) {
 				setRequestError( addToCartError.graphQLErrors[ 0 ].message );
@@ -74,8 +73,8 @@ const AddToCart = ( props ) => {
 			{addToCartLoading && <p>Adding to Cart...</p>}
 
 			{/*	Check if its an external product then put its external buy link */}
-			{ "ExternalProduct" === product.__typename ? (
-					<a href={ product.externalUrl } target="_blank" className="btn btn-secondary">Buy</a>
+			{ "ExternalProduct" === product.nodeType ? (
+					<a href={ product.externalUrl } target="_blank" className="btn btn-secondary"><button>Buy</button></a>
 				) :
 				<button onClick={ handleAddToCartClick } className="btn btn-secondary">Add to cart</button>
 			}

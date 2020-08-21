@@ -391,6 +391,8 @@ export const getUpdatedItems = (products, newQty, cartKey) => {
 				quantity: cartItem.qty,
 			});
 		}
+
+		return null;
 	});
 
 	// Return the updatedItems array with new Qtys.

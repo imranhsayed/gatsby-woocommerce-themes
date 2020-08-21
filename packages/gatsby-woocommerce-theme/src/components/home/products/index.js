@@ -23,11 +23,15 @@ const Products = ( props ) => {
 	useEffect( () => {
 		const activePage = 1;
 		setActivePage( activePage );
-		setProductsToBeDisplayed( activePage * productsPerPage );
+
+		/* eslint-disable */
+		setProductsToBeDisplayed( activePage * productsPerPage ); /* eslint-disable no-alert, no-console */
+
 
 	}, [products.length] );
 
 	useEffect( () => {
+		/* eslint-disable */
 		setProductsToBeDisplayed( activePage * productsPerPage );
 	}, [activePage] );
 

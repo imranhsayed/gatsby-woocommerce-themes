@@ -1,7 +1,9 @@
 
 const { slash } = require( `gatsby-core-utils` );
-const customTemplates = [ '/' ];
+const customTemplatesUris = [ '/'  ];
+const customTemplateSlugs = [ 'checkout', 'cart', 'my-account' ];
 const singlePageTemplate = require.resolve(`../src/templates/page/index.js`);
+const myAccountPageTemplate = require.resolve(`../src/templates/my-account/index.js`);
 const { ImageFragment } = require('./fragements/image/index');
 
 // Get all the pages.
@@ -14,6 +16,7 @@ query GET_PAGES {
       content
       date
       uri
+      slug
       featuredImage {
         node {
 		  ...ImageFragment
@@ -49,7 +52,7 @@ module.exports = async ( { actions, graphql } ) => {
 		pages.map( ( page ) => {
 
 			// If its not a custom template, create the page.
-			if ( ! customTemplates.includes( page.uri ) ) {
+			if ( ! customTemplatesUris.includes( page.uri ) &&! customTemplateSlugs.includes( page.slug )  ) {
 
 				createPage( {
 					path: `${ page.uri }`,
@@ -57,6 +60,15 @@ module.exports = async ( { actions, graphql } ) => {
 					context: { ...page }, // pass single page data in context, so its available in the singlePageTemplate in props.pageContext.
 				} );
 
+			}
+
+			// Load custom template for my-account
+			if ( 'my-account' === page.slug ) {
+				createPage( {
+					path: `/my-account`,
+					component: slash( myAccountPageTemplate ),
+					context: { ...page },
+				} );
 			}
 
 		} );

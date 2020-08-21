@@ -3,13 +3,10 @@ import React from 'react';
 import { isEmpty } from 'lodash';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import './style.scss';
-const productImagePlaceholder = 'https://via.placeholder.com/434';
 
 const Page = ( props ) => {
 
 	const { data } = props;
-
-	console.warn( data );
 
 	const hasImagesSizes = null !== data.featuredImage && !isEmpty( data.featuredImage.node ) && ( !isEmpty( data.featuredImage.node.mediaDetails.sizes ) );
 	const imgSrcUrl   = hasImagesSizes ? data.featuredImage.node.mediaDetails.sizes[ 0 ].sourceUrl : '';
@@ -34,14 +31,6 @@ const Page = ( props ) => {
 									effect="blur"
 								/>
 
-							) : !isEmpty( productImagePlaceholder ) ? (
-								<LazyLoadImage
-									alt="default"
-									height="450"
-									src={ productImagePlaceholder }
-									width="450"
-									effect="blur"
-								/>
 							) : null }
 
 							{ ! isEmpty( data.content ) ? (
