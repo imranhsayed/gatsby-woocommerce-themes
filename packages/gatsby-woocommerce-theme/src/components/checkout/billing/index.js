@@ -1,6 +1,6 @@
 import React from 'react';
-import countryList from './country-list';
-import Error from "./Error";
+import countryList from './../country-list';
+import Error from "./../error";
 
 const Billing = ( { input, handleOnChange } ) => {
 	return (
