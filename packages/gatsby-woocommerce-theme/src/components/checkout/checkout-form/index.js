@@ -9,44 +9,49 @@ import { getFormattedCart, createCheckoutData } from "../../../utils/functions";
 import OrderSuccess from "../order-success";
 import GET_CART from "../../../queries/get-cart";
 import CHECKOUT_MUTATION from "../../../mutations/checkout";
+import CheckoutError from "../checkout-error";
 
 const CheckoutForm = () => {
-  // const initialState = {
-  // 	firstName: '',
-  // 	lastName: '',
-  // 	company: '',
-  // 	country: '',
-  // 	address1: '',
-  // 	address2: '',
-  // 	city: '',
-  // 	state: '',
-  // 	postcode: '',
-  // 	phone: '',
-  // 	email: '',
-  // 	createAccount: false,
-  // 	orderNotes: '',
-  // 	paymentMethod: '',
-  // 	errors: null
-  // };
+  const initialState = {
+  	firstName: '',
+  	lastName: '',
+  	company: '',
+  	country: '',
+  	address1: '',
+  	address2: '',
+  	city: '',
+  	state: '',
+  	postcode: '',
+  	phone: '',
+  	email: '',
+  	createAccount: false,
+  	username: '',
+  	password: '',
+  	customerNote: '',
+  	paymentMethod: '',
+  	errors: null
+  };
 
   // Use this for testing purposes, so you dont have to fill the checkout form over an over again.
-  const initialState = {
-    firstName: "Imran",
-    lastName: "Sayed",
-    address1: "109 Hills Road Valley",
-    address2: "Station Road",
-    city: "Pune",
-    state: "Maharastra",
-    country: "IN",
-    postcode: "400298",
-    phone: "9959338989",
-    email: "codeytek.academy@gmail.com",
-    company: "Tech",
-    createAccount: false,
-    orderNotes: "",
-    paymentMethod: "cod",
-    errors: null,
-  };
+  // const initialState = {
+  //   firstName: "Imran",
+  //   lastName: "Sayed",
+  //   address1: "109 Hills Road Valley",
+  //   address2: "Station Road",
+  //   city: "Pune",
+  //   state: "Maharastra",
+  //   country: "IN",
+  //   postcode: "400298",
+  //   phone: "9959338989",
+  //   email: "codeytek.academy@gmail.com",
+  //   company: "Tech",
+  //   createAccount: false,
+	// username: '',
+	// password: '',
+	// customerNote: "My Order notes",
+  //   paymentMethod: "cod",
+  //   errors: null,
+  // };
 
   const [cart, setCart] = useContext(AppContext);
   const [input, setInput] = useState(initialState);
@@ -116,7 +121,6 @@ const CheckoutForm = () => {
   const handleOnChange = (event) => {
     if ("createAccount" === event.target.name) {
       const newState = { ...input, [event.target.name]: !input.createAccount };
-      console.warn("newState", newState);
       setInput(newState);
     } else {
       const newState = { ...input, [event.target.name]: event.target.value };
@@ -131,6 +135,8 @@ const CheckoutForm = () => {
       checkout();
     }
   }, [orderData]);
+
+  console.warn( 'input', input );
 
   return (
     <>
@@ -161,9 +167,7 @@ const CheckoutForm = () => {
 
               {/* Checkout Loading*/}
               {checkoutLoading && <p>Processing Order...</p>}
-              {requestError && (
-                <p>Error : {requestError} :( Please try again</p>
-              )}
+              {requestError && <CheckoutError requestError={ requestError }/> }
             </div>
           </div>
         </form>
@@ -171,7 +175,7 @@ const CheckoutForm = () => {
         ""
       )}
 
-      {/*	Show message if Order Sucess*/}
+      {/*Show message if Order Success*/}
       <OrderSuccess response={checkoutResponse} />
     </>
   );

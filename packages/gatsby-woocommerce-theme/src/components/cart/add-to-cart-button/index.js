@@ -71,9 +71,6 @@ const AddToCart = (props) => {
 
   return (
     <div>
-      {/* Add To Cart Loading*/}
-      {addToCartLoading && <p>Adding to Cart...</p>}
-
       {/*	Check if its an external product then put its external buy link */}
       {"ExternalProduct" === product.nodeType ? (
         <a href={product.externalUrl} target="_blank">
@@ -92,6 +89,14 @@ const AddToCart = (props) => {
         </Link>
       ) : (
         ""
+      )}
+      {/* Add To Cart Loading*/}
+      {addToCartLoading ? (
+        <p className="mt-2">Adding to Cart...</p>
+      ) : (
+        <p className="mt-2" style={{ color: "transparent" }}>
+          Adding to Cart...
+        </p>
       )}
     </div>
   );

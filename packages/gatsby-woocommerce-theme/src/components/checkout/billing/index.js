@@ -1,13 +1,19 @@
 import React from "react";
 import countryList from "./../country-list";
 import Error from "./../error";
+import { isUserLoggedIn } from "../../../utils/functions";
+import { isEmpty } from "lodash";
+import CreateAccount from "../create-account";
 
 const Billing = ({ input, handleOnChange }) => {
+
+	const auth = isUserLoggedIn();
+
   return (
     <React.Fragment>
       {/*Name*/}
 
-      <form>
+      <div className="billing-info">
         <div className="form-row">
           <div className="form-group col-md-6">
             <label htmlFor="first-name">
@@ -47,14 +53,14 @@ const Billing = ({ input, handleOnChange }) => {
 
         {/* Company Name */}
         <div className="form-group">
-          <label htmlFor="first-name">Company Name</label>
+          <label htmlFor="company-name">Company Name</label>
           <input
             onChange={handleOnChange}
             value={input.company}
             type="text"
             name="company"
             className="form-control woo-next-checkout-input"
-            id="first-name"
+            id="company-name"
           />
           <Error errors={input.errors} fieldName={"company"} />
         </div>
@@ -110,7 +116,7 @@ const Billing = ({ input, handleOnChange }) => {
             name="address2"
             placeholder="Apartment, suite, unit etc.(optional)"
             className="form-control woo-next-checkout-input"
-            id="first-name"
+            id="address-2"
           />
         </div>
         {/* Town/City */}
@@ -204,26 +210,16 @@ const Billing = ({ input, handleOnChange }) => {
             <Error errors={input.errors} fieldName={"email"} />
           </div>
         </div>
-      </form>
-      {/*	@TODO Create an Account */}
-      <div className="form-check">
-        <label className="form-check-label">
-          <input
-            onChange={handleOnChange}
-            className="form-check-input"
-            name="createAccount"
-            type="checkbox"
-          />
-          Create an account?
-        </label>
       </div>
-      {/* @TODO Order Notes */}
-      {/*<h2 className="mt-4 mb-4">Additional Information</h2>*/}
-      {/*<div className="form-group">*/}
-      {/*	<label htmlFor="order-notes">Order Notes</label>*/}
-      {/*	<textarea onChange={ handleOnChange } defaultValue={ input.orderNotes } name="orderNotes" className="form-control woo-next-checkout-textarea" id="order-notes" rows="4"/>*/}
-      {/*	<Error errors={ input.errors } fieldName={ 'orderNotes' }/>*/}
-      {/*</div>*/}
+
+	    { isEmpty( auth ) ? <CreateAccount handleOnChange={ handleOnChange } input={ input }/> : null }
+
+      <h4 className="mt-4 mb-4">Additional Information</h4>
+      <div className="form-group">
+      	<label htmlFor="order-notes">Order Notes</label>
+      	<textarea onChange={ handleOnChange } defaultValue={ input.customerNote } name="customerNote" className="form-control woo-next-checkout-textarea" id="order-notes" rows="4"/>
+      	<Error errors={ input.errors } fieldName={ 'customerNote' }/>
+      </div>
     </React.Fragment>
   );
 };

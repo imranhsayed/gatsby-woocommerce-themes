@@ -62,7 +62,6 @@ const validateAndSanitizeRegisterForm = ( data ) => {
 	addErrorAndSanitizedData( 'email', 'Email', 11, 50, 'email', true );
 	addErrorAndSanitizedData( 'password', 'Password', 2, 35, 'string', true );
 
-
 	return {
 		sanitizedData,
 		errors,
