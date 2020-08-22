@@ -115,7 +115,6 @@ const CheckoutForm = () => {
 
 		if ( 'createAccount' === event.target.name ) {
 			const newState = { ...input, [event.target.name]: ! input.createAccount };
-			console.warn( 'newState', newState );
 			setInput( newState );
 		} else {
 			const newState = { ...input, [event.target.name]: event.target.value };

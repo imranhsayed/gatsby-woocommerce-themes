@@ -6,7 +6,11 @@ const LOGIN = gql`
             authToken
             user {
                 id
+                username
                 name
+                email
+                firstName
+                lastName
             }
         }
     }

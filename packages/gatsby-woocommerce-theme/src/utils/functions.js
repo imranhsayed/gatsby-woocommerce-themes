@@ -398,8 +398,35 @@ export const getUpdatedItems = (products, newQty, cartKey) => {
 
 export const isUserLoggedIn = () => {
 	return localStorage.getItem( 'auth' );
-}
+};
 
 export const logOut = () => {
 	localStorage.removeItem( 'auth' );
+};
+
+export const setAuth = ( authData ) => {
+	localStorage.setItem( 'auth', JSON.stringify( authData ) );
+};
+
+/**
+ * Check if user is logged in.
+ *
+ * @return {object} Auth Object containing token and user data, false on failure.
+ */
+export const isUserValidated = () => {
+
+	let authTokenData = localStorage.getItem( 'auth' );
+	let userLoggedInData = '';
+
+	if ( ! isEmpty( authTokenData ) ) {
+
+		authTokenData = JSON.parse( authTokenData );
+
+		if ( ! isEmpty( authTokenData.authToken ) ) {
+			userLoggedInData = authTokenData;
+		}
+	}
+
+	return userLoggedInData;
+
 };
