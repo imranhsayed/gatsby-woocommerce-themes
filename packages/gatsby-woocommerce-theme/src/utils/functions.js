@@ -324,10 +324,6 @@ export const getFormattedCart = (data) => {
 export const createCheckoutData = (order) => {
 	const checkoutData = {
 		clientMutationId: v4(),
-		account: {
-			username: "ImranSayedDev",
-			password: "%e[M]q.Z^cYLdNd!=>Sh]M"
-		},
 		billing: {
 			firstName: order.firstName,
 			lastName: order.lastName,
@@ -398,4 +394,39 @@ export const getUpdatedItems = (products, newQty, cartKey) => {
 
 	// Return the updatedItems array with new Qtys.
 	return updatedItems;
+};
+
+export const isUserLoggedIn = () => {
+	return localStorage.getItem( 'auth' );
+};
+
+export const logOut = () => {
+	localStorage.removeItem( 'auth' );
+};
+
+export const setAuth = ( authData ) => {
+	localStorage.setItem( 'auth', JSON.stringify( authData ) );
+};
+
+/**
+ * Check if user is logged in.
+ *
+ * @return {object} Auth Object containing token and user data, false on failure.
+ */
+export const isUserValidated = () => {
+
+	let authTokenData = localStorage.getItem( 'auth' );
+	let userLoggedInData = '';
+
+	if ( ! isEmpty( authTokenData ) ) {
+
+		authTokenData = JSON.parse( authTokenData );
+
+		if ( ! isEmpty( authTokenData.authToken ) ) {
+			userLoggedInData = authTokenData;
+		}
+	}
+
+	return userLoggedInData;
+
 };

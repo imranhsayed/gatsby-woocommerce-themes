@@ -24,9 +24,11 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 6. WooCommerce store
 7. Google Analytics feature
 8. Yoast SEO supported.
-9. Product Search with pagination ( even works offline ) 
-10.Product pagination
+9.  Product Search with pagination ( even works offline ) 
+10. Product pagination
 11. Archive pages.
+12. Authentication with JWT
+13. My Account page ( with Login and Registration )
 
 ## 👨‍💻 Maintainer
 
@@ -55,6 +57,9 @@ d. [wp-graphql-woocommerce](https://github.com/imranhsayed/gatsby-woocommerce-th
 e. [wp-gatsby](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-gatsby.zip)
 f. [Yoast-SEO](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wordpress-seo.14.5.zip)
 g. [wp-graphql-yoast-seo](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-yoast-seo.zip)
+h. [wp-graphql-jwt-authentication](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-jwt-authentication.zip)
+
+* You can follow the readme to setup [https://github.com/wp-graphql/wp-graphql-jwt-authentication#install-activate--setup](https://github.com/wp-graphql/wp-graphql-jwt-authentication#install-activate--setup)
 
 
 2. - Set Header menu as `HCMS Header Menu`
@@ -72,14 +77,6 @@ g. [wp-graphql-yoast-seo](https://github.com/imranhsayed/gatsby-woocommerce-them
 8. Setup WooCommerce:
 * Make sure WooCommerce Plugin is active in WordPress and the payment modes have been set from its settings.
 * You can also import default wooCommerce products that come with wooCommerce Plugin for development ( if you don't have any products in your WordPress install ) `WP Dashboard > Tools > Import > WooCommerce products(CSV)`: The WooCommerce default products csv file is available at wp-content/plugins/woocommerce/sample-data/sample_products.csv
-
-9. To load the my account page in iframe make sure you . For example for apache you add that to .htaccess:
-Take reference from this [article](https://www.a2hosting.in/kb/developer-corner/configuring-frames-with-the-x-frame-options-header)
-```php
-<IfModule mod_headers.c>
-	Header always unset X-Frame-Options
-</IfModule>
-```
 
 ## 🚀 Development
 
@@ -183,3 +180,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 * output directory: `site/public`
 * development command: `npm run dev` 
 * root directory: `/`
+
+
+## Helpful Tools:
+1. [Apollo Client Developer Tools Chrome Extension](https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm/related)
