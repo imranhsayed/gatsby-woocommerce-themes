@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './style.scss';
 import Dashboard from "./dashboard";
+import Orders from "./orders";
 import { isUserLoggedIn } from "../../utils/functions";
 
 const auth = isUserLoggedIn();
@@ -16,7 +17,7 @@ const tabItems = [
 		id: 2,
 		title: 'Orders',
 		icon: 'tabitem__icon tab-users',
-		content: 'step 2 content',
+		content: <Orders authData={ auth }/>,
 	},
 	{
 		id: 3,
@@ -54,11 +55,9 @@ const TabItemComponent = (
 	)
 };
 
-const CustomerAccount = ( { authData } ) => {
+const CustomerAccount = () => {
 
 	const [active, setActive] = useState( 0 );
-
-	console.warn( 'authData', authData );
 
 	return (
 		<div className="wrapper">
