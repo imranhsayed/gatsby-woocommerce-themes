@@ -4,6 +4,8 @@ import Dashboard from "./dashboard";
 import Orders from "./orders";
 import { isUserLoggedIn } from "../../utils/functions";
 import Logout from "./logout";
+import Addresses from "./addresses";
+import AccountDetails from "./account-details";
 
 const auth = isUserLoggedIn();
 
@@ -24,13 +26,13 @@ const tabItems = [
 		id: 3,
 		title: 'Addresses',
 		icon: 'tabitem__icon tab-addresses',
-		content: 'step 3 content',
+		content: <Addresses authData={ auth }/>,
 	},
 	{
 		id: 4,
 		title: 'Account Details',
 		icon: 'tabitem__icon tab-account-details',
-		content: 'step 4 content',
+		content: <AccountDetails authData={ auth }/>,
 	},
 	{
 		id: 5,
