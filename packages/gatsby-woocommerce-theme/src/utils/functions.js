@@ -357,6 +357,13 @@ export const createCheckoutData = (order) => {
 		customerNote: order.customerNote
 	};
 
+	if ( order.createAccount ) {
+		checkoutData.account = {
+			username: order.username,
+			password: order.password
+		}
+	}
+
 	return checkoutData;
 };
 

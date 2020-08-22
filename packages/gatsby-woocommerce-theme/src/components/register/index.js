@@ -185,7 +185,7 @@ const Register = ( { setLoggedIn } ) => {
 					)
 				) : '' }
 
-				{/* Login Form */ }
+				{/* Register Form */ }
 				<form className="mt-1" onSubmit={ ( event ) => handleRegister( event ) }>
 
 					{/* Username */ }
