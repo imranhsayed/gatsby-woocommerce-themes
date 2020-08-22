@@ -354,6 +354,7 @@ export const createCheckoutData = (order) => {
 		paymentMethod: order.paymentMethod,
 		isPaid: false,
 		transactionId: 'hjkhjkhsdsdiui',
+		customerNote: order.customerNote
 	};
 
 	return checkoutData;

@@ -24,7 +24,7 @@ const CheckoutForm = () => {
   // 	phone: '',
   // 	email: '',
   // 	createAccount: false,
-  // 	orderNotes: '',
+  // 	customerNote: '',
   // 	paymentMethod: '',
   // 	errors: null
   // };
@@ -43,7 +43,7 @@ const CheckoutForm = () => {
     email: "codeytek.academy@gmail.com",
     company: "Tech",
     createAccount: false,
-    orderNotes: "",
+	customerNote: "My Order notes",
     paymentMethod: "cod",
     errors: null,
   };

@@ -1,8 +1,13 @@
 import React from "react";
 import countryList from "./../country-list";
 import Error from "./../error";
+import { isUserLoggedIn } from "../../../utils/functions";
+import { isEmpty } from "lodash";
 
 const Billing = ({ input, handleOnChange }) => {
+
+	const auth = isUserLoggedIn();
+
   return (
     <React.Fragment>
       {/*Name*/}
@@ -205,25 +210,26 @@ const Billing = ({ input, handleOnChange }) => {
           </div>
         </div>
       </form>
-      {/*	@TODO Create an Account */}
-      <div className="form-check">
-        <label className="form-check-label">
-          <input
-            onChange={handleOnChange}
-            className="form-check-input"
-            name="createAccount"
-            type="checkbox"
-          />
-          Create an account?
-        </label>
+
+	    { ! isEmpty( auth ) ? (
+		    <div className="form-check">
+			    <label className="form-check-label">
+				    <input
+					    onChange={handleOnChange}
+					    className="form-check-input"
+					    name="createAccount"
+					    type="checkbox"
+				    />
+				    Create an account?
+			    </label>
+		    </div>
+	    ) : null }
+      <h2 className="mt-4 mb-4">Additional Information</h2>
+      <div className="form-group">
+      	<label htmlFor="order-notes">Order Notes</label>
+      	<textarea onChange={ handleOnChange } defaultValue={ input.customerNote } name="customerNote" className="form-control woo-next-checkout-textarea" id="order-notes" rows="4"/>
+      	<Error errors={ input.errors } fieldName={ 'customerNote' }/>
       </div>
-      {/* @TODO Order Notes */}
-      {/*<h2 className="mt-4 mb-4">Additional Information</h2>*/}
-      {/*<div className="form-group">*/}
-      {/*	<label htmlFor="order-notes">Order Notes</label>*/}
-      {/*	<textarea onChange={ handleOnChange } defaultValue={ input.orderNotes } name="orderNotes" className="form-control woo-next-checkout-textarea" id="order-notes" rows="4"/>*/}
-      {/*	<Error errors={ input.errors } fieldName={ 'orderNotes' }/>*/}
-      {/*</div>*/}
     </React.Fragment>
   );
 };

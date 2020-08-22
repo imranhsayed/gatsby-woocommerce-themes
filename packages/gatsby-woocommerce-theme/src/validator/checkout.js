@@ -26,7 +26,7 @@ const validateAndSanitizeCheckoutForm = ( data ) => {
 	data.phone = ( ! isEmpty( data.phone ) ) ? data.phone : '';
 	data.email = ( ! isEmpty( data.email ) ) ? data.email : '';
 	data.createAccount = ( ! isEmpty( data.createAccount ) ) ? data.createAccount : '';
-	data.orderNotes = ( ! isEmpty( data.orderNotes ) ) ? data.orderNotes : '';
+	data.customerNote = ( ! isEmpty( data.customerNote ) ) ? data.customerNote : '';
 	data.paymentMethod = ( ! isEmpty( data.paymentMethod ) ) ? data.paymentMethod : '';
 
 	/**
@@ -92,7 +92,7 @@ const validateAndSanitizeCheckoutForm = ( data ) => {
 
 	// The data.createAccount is a boolean value.
 	sanitizedData.createAccount = data.createAccount;
-	addErrorAndSanitizedData( 'orderNotes', '', 0, 254, 'string', false );
+	addErrorAndSanitizedData( 'customerNote', '', 0, 254, 'string', false );
 	addErrorAndSanitizedData( 'paymentMethod', 'Payment mode field', 2, 50, 'string', true );
 
 
