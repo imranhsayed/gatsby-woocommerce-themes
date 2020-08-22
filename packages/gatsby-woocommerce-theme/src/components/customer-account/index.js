@@ -3,6 +3,7 @@ import './style.scss';
 import Dashboard from "./dashboard";
 import Orders from "./orders";
 import { isUserLoggedIn } from "../../utils/functions";
+import Logout from "./logout";
 
 const auth = isUserLoggedIn();
 
@@ -35,7 +36,7 @@ const tabItems = [
 		id: 5,
 		title: 'Logout',
 		icon: 'tabitem__icon tab-logout',
-		content: 'step 4 content',
+		content: null,
 	},
 ];
 
@@ -55,14 +56,16 @@ const TabItemComponent = (
 	)
 };
 
-const CustomerAccount = () => {
+const CustomerAccount = ( { handleLogout } ) => {
 
 	const [active, setActive] = useState( 0 );
 
 	return (
 		<div className="wrapper">
 			<div className="tabs">
-				{ tabItems.map( ( { id, icon, title } ) =>
+				{ tabItems.map( ( { id, icon, title } ) => ( 5 === id ) ? (
+					<Logout handleLogout={ handleLogout }/>
+				) : (
 					<TabItemComponent
 						key={ title }
 						icon={ icon }
@@ -70,10 +73,13 @@ const CustomerAccount = () => {
 						onItemClicked={ () => setActive( id ) }
 						isActive={ active === id }
 					/>
+					)
+
 				) }
 			</div>
 			<div className="content">
 				{ tabItems.map( ( { id, content } ) => {
+
 					return active === id ? <div key={ id }>{ content }</div> : ''
 				} ) }
 			</div>

@@ -34,9 +34,8 @@ const MyAccount = () => {
           </div>
         </div>
       ) : (
-        <div>
-          <CustomerAccount/>
-          <button onClick={handleLogout}>Log out</button>
+        <div className="account-details">
+          <CustomerAccount handleLogout={handleLogout}/>
         </div>
       )}
     </Layout>
