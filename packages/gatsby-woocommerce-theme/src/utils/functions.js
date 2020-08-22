@@ -354,7 +354,15 @@ export const createCheckoutData = (order) => {
 		paymentMethod: order.paymentMethod,
 		isPaid: false,
 		transactionId: 'hjkhjkhsdsdiui',
+		customerNote: order.customerNote
 	};
+
+	if ( order.createAccount ) {
+		checkoutData.account = {
+			username: order.username,
+			password: order.password
+		}
+	}
 
 	return checkoutData;
 };

@@ -3,6 +3,7 @@ import { v4 } from "uuid";
 import { getUpdatedItems } from "../../../utils/functions";
 
 import cartSpinnerGif from '../../../images/cart-spinner.gif';
+import './style.scss';
 
 const CartItem = ( {
 	                   item,
@@ -64,7 +65,7 @@ const CartItem = ( {
 				{ /* eslint-disable */ }
 				<span className="woo-next-cart-close-icon"
 				      onClick={ ( event ) => handleRemoveProductClick( event, item.cartKey, products ) }>
-					<i className="fa fa-times-circle">✖</i>
+					<i className="cart-close">✖</i>
 				</span>
 			</th>
 			<td className="woo-next-cart-element">
