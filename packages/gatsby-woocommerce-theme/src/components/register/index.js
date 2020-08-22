@@ -162,7 +162,7 @@ const Register = ( { setLoggedIn } ) => {
 			<div className="register-form">
 
 				{/* Title */ }
-				<h2 className="mb-2">Register</h2>
+				<h4 className="mb-2">Register</h4>
 
 				{/* Error Message */ }
 				{ ( ( '' !== errorMessage ) ) ? (
