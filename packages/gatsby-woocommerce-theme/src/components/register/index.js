@@ -153,7 +153,7 @@ const Register = ( { setLoggedIn } ) => {
 		// localStorage.setItem( 'registration-success', 'yes' );
 
 		// Add a message.
-		setSuccessMessage( 'Registration Successful! . You will be redirected to login page now...' );
+		setSuccessMessage( 'Registration Successful! . You will be logged in now...' );
 
 	};
 
