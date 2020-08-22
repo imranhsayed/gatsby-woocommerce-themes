@@ -404,6 +404,10 @@ export const logOut = () => {
 	localStorage.removeItem( 'auth' );
 };
 
+export const setAuth = ( authData ) => {
+	localStorage.setItem( 'auth', JSON.stringify( authData ) );
+};
+
 /**
  * Check if user is logged in.
  *

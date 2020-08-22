@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 import MessageAlert from "../message-alert";
 import cartSpinnerGif from '../../images/cart-spinner.gif';
-import { isUserValidated } from "../../utils/functions";
+import { isUserValidated, setAuth } from "../../utils/functions";
 import { isEmpty } from 'lodash';
 import validateAndSanitizeRegisterForm from "../../validator/register";
 import { useMutation } from "@apollo/client";
 import { v4 } from "uuid";
-import REGISTER_USER from "../../mutations/register";
-
+import REGISTER_CUSTOMER from "../../mutations/register";
 
 /**
  * Register Functional Component.
  *
  * @return {object} Register form.
  */
-const Register = () => {
+const Register = ( { setLoggedIn } ) => {
 
 	const [ username, setUsername ]         = useState( '' );
 	const [ email, setEmail ]               = useState( '' );
@@ -69,23 +68,8 @@ const Register = () => {
 
 	};
 
-	/**
-	 * Set server side error.
-	 *
-	 * Sets error data received as a response of our query from the server
-	 * and set statusbar to true so that its visible.
-	 *
-	 * @param {String} error Error
-	 *
-	 * @return {void}
-	 */
-	const setServerSideError = ( error ) => {
-		setErrorMessage( error );
-		setShowAlertBar( true );
-	};
-
 	// Register Mutation.
-	const [ register, { loading: registerLoading, error: registerError }] = useMutation( REGISTER_USER, {
+	const [ register, { loading: registerLoading, error: registerError }] = useMutation( REGISTER_CUSTOMER, {
 		variables: {
 			input: {
 				clientMutationId: v4(), // Generate a unique id.,
@@ -101,16 +85,17 @@ const Register = () => {
 				setErrorMessage( registerError.graphQLErrors[ 0 ].message );
 			}
 
-			// const { register } = data;
-			console.warn( 'register', data );
-			handleRegisterSuccess();
-			// const authData = {
-			// 	authToken: register.authToken,
-			// 	user: register.user
-			// };
+			const { registerCustomer: { customer } } = data;
 
-			// localStorage.setItem( 'auth', JSON.stringify( authData ) );
-			// setLoggedIn( true );
+			handleRegisterSuccess();
+
+			const authData = {
+				authToken: customer.jwtAuthToken,
+				user: customer,
+			};
+
+			setAuth( authData )
+			setLoggedIn( true );
 		},
 		onError: ( error ) => {
 			if ( error ) {
@@ -125,7 +110,6 @@ const Register = () => {
 	 * Handles user registration.
 	 *
 	 * @param {object} event Event Object.
-	 * @param {object} registerUser registerUser function from REGISTER_USER mutation query.
 	 * @return {void}
 	 */
 	const handleRegister = async ( event ) => {
@@ -159,10 +143,9 @@ const Register = () => {
 	/**
 	 * Handle Register success.
 	 *
-	 * @param {Object} response Response received.
 	 * @return {void}
 	 */
-	const handleRegisterSuccess = ( response ) => {
+	const handleRegisterSuccess = () => {
 
 		// Set form fields value to empty.
 		setErrorMessage( '' );
