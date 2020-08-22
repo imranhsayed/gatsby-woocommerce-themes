@@ -1,5 +1,6 @@
 const { slash }         = require( `gatsby-core-utils` );
 const frontPageTemplate = require.resolve( `../src/templates/front-page/index.js` );
+const singleProductPageTemplate = require.resolve( `../src/templates/product/index.js` );
 const { ProductsFragment } = require('./fragements/products/index.js');
 
 // Get all the front page data.
@@ -15,7 +16,7 @@ query GET_FRONT_PAGE {
       }
     }
   }
-  products: allWpProduct(limit: 100) {
+  products: allWpProduct(limit: 1000) {
     edges {
       node {
       ...ProductsFragment
@@ -83,6 +84,14 @@ module.exports = async ( { actions, graphql } ) => {
 			},
 		} );
 
+		// Create Single Product Pages.
+		allProducts.length && allProducts.map( product => {
+			createPage( {
+				path: product.link,
+				component: slash( singleProductPageTemplate ),
+				context: { product },
+			} );
+		} );
 	} )
 
 };

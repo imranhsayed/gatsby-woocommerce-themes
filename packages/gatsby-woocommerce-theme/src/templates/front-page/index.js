@@ -13,6 +13,8 @@ const FrontPage = ( props ) => {
 		      }
 	      } = props;
 
+	console.warn( props.pageContext );
+
 	return (
 		<Layout>
 			{

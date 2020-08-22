@@ -6,6 +6,7 @@ fragment ProductsFragment on WpProduct {
         productId
         nodeType
         link
+        description
         image {
 		  ...ImageFragment
 		}
