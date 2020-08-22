@@ -3,6 +3,7 @@ import countryList from "./../country-list";
 import Error from "./../error";
 import { isUserLoggedIn } from "../../../utils/functions";
 import { isEmpty } from "lodash";
+import CreateAccount from "../create-account";
 
 const Billing = ({ input, handleOnChange }) => {
 
@@ -12,7 +13,7 @@ const Billing = ({ input, handleOnChange }) => {
     <React.Fragment>
       {/*Name*/}
 
-      <form>
+      <div className="billing-info">
         <div className="form-row">
           <div className="form-group col-md-6">
             <label htmlFor="first-name">
@@ -209,21 +210,10 @@ const Billing = ({ input, handleOnChange }) => {
             <Error errors={input.errors} fieldName={"email"} />
           </div>
         </div>
-      </form>
+      </div>
 
-	    { ! isEmpty( auth ) ? (
-		    <div className="form-check">
-			    <label className="form-check-label">
-				    <input
-					    onChange={handleOnChange}
-					    className="form-check-input"
-					    name="createAccount"
-					    type="checkbox"
-				    />
-				    Create an account?
-			    </label>
-		    </div>
-	    ) : null }
+	    { isEmpty( auth ) ? <CreateAccount handleOnChange={ handleOnChange }/> : null }
+
       <h2 className="mt-4 mb-4">Additional Information</h2>
       <div className="form-group">
       	<label htmlFor="order-notes">Order Notes</label>
