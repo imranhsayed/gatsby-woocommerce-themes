@@ -67,15 +67,17 @@ const Products = (props) => {
           <Product key={product.id} product={product} />
         ))}
       </div>
-      <div className="pagination">
-        <Pagination
-          activePage={activePage}
-          itemsCountPerPage={productsPerPage}
-          totalItemsCount={products.length}
-          pageRangeDisplayed={pageRange}
-          onChange={handlePageChange}
-        />
-      </div>
+      <Pagination
+        activePage={activePage}
+        itemsCountPerPage={productsPerPage}
+        totalItemsCount={products.length}
+        pageRangeDisplayed={pageRange}
+        onChange={handlePageChange}
+        itemClass={"page-item"}
+        linkClass={"page-link"}
+        prevPageText={"Previous"}
+        nextPageText={"Next"}
+      />
     </div>
   );
 };
