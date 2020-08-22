@@ -1,88 +1,130 @@
 
-import React, { useContext, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import cartSpinnerGif from '../../images/cart-spinner.gif';
-import axios from 'axios';
+import { isUserLoggedIn, logOut } from "../../utils/functions";
+import { isEmpty } from "../../utils/functions";
+import { useMutation } from '@apollo/client';
+import LOGIN from "../../mutations/login";
+import { v4 } from 'uuid';
+import validateAndSanitizeLoginForm from "../../validator/login";
 
 const Login = () =>  {
-
-	const [ store, setStore ] = useContext( AppContext );
 
 	const [ loginFields, setLoginFields ] = useState({
 		username: '',
 		password: '',
-		userNiceName: '',
-		userEmail: '',
-		loading: false,
-		error: ''
 	});
 
-	const createMarkup = ( data ) => ({
-		__html: data
-	});
+	const [ errorMessage, setErrorMessage ] = useState( null );
+	const [ loggedIn, setLoggedIn ] = useState( false );
+
+	useEffect( () => {
+		const auth = isUserLoggedIn();
+		if ( ! isEmpty( auth ) ) {
+			setLoggedIn( true );
+		}
+
+	}, [ loggedIn ] );
+
+	// Add to Cart Mutation.
+	const [ login, { data, loading: loginLoading, error: loginError }] = useMutation( LOGIN, {
+		variables: {
+			input: {
+				clientMutationId: v4(), // Generate a unique id.,
+				username: loginFields.username,
+				password: loginFields.password
+			}
+		},
+		onCompleted: ( data ) => {
+
+			// If error.
+			if ( ! isEmpty( loginError ) ) {
+				setErrorMessage( loginError.graphQLErrors[ 0 ].message );
+			}
+
+			const { login } = data;
+			const authData = {
+				authToken: login.authToken,
+				user: login.user
+			};
+
+			localStorage.setItem( 'auth', JSON.stringify( authData ) );
+			setLoggedIn( true );
+		},
+		onError: ( error ) => {
+			if ( error ) {
+				if ( ! isEmpty( error ) ) {
+					setErrorMessage( error.graphQLErrors[ 0 ].message );
+				}
+			}
+		}
+	} );
 
 	const onFormSubmit = ( event ) => {
+
 		event.preventDefault();
+		setErrorMessage( null );
 
-		const siteUrl = clientConfig.siteUrl;
+		// Validation and Sanitization.
+		const validationResult = validateAndSanitizeLoginForm( { username: loginFields.username, password: loginFields.password } );
 
-		const loginData = {
-			username: loginFields.username,
-			password: loginFields.password,
-		};
+		if ( validationResult.isValid ) {
+			setLoginFields({
+				username: validationResult.sanitizedData.username,
+				password: validationResult.sanitizedData.password
+			});
+			login();
+		} else {
+			setClientSideError( validationResult );
+		}
+	};
 
-		setLoginFields( { ...loginFields, loading: true } );
+	/**
+	 * Sets client side error.
+	 *
+	 * Sets error data to result received from our client side validation function,
+	 * and statusbar to true so that its visible to show the error.
+	 *
+	 * @param {Object} validationResult Validation Data result.
+	 */
+	const setClientSideError = ( validationResult ) => {
 
-		axios.post( `${siteUrl}/wp-json/jwt-auth/v1/token`, loginData )
-			.then( res => {
+		if( validationResult.errors.password ) {
+			setErrorMessage( validationResult.errors.password );
+		}
 
-				if ( undefined === res.data.token ) {
-					setLoginFields( {
-						...loginFields,
-						error: res.data.message,
-						loading: false }
-					);
-					return;
-				}
+		if( validationResult.errors.username ) {
+			setErrorMessage( validationResult.errors.username );
+		}
 
-				const { token, user_nicename, user_email } = res.data;
-
-				localStorage.setItem( 'token', token );
-				localStorage.setItem( 'userName', user_nicename );
-
-				setStore({
-					...store,
-					userName: user_nicename,
-					token: token
-				});
-
-				setLoginFields( {
-					...loginFields,
-					loading: false,
-					token: token,
-					userNiceName: user_nicename,
-					userEmail: user_email,
-				} )
-			} )
-			.catch( err => {
-				setLoginFields( { ...loginFields, error: err.response.data.message, loading: false } );
-			} )
 	};
 
 	const handleOnChange = ( event ) => {
 		setLoginFields( { ...loginFields, [event.target.name]: event.target.value } );
 	};
 
+	const handleLogout = () => {
+		logOut();
+		setLoggedIn( false );
+	};
 
-	const { username, password, userNiceName, error, loading } = loginFields;
+	const { username, password, error } = loginFields;
 
-	if ( store.token ) {
-		return ( <Redirect to={`/dashboard`} noThrow /> )
+	console.warn( 'errorMessage', errorMessage );
+
+	if ( loggedIn ) {
+		return (
+			<div>
+				<h3>Logged In</h3>
+				<button onClick={ handleLogout }>Log out</button>
+			</div>
+		);
 	} else {
 		return (
 			<>
 				<div style={{ height: '100vh', maxWidth: '400px', margin: '0 auto' }}>
 					<h4 className="mb-4">Login</h4>
-					{ error && <div className="alert alert-danger" dangerouslySetInnerHTML={ createMarkup( error ) }/> }
+					{ ! isEmpty( errorMessage ) && <div className="alert alert-danger" dangerouslySetInnerHTML={ { __html: errorMessage } }/> }
 					<form onSubmit={ onFormSubmit }>
 						<label className="form-group">
 							Username:
@@ -107,7 +149,7 @@ const Login = () =>  {
 						</label>
 						<br/>
 						<button className="btn btn-primary mb-3" type="submit">Login</button>
-						{ loading && <img className="woo-next-cart-item-spinner" src={ cartSpinnerGif } alt="loading"/> }
+						{ loginLoading && <img className="woo-next-cart-item-spinner" src={ cartSpinnerGif } alt="loading"/> }
 					</form>
 				</div>
 			</>

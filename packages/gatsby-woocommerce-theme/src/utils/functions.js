@@ -395,3 +395,11 @@ export const getUpdatedItems = (products, newQty, cartKey) => {
 	// Return the updatedItems array with new Qtys.
 	return updatedItems;
 };
+
+export const isUserLoggedIn = () => {
+	return localStorage.getItem( 'auth' );
+}
+
+export const logOut = () => {
+	localStorage.removeItem( 'auth' );
+};
