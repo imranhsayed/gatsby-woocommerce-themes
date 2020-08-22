@@ -1,4 +1,21 @@
 .pagination {
   margin-top: 100px;
   justify-content: center;
+  .page-link {
+    color: #343a40;
+    font-weight: 600;
+    border: none;
+    &:hover {
+      color: #343a40;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .page-item {
+    &.active .page-link {
+      background-color: #343a40;
+      border-color: #343a40;
+    }
+  }
 }
