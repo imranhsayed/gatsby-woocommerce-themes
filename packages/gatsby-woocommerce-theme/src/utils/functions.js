@@ -324,10 +324,6 @@ export const getFormattedCart = (data) => {
 export const createCheckoutData = (order) => {
 	const checkoutData = {
 		clientMutationId: v4(),
-		account: {
-			username: "ImranSayedDev",
-			password: "%e[M]q.Z^cYLdNd!=>Sh]M"
-		},
 		billing: {
 			firstName: order.firstName,
 			lastName: order.lastName,
@@ -398,4 +394,12 @@ export const getUpdatedItems = (products, newQty, cartKey) => {
 
 	// Return the updatedItems array with new Qtys.
 	return updatedItems;
+};
+
+export const isUserLoggedIn = () => {
+	return localStorage.getItem( 'auth' );
+}
+
+export const logOut = () => {
+	localStorage.removeItem( 'auth' );
 };
