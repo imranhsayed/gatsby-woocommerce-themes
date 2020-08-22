@@ -7,6 +7,8 @@ const LOGIN = gql`
             user {
                 id
                 name
+                email
+                nicename
             }
         }
     }

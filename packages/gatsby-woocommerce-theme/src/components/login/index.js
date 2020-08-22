@@ -26,7 +26,7 @@ const Login = () =>  {
 
 	}, [ loggedIn ] );
 
-	// Add to Cart Mutation.
+	// Login Mutation.
 	const [ login, { loading: loginLoading, error: loginError }] = useMutation( LOGIN, {
 		variables: {
 			input: {

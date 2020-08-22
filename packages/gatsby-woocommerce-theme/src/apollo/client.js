@@ -1,11 +1,11 @@
+
 /**
  * Internal dependencies.
  */
 import { siteURL } from '../../client-config';
 
-
 import fetch from 'isomorphic-fetch';
-import { ApolloClient, createHttpLink, InMemoryCache, ApolloLink, empty } from '@apollo/client';
+import { ApolloClient, createHttpLink, InMemoryCache, ApolloLink } from '@apollo/client';
 import { isEmpty } from 'lodash';
 
 /**
@@ -93,5 +93,5 @@ export const client = new ApolloClient({
 		uri: `${siteURL}/graphql`,
 		fetch: fetch
 	}) ) ),
-	cache: new InMemoryCache(),
+	cache: new InMemoryCache()
 });
