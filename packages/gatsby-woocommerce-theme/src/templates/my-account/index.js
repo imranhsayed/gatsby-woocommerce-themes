@@ -26,10 +26,10 @@ const MyAccount = () => {
 	return (
 		<Layout>
 			{ !loggedIn ? (
-				<>
+				<div className="row">
 					<Login setLoggedIn={ setLoggedIn }/>
 					<Register setLoggedIn={ setLoggedIn }/>
-				</>
+				</div>
 			) : (
 				<div>
 					<h3>Logged In</h3>

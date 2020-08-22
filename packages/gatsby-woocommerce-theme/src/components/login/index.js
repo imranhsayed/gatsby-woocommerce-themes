@@ -98,8 +98,8 @@ const Login = ( { setLoggedIn } ) => {
 
 	      const { username, password } = loginFields;
 	      return (
-		      <>
-			      <div style={ { height: '100vh', maxWidth: '400px', margin: '0 auto' } }>
+		      <div className="columns large-6 medium-6 small-12">
+			      <div className="login-form">
 				      <h4 className="mb-4">Login</h4>
 				      { !isEmpty( errorMessage ) &&
 				      <div className="alert alert-danger" dangerouslySetInnerHTML={ { __html: errorMessage } }/> }
@@ -131,7 +131,7 @@ const Login = ( { setLoggedIn } ) => {
 					      <img className="woo-next-cart-item-spinner" src={ cartSpinnerGif } alt="loading"/> }
 				      </form>
 			      </div>
-		      </>
+		      </div>
 	      )
       }
 ;

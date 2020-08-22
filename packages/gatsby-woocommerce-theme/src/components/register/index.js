@@ -131,9 +131,7 @@ const Register = ( { setLoggedIn } ) => {
 				register();
 
 			} else {
-
 				setClientSideError( validationResult );
-
 			}
 
 		}
@@ -160,82 +158,84 @@ const Register = ( { setLoggedIn } ) => {
 	};
 
 	return (
-		<div className="wd-form container mt-5 pt-5">
+		<div className="columns large-6 medium-6 small-12">
+			<div className="register-form">
 
-			{/* Title */ }
-			<h2 className="mb-2">Register</h2>
+				{/* Title */ }
+				<h2 className="mb-2">Register</h2>
 
-			{/* Error Message */ }
-			{ ( ( '' !== errorMessage ) ) ? (
-				showAlertBar && (
-					<MessageAlert
-						message={ errorMessage }
-						success={ false }
-						onCloseButtonClick={ onCloseButtonClick }
-					/>
-				)
-			) : '' }
+				{/* Error Message */ }
+				{ ( ( '' !== errorMessage ) ) ? (
+					showAlertBar && (
+						<MessageAlert
+							message={ errorMessage }
+							success={ false }
+							onCloseButtonClick={ onCloseButtonClick }
+						/>
+					)
+				) : '' }
 
-			{ ( ( '' !== successMessage ) ) ? (
-				showAlertBar && (
-					<MessageAlert
-						message={ successMessage }
-						success={ true }
-						onCloseButtonClick={ onCloseButtonClick }
-					/>
-				)
-			) : '' }
+				{ ( ( '' !== successMessage ) ) ? (
+					showAlertBar && (
+						<MessageAlert
+							message={ successMessage }
+							success={ true }
+							onCloseButtonClick={ onCloseButtonClick }
+						/>
+					)
+				) : '' }
 
-			{/* Login Form */ }
-			<form className="mt-1" onSubmit={ ( event ) => handleRegister( event ) }>
+				{/* Login Form */ }
+				<form className="mt-1" onSubmit={ ( event ) => handleRegister( event ) }>
 
-				{/* Username */ }
-				<div className="form-group">
-					<label className="lead mt-1" htmlFor="username">Username</label>
-					<input
-						type="text"
-						className="form-control"
-						id="username"
-						placeholder="Enter username"
-						value={ username }
-						onChange={ ( event ) => setUsername( event.target.value ) }
-					/>
-				</div>
+					{/* Username */ }
+					<div className="form-group">
+						<label className="lead mt-1" htmlFor="username">Username</label>
+						<input
+							type="text"
+							className="form-control"
+							id="username"
+							placeholder="Enter username"
+							value={ username }
+							onChange={ ( event ) => setUsername( event.target.value ) }
+						/>
+					</div>
 
-				{/* Username */ }
-				<div className="form-group">
-					<label className="lead mt-1" htmlFor="email">Email</label>
-					<input
-						type="email"
-						className="form-control"
-						id="email"
-						placeholder="Enter email"
-						value={ email }
-						onChange={ ( event ) => setEmail( event.target.value ) }
-					/>
-				</div>
+					{/* Username */ }
+					<div className="form-group">
+						<label className="lead mt-1" htmlFor="email">Email</label>
+						<input
+							type="email"
+							className="form-control"
+							id="email"
+							placeholder="Enter email"
+							value={ email }
+							onChange={ ( event ) => setEmail( event.target.value ) }
+						/>
+					</div>
 
-				{/* Password */ }
-				<div className="form-group">
-					<label className="lead mt-1" htmlFor="password">Password</label>
-					<input
-						type="password"
-						className="form-control"
-						id="password"
-						placeholder="Enter password"
-						value={ password }
-						onChange={ ( event ) => setPassword( event.target.value ) }
-					/>
-				</div>
+					{/* Password */ }
+					<div className="form-group">
+						<label className="lead mt-1" htmlFor="password">Password</label>
+						<input
+							type="password"
+							className="form-control"
+							id="password"
+							placeholder="Enter password"
+							value={ password }
+							onChange={ ( event ) => setPassword( event.target.value ) }
+						/>
+					</div>
 
-				{/* Submit Button */ }
-				<div className="form-group">
-					<button className="btn btn-primary" disabled={ registerLoading ? 'disabled' : '' } type="submit">Register</button>
-				</div>
+					{/* Submit Button */ }
+					<div className="form-group">
+						<button className="btn btn-primary" disabled={ registerLoading ? 'disabled' : '' } type="submit">Register</button>
+					</div>
 
-				{/*	Loading */ }
-				{ registerLoading ?  <img className="woo-next-cart-item-spinner" src={ cartSpinnerGif } alt="loading"/> : '' }
-			</form>
+					{/*	Loading */ }
+					{ registerLoading ?  <img className="woo-next-cart-item-spinner" src={ cartSpinnerGif } alt="loading"/> : '' }
+				</form>
+			</div>
 		</div>
 	)
 };
