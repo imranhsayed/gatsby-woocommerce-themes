@@ -1,24 +1,28 @@
 @import "../../../sass/0-settings/colors";
 .categories-list-wrap {
-	width: 100%;
-	margin-top: 100px;
-	display: flex;
+  -webkit-box-shadow: 0 8px 8px -4px rgba(40, 44, 63, 0.04);
+  box-shadow: 0 8px 8px -4px rgba(40, 44, 63, 0.04);
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
 
-	.categories-list {
-		display: flex;
-		justify-content: center;
-		width: 100%;
-	}
+  .categories-list {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 
-	.categories-link {
-		display: inline-block;
-		padding: 16px;
-		transition: 0.3s;
+  .categories-link {
+    display: inline-block;
+    padding: 16px;
+    transition: 0.3s;
 
-		&.active,
-		&:hover {
-			text-decoration: underline;
-			color: $color__secondary;
-		}
-	}
+    color: #91969a;
+    font-weight: 700;
+    &.active,
+    &:hover {
+      text-decoration: underline;
+      color: #555;
+    }
+  }
 }
