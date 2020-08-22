@@ -27,10 +27,6 @@ const Product = (props) => {
     // @TODO Need to handle Group products differently.
     !isEmpty(product) && "GroupProduct" !== product.nodeType ? (
       <div className="col-lg-4 col-md-6 mb-5">
-        <h3 className="card-header text-center">
-          {product.name ? product.name : ""}
-        </h3>
-
         <Link to={product.link} className="product-image">
           {!isEmpty(product.image) ? (
             <LazyLoadImage
@@ -51,7 +47,8 @@ const Product = (props) => {
           ) : null}
         </Link>
         <div className="card-body text-center">
-          <h6 className="card-subtitle mb-3">{product.price}</h6>
+          <h3 className="card-header">{product.name ? product.name : ""}</h3>
+          <h6 className="card-subtitle">{product.price}</h6>
           <AddToCartButton product={product} />
         </div>
       </div>

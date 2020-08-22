@@ -4,3 +4,20 @@
   display: block;
   width: 100%;
 }
+
+.product-container {
+  .card-header {
+    background: none;
+    border: 0;
+    font-size: 18px;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  .card-body {
+    padding: 10px;
+  }
+  .card-subtitle {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+}
