@@ -108,7 +108,7 @@ const CartItemsContainer = () => {
         <div className="container woo-next-cart-wrapper">
           <h1 className="mt-5 woo-next-cart-heading">Cart</h1>
           <div className="woo-next-cart-table-row row">
-            <div className="woo-next-cart-table col-md-8">
+            <div className="woo-next-cart-table col-md-8 mb-md-0 mb-5">
               <table className="table table-hover">
                 <thead>
                   {/* eslint-disable */}
