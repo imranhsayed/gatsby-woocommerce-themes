@@ -29,6 +29,7 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 11. Archive pages.
 12. Authentication with JWT
 13. My Account page ( with Login and Registration )
+14. Create an account on checkout.
 
 ## 👨‍💻 Maintainer
 
