@@ -9,6 +9,7 @@ import { getFormattedCart, createCheckoutData } from "../../../utils/functions";
 import OrderSuccess from "../order-success";
 import GET_CART from "../../../queries/get-cart";
 import CHECKOUT_MUTATION from "../../../mutations/checkout";
+import CheckoutError from "../checkout-error";
 
 const CheckoutForm = () => {
   const initialState = {
@@ -166,9 +167,7 @@ const CheckoutForm = () => {
 
               {/* Checkout Loading*/}
               {checkoutLoading && <p>Processing Order...</p>}
-              {requestError && (
-                <p>Error : {requestError} :( Please try again</p>
-              )}
+              {requestError && <CheckoutError requestError={ requestError }/> }
             </div>
           </div>
         </form>

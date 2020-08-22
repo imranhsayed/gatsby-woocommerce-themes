@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Error from "../error";
 
 const CreateAccount = ( { handleOnChange, input } ) => {
 
@@ -24,7 +25,12 @@ const CreateAccount = ( { handleOnChange, input } ) => {
 
 						{/* Username */ }
 						<div className="form-group col-md-6">
-							<label htmlFor="username">Username</label>
+							<label htmlFor="username">
+								Username
+								<abbr className="required" title="required">
+									*
+								</abbr>
+							</label>
 							<input
 								type="text"
 								className="form-control woo-next-checkout-input"
@@ -34,11 +40,17 @@ const CreateAccount = ( { handleOnChange, input } ) => {
 								value={ input.username }
 								onChange={ handleOnChange }
 							/>
+							<Error errors={input.errors} fieldName={"username"} />
 						</div>
 
 						{/* Password */ }
 						<div className="form-group col-md-6">
-							<label htmlFor="password">Password</label>
+							<label htmlFor="password">
+								Password
+								<abbr className="required" title="required">
+									*
+								</abbr>
+							</label>
 							<input
 								type="password"
 								className="form-control woo-next-checkout-input"
@@ -48,6 +60,7 @@ const CreateAccount = ( { handleOnChange, input } ) => {
 								value={ input.password }
 								onChange={ handleOnChange }
 							/>
+							<Error errors={input.errors} fieldName={"password"} />
 						</div>
 					</div>
 				) : null
