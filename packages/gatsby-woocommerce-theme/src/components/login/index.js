@@ -27,7 +27,7 @@ const Login = () =>  {
 	}, [ loggedIn ] );
 
 	// Add to Cart Mutation.
-	const [ login, { data, loading: loginLoading, error: loginError }] = useMutation( LOGIN, {
+	const [ login, { loading: loginLoading, error: loginError }] = useMutation( LOGIN, {
 		variables: {
 			input: {
 				clientMutationId: v4(), // Generate a unique id.,
@@ -108,9 +108,7 @@ const Login = () =>  {
 		setLoggedIn( false );
 	};
 
-	const { username, password, error } = loginFields;
-
-	console.warn( 'errorMessage', errorMessage );
+	const { username, password } = loginFields;
 
 	if ( loggedIn ) {
 		return (

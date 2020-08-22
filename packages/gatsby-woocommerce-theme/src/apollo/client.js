@@ -5,30 +5,46 @@ import { siteURL } from '../../client-config';
 
 
 import fetch from 'isomorphic-fetch';
-import { ApolloClient, createHttpLink, InMemoryCache, ApolloLink } from '@apollo/client';
+import { ApolloClient, createHttpLink, InMemoryCache, ApolloLink, empty } from '@apollo/client';
+import { isEmpty } from 'lodash';
 
 /**
  * Middleware operation
+ *
  * If we have a session token in localStorage, add it to the GraphQL request as a Session header.
+ * If we have a auth token in localStorage, add it to the GraphQL request as a authorization header.
  */
 export const middleware = new ApolloLink( ( operation, forward ) => {
 
-	// let headersData = {};
+	let headersData = null;
 
 	/**
 	 * If session data exist in local storage, set value as session header.
 	 */
 	const session = ( process.browser ) ?  localStorage.getItem( "woo-session" ) : null;
 
-	// let headersData = {
-	// 	"woocommerce-session": `Session ${ session }`
-	// };
+	if ( ! isEmpty( session ) ) {
+		headersData = {
+			"woocommerce-session": `Session ${ session }`
+		};
+	}
 
-	if ( session ) {
+	/**
+	 * If auth token exist in local storage, set value as authorization header.
+	 */
+	const auth = ( process.browser ) ?  JSON.parse( localStorage.getItem( "auth" ) ) : null;
+	const token = ( ! isEmpty( auth ) ) ? auth.authToken : null;
+
+	if ( ! isEmpty( token ) ) {
+		headersData = {
+			...headersData,
+			"authorization": token ? `Bearer ${token}` : "",
+		};
+	}
+
+	if ( ! isEmpty( headersData ) ) {
 		operation.setContext( ( { headers = {} } ) => ( {
-			headers: {
-				"woocommerce-session": `Session ${ session }`
-			}
+			headers: headersData,
 		} ) );
 	}
 
