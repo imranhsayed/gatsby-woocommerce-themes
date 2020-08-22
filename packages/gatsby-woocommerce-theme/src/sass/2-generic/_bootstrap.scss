@@ -1,0 +1,8 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+.main-container {
+  .row {
+    max-width: $site-width;
+  }
+}
