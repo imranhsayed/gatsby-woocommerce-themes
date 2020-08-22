@@ -405,7 +405,7 @@ export const getUpdatedItems = (products, newQty, cartKey) => {
 };
 
 export const isUserLoggedIn = () => {
-	return localStorage.getItem( 'auth' );
+	return JSON.parse( localStorage.getItem( 'auth' ) );
 };
 
 export const logOut = () => {

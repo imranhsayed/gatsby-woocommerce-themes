@@ -4,11 +4,14 @@ import Login from "../../components/login";
 import Register from "../../components/register";
 import { isEmpty, isUserLoggedIn, logOut } from "../../utils/functions";
 import "./style.scss";
+import CustomerAccount from "../../components/customer-account";
 
 const MyAccount = () => {
+
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
+
     const auth = isUserLoggedIn();
 
     if (!isEmpty(auth)) {
@@ -32,7 +35,7 @@ const MyAccount = () => {
         </div>
       ) : (
         <div>
-          <h3>Logged In</h3>
+          <CustomerAccount/>
           <button onClick={handleLogout}>Log out</button>
         </div>
       )}
