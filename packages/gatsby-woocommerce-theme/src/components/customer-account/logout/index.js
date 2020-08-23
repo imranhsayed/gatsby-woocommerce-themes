@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const Logout = ( { handleLogout } ) => {
-	return(
-		<div className="tabitem tabitem--inactive">
-			<button onClick={handleLogout}>Log out</button>
-		</div>
-	)
+const Logout = ({ handleLogout }) => {
+  console.log("hey");
+  return (
+    <div className="tabitem tabitem--inactive">
+      <button onClick={handleLogout} className="logout">
+        Log out
+      </button>
+    </div>
+  );
 };
 
 export default Logout;

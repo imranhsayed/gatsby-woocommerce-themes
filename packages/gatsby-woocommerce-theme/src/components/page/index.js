@@ -23,7 +23,7 @@ const Page = (props) => {
   return (
     <>
       {!isEmpty(data) ? (
-        <div className="page-container wrapper container">
+        <div className="page-container container py-5">
           {!isEmpty(data.title) ? <h2>{data.title}</h2> : null}
           <div className="row">
             <main className="page-content col-md-8">
