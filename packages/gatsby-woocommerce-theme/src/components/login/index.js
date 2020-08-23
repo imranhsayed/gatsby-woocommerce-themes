@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cartSpinnerGif from "../../images/cart-spinner.gif";
 import { setAuth } from "../../utils/functions";
-import { isEmpty } from "../../utils/functions";
+import { isEmpty } from 'lodash';
 import { useMutation } from "@apollo/client";
 import LOGIN from "../../mutations/login";
 import { v4 } from "uuid";
