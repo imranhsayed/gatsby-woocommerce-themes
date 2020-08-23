@@ -1,4 +1,5 @@
 import { v4 } from "uuid";
+import { isEmpty } from 'lodash';
 
 export const normalizePath = (path) => {
   const pathStr = path.split("/");
@@ -38,23 +39,6 @@ export const getFormattedDate = (dateString) => {
   const date = new Date(dateString);
 
   return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
-};
-
-/**
- * Validate and check if the given variable is empty
- *
- * @param {any} value Value that we check
- * @return {boolean}
- *
- */
-
-export const isEmpty = (value) => {
-  return (
-    value === undefined ||
-    value === null ||
-    (typeof value === "object" && Object.keys(value).length === 0) ||
-    (typeof value === "string" && value.trim().length === 0)
-  );
 };
 
 /**

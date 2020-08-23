@@ -54,7 +54,9 @@
     "react-js-pagination": "^3.0.3",
     "react-lazy-load-image-component": "^1.5.0",
     "react-responsive": "^8.1.0",
+    "react-slick": "^0.27.10",
     "sass-mq": "^5.0.1",
+    "slick-carousel": "^1.8.1",
     "uuid": "^8.3.0",
     "validator": "^13.1.1"
   },

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../components/layout";
 import Login from "../../components/login";
 import Register from "../../components/register";
-import { isEmpty, isUserLoggedIn, logOut } from "../../utils/functions";
+import { isUserLoggedIn, logOut } from "../../utils/functions";
+import { isEmpty } from 'lodash';
 import "./style.scss";
 import CustomerAccount from "../../components/customer-account";
 
