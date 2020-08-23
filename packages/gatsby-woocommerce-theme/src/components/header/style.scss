@@ -148,8 +148,8 @@
     .header-nav__menu-link {
       display: flex;
       padding: 10px;
-      color: $color__text;
       white-space: nowrap;
+      color: #757575;
 
       @include mq(large) {
         display: inline-block;
@@ -217,4 +217,8 @@
 
 .mobile-menu-open {
   //position: fixed;
+}
+
+.site-brand__description {
+  margin-bottom: 0;
 }
