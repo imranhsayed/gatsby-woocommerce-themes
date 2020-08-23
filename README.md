@@ -37,6 +37,10 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 |--------------------------------------------------------|-----------------|
 | [Imran Sayed](mailto:codeytek.academy@gmail.com)       |  @imranhsayed   |
 
+![](demos/demo1.gif)
+
+![](demos/My-account.gif)
+
 ## 🚀 Set Up
 
 ### Gatsby Setup
