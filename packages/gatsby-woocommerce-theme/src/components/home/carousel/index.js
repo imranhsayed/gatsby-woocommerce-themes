@@ -8,11 +8,11 @@ import Link from "gatsby-link";
 const Carousel = ({ categories }) => {
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     arrows: true,
     fade: true,
     pauseOnDotsHover: true,
@@ -32,9 +32,7 @@ const Carousel = ({ categories }) => {
                     {!isEmpty(category.image) &&
                     !isEmpty(category.image.sourceUrl) ? (
                       <img
-                        src={
-                          "https://user-images.githubusercontent.com/12367607/90980823-43d51e80-e57b-11ea-816e-29f941b0ad95.jpg"
-                        }
+                        src={ category.image.sourceUrl }
                         alt={
                           !isEmpty(category.image.altText)
                             ? category.image.altText
@@ -46,15 +44,12 @@ const Carousel = ({ categories }) => {
                   <div className="carousal-info">
                     <div className="container">
                       <div className="carousal-info-inner">
-                        <h2>Clothing</h2>
-                        <p>
-                          The standard Lorem Ipsum passage, used since the 1500s
-                        </p>
+                        <h2>{ category.name }</h2>
+                        <p>{ category.description }</p>
                         <Link
                           to={category.uri}
                           className="btn btn-outline-dark"
-                        >
-                          {category.name}
+                        >Explore
                         </Link>
                       </div>
                     </div>

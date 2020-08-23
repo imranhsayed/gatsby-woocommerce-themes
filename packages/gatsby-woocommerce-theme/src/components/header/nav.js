@@ -132,7 +132,9 @@ const Nav = ( props ) => {
 									</li>
 								);
 							} ) }
-							<Link className="header-nav__menu-link" to="/checkout">Checkout</Link>
+							<li className="header-nav__menu-item">
+								<Link className="header-nav__menu-link" to="/checkout">Checkout</Link>
+							</li>
 						</ul>
 					) : null }
 

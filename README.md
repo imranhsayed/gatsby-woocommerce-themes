@@ -79,6 +79,8 @@ h. [wp-graphql-jwt-authentication](https://github.com/imranhsayed/gatsby-woocomm
 * Make sure WooCommerce Plugin is active in WordPress and the payment modes have been set from its settings.
 * You can also import default wooCommerce products that come with wooCommerce Plugin for development ( if you don't have any products in your WordPress install ) `WP Dashboard > Tools > Import > WooCommerce products(CSV)`: The WooCommerce default products csv file is available at wp-content/plugins/woocommerce/sample-data/sample_products.csv
 
+9. For home page carousel please upload same size product category images of dimensions `1900x600` 
+
 ## 🚀 Development
 
 * Navigate into site’s directory.

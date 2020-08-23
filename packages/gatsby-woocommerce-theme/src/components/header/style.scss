@@ -11,15 +11,15 @@
 }
 
 .site-header {
-  padding-top: 12px;
-  padding-bottom: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: static;
+	padding: 10px 0;
 
   @include mq(medium) {
     align-items: center;
+	  padding: 0;
   }
 }
 
@@ -31,27 +31,33 @@
     width: 300px;
     margin-left: 10px;
   }
+
+	.site-brand__logo {
+		@include mq( $until: small ) {
+			width: 50px;
+		}
+	}
 }
 
 // Menu
 .header-nav {
   display: flex;
   position: absolute;
-  top: 70px;
-  right: -104vw;
+  top: 74px;
+  right: -100vw;
   transition: 0.3s all;
   background-color: $white;
   height: calc(100vh - 80px);
   border-top: 1px solid $color__border;
   width: 100vw;
   z-index: 10;
-  margin-right: 32px;
+  margin-right: 0;
 
   &.menu-visible {
-    right: -4px;
+    right: 0;
 
     @include mq($from: medium, $until: large) {
-      right: -4px;
+      right: 0;
     }
   }
 
@@ -79,13 +85,14 @@
 
   // Main menu list
   .header-nav__menu-item {
-    padding: 4px 16px;
+    padding: 28px 16px;
     color: #757575;
     position: relative;
     border: 1px solid $color__border;
     transition: 0.3s;
 
     @include mq($until: large) {
+	    padding: 8px 16px;
       svg {
         display: none;
       }
@@ -127,10 +134,11 @@
       text-align: center;
       vertical-align: middle;
       margin: 16px 0 0 16px;
+	    padding: 4px 16px;
 
       @include mq(large) {
         margin: 0;
-        margin-left: 13px;
+        margin-right: 16px;
       }
 
       a {
@@ -180,12 +188,12 @@
     @include mq(large) {
       position: absolute;
       display: none;
-      top: 30px;
+      top: 80px;
       left: 0;
       width: 200px;
       border: 1px solid $color__border;
       box-shadow: 2px 2px 2px $color__box-shadow;
-      padding: 10px;
+	  padding: 0 10px;
       overflow: visible;
       max-height: 300px;
     }
@@ -221,4 +229,9 @@
 
 .site-brand__description {
   margin-bottom: 0;
+}
+
+.header-nav__menu-link-container-with-arrow {
+	display: flex;
+	justify-content: space-between;
 }

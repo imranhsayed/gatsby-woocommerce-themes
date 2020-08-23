@@ -1,5 +1,6 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+@import "../../../sass/essentials";
 
 .carousel-img-wrap {
   position: relative;
@@ -23,4 +24,23 @@
 
 .carousal-info-inner {
   max-width: 400px;
+
+	p {
+		@include mq( $until: medium ) {
+			display: none;
+		}
+	}
+
+	h2 {
+		@include mq( $until: medium ) {
+			font-size: 18px;
+			margin-bottom: 8px;
+		}
+	}
+
+	a {
+		@include mq( $until: medium ) {
+			font-size: 12px;
+		}
+	}
 }

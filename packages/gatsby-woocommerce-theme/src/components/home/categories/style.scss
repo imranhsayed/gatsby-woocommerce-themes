@@ -5,16 +5,18 @@
   width: 100%;
   margin-top: 100px;
   display: flex;
+	padding-bottom: 16px;
 
   .categories-list {
     display: flex;
     justify-content: center;
+	  flex-flow: wrap;
     width: 100%;
   }
 
   .categories-link {
     display: inline-block;
-    padding: 16px;
+    padding: 8px 16px;
     transition: 0.3s;
 
     color: #91969a;

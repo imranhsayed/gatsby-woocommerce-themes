@@ -21,6 +21,10 @@ ul {
 a {
   text-decoration: none;
   cursor: pointer;
+
+	&:visited {
+		color: #757575;
+	}
 }
 
 ul {

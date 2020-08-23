@@ -11,6 +11,7 @@ query GET_FRONT_PAGE {
       id
       name
       uri
+      description
       image {
         ...ImageFragment
       }
