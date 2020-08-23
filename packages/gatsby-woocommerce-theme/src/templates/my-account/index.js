@@ -7,11 +7,9 @@ import "./style.scss";
 import CustomerAccount from "../../components/customer-account";
 
 const MyAccount = () => {
-
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
-
     const auth = isUserLoggedIn();
 
     if (!isEmpty(auth)) {
@@ -34,8 +32,8 @@ const MyAccount = () => {
           </div>
         </div>
       ) : (
-        <div className="account-details">
-          <CustomerAccount handleLogout={handleLogout}/>
+        <div className="account-details container">
+          <CustomerAccount handleLogout={handleLogout} />
         </div>
       )}
     </Layout>
