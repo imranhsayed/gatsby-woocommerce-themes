@@ -32,7 +32,7 @@ const MyAccount = () => {
           </div>
         </div>
       ) : (
-        <div className="account-details container">
+        <div className="account-details container py-5">
           <CustomerAccount handleLogout={handleLogout} />
         </div>
       )}

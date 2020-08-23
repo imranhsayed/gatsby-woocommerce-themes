@@ -4,7 +4,9 @@ const Logout = ({ handleLogout }) => {
   console.log("hey");
   return (
     <div className="tabitem tabitem--inactive">
-      <button onClick={handleLogout}>Log out</button>
+      <button onClick={handleLogout} className="logout">
+        Log out
+      </button>
     </div>
   );
 };

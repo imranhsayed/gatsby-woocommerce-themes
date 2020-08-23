@@ -63,8 +63,8 @@ const CustomerAccount = ({ handleLogout }) => {
   const [active, setActive] = useState(0);
 
   return (
-    <div className="">
-      <div className="tabs">
+    <div className="row">
+      <div className="account-details-menu col-3">
         {tabItems.map(({ id, icon, title }) =>
           5 === id ? (
             <Logout key={title} handleLogout={handleLogout} />
@@ -79,7 +79,7 @@ const CustomerAccount = ({ handleLogout }) => {
           )
         )}
       </div>
-      <div className="content">
+      <div className="account-details-content card col-9 px-0">
         {tabItems.map(({ id, content }) => {
           return active === id ? <div key={id}>{content}</div> : "";
         })}

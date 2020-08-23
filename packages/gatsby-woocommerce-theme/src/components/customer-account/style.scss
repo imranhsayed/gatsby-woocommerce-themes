@@ -1,37 +1,37 @@
-.tabs {
-	display: flex;
-	justify-content: center;
-}
-
 .tabitem {
-	border: 2px solid #fff;
-	cursor: pointer;
-	width: 100px;
-	height: 100px;
-	text-align: center;
-	padding: 15px;
-	background-color: #280680;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  cursor: pointer;
+  padding: 5px 0;
 }
 
 .tabitem--inactive {
-	opacity: 0.3;
-	filter: grayscale(100%);
+  opacity: 0.5;
+  filter: grayscale(100%);
 }
 
 .tabitem__icon {
-	color: rgba(255, 255, 255, 0.9);
-	font-size: 22px;
+  font-size: 22px;
 }
 
 .tabitem__title {
-	color: rgba(255, 255, 255, 0.9);
-	font-size: 16px;
-	margin: 10px 0;
+  font-size: 16px;
+  margin: 10px 0;
 }
 
 .content {
-	margin-top: 15px;
+  margin-top: 15px;
+}
+
+.account-details-menu {
+  .logout {
+    border: none;
+    padding: 0;
+    margin: 10px 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+.account-details-content {
+  min-height: 355px;
 }
