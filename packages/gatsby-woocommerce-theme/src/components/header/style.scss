@@ -15,11 +15,12 @@
   align-items: center;
   justify-content: space-between;
   position: static;
-	padding: 10px 0;
+  padding: 10px 0;
+  position: relative;
 
   @include mq(medium) {
     align-items: center;
-	  padding: 0;
+    padding: 0;
   }
 }
 
@@ -32,11 +33,11 @@
     margin-left: 10px;
   }
 
-	.site-brand__logo {
-		@include mq( $until: small ) {
-			width: 50px;
-		}
-	}
+  .site-brand__logo {
+    @include mq($until: small) {
+      width: 50px;
+    }
+  }
 }
 
 // Menu
@@ -44,7 +45,7 @@
   display: flex;
   position: absolute;
   top: 74px;
-  right: -100vw;
+  right: -115vw;
   transition: 0.3s all;
   background-color: $white;
   height: calc(100vh - 80px);
@@ -54,7 +55,7 @@
   margin-right: 0;
 
   &.menu-visible {
-    right: 0;
+    right: -15px;
 
     @include mq($from: medium, $until: large) {
       right: 0;
@@ -92,7 +93,7 @@
     transition: 0.3s;
 
     @include mq($until: large) {
-	    padding: 8px 16px;
+      padding: 8px 16px;
       svg {
         display: none;
       }
@@ -134,7 +135,7 @@
       text-align: center;
       vertical-align: middle;
       margin: 16px 0 0 16px;
-	    padding: 4px 16px;
+      padding: 4px 16px;
 
       @include mq(large) {
         margin: 0;
@@ -193,7 +194,7 @@
       width: 200px;
       border: 1px solid $color__border;
       box-shadow: 2px 2px 2px $color__box-shadow;
-	  padding: 0 10px;
+      padding: 0 10px;
       overflow: visible;
       max-height: 300px;
     }
@@ -232,6 +233,6 @@
 }
 
 .header-nav__menu-link-container-with-arrow {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
