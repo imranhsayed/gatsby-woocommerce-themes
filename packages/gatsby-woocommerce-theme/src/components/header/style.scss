@@ -31,6 +31,10 @@
   .site-brand__content {
     width: 300px;
     margin-left: 10px;
+	  @include mq($until: small) {
+		  width: 150px;
+		  font-size: 12px;
+	  }
   }
 
   .site-brand__logo {
