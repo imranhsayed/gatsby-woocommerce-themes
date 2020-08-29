@@ -44,10 +44,11 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 ## 🚀 Set Up
 
 ### Gatsby Setup
-* Rename `.env-example` file to `.env` and add your WordPress SITE_URL in `site` directory : 
+* Create a file called `.env` taking example from `.env-example` and add the following into `site` directory : 
 - `WORDPRESS_SITE_URL=https://example.com`
 - `GATSBY_SITE_URL=https://example.com`
 - `GOOGLE_TAGMANAGER_ID=xxx`
+- `FB_APP_ID=xxx`
 
 ### Client config. 
 rename client-config-example.js in packages/gatsby-woocommerce-theme directory to client-config.js and add your WordPress Site URL. 

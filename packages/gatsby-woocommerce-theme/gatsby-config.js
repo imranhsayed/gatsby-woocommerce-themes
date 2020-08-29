@@ -1,8 +1,11 @@
-module.exports = ({ wordPressUrl, gatsbySiteUrl, googleTagManagerId }) => ({
+module.exports = ({ wordPressUrl, gatsbySiteUrl, googleTagManagerId, fbAppId }) => ({
   siteMetadata: {
     title: `Gatsby WooCommerce Theme`,
-    description: `Gatsby WooCommerce Theme`,
+    description: `Codeytek - Gatsby WooCommerce Theme`,
+	siteUrl: gatsbySiteUrl,
+	wordPressSiteUrl: wordPressUrl,
     author: `@imranhsayed`,
+	fbAppId: fbAppId,
   },
   plugins: [
     {

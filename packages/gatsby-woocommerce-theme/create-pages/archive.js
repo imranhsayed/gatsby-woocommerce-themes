@@ -1,6 +1,7 @@
 const { slash }         = require( `gatsby-core-utils` );
 const frontPageTemplate = require.resolve( `../src/templates/archive/index.js` );
 const { ProductsFragment } = require('./fragements/products/index.js');
+const { SeoFragment } = require('./fragements/seo/index.js');
 
 // Get all the front page data.
 const GET_ARCHIVES = `
@@ -25,11 +26,15 @@ query GET_ARCHIVES {
     edges {
       node {
       ...ProductsFragment
+      seo {
+        ...SeoFragment
+      }
       }
     }
   }
 }
 ${ ProductsFragment }
+${ SeoFragment }
 `;
 
 module.exports = async ( { actions, graphql } ) => {

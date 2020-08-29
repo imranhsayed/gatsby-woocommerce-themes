@@ -3,11 +3,14 @@ import Search from "../../components/home/search";
 import { isEmpty } from 'lodash';
 import Layout from "../../components/layout";
 import Carousel from "../../components/home/carousel";
+import SEO from "../../components/seo";
+import { getOgImage } from "../../utils/functions";
 
 const FrontPage = ( props ) => {
 
 	const {
 		      pageContext: {
+			      page: { title, seo, uri },
 			      categories,
 			      category,
 			      postSearchData: { products, options }
@@ -19,6 +22,13 @@ const FrontPage = ( props ) => {
 			{
 				! isEmpty( props.pageContext ) ? (
 					<>
+						<SEO
+							title={ title }
+							seoData={ seo }
+							uri={ uri }
+							header={ { siteTitle: 'Gatsby WooCommerce Theme' } }
+							openGraphImage={ getOgImage( seo ) }
+						/>
 						<Carousel categories={ categories }/>
 						<Search
 							products={ products }
