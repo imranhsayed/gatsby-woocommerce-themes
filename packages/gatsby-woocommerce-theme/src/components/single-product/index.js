@@ -3,6 +3,7 @@ import AddToCartButton from "../cart/add-to-cart-button";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { isEmpty } from "lodash";
+import SocialShareCard from "../social-share-card";
 
 const productImagePlaceholder = "https://via.placeholder.com/434";
 
@@ -56,6 +57,7 @@ const SingleProduct = (props) => {
               <h6 className="card-subtitle mb-3">{product.price}</h6>
               <AddToCartButton product={product} />
             </div>
+	          <SocialShareCard title={ product.name } sectionTitle="Share this product" link={ product.uri }/>
           </div>
         </div>
       </div>
