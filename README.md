@@ -23,13 +23,14 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 5. Custom Widgets, Menus, Social elements.
 6. WooCommerce store
 7. Google Analytics feature
-8. Yoast SEO supported.
+8. Yoast SEO supported ( with og tags )
 9.  Product Search with pagination ( even works offline ) 
 10. Product pagination
 11. Archive pages.
 12. Authentication with JWT
 13. My Account page ( with Login and Registration )
 14. Create an account on checkout.
+15. Social share.
 
 ## 👨‍💻 Maintainer
 
