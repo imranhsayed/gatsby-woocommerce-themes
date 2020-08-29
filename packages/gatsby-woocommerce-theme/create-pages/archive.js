@@ -1,5 +1,5 @@
 const { slash }         = require( `gatsby-core-utils` );
-const frontPageTemplate = require.resolve( `../src/templates/archive/index.js` );
+const archivePageTemplate = require.resolve( `../src/templates/archive/index.js` );
 const { ProductsFragment } = require('./fragements/products/index.js');
 const { SeoFragment } = require('./fragements/seo/index.js');
 
@@ -12,6 +12,9 @@ query GET_ARCHIVES {
       name
       uri
       description
+      seo {
+        ...SeoFragment
+      }
       image {
         ...ImageFragment
       }
@@ -76,11 +79,9 @@ module.exports = async ( { actions, graphql } ) => {
 
 		categories.nodes.length && categories.nodes.map( ( category ) => {
 
-			const productsData = category.products.length ? category.products.nodes : [];
-
 			createPage( {
 				path: category.uri,
-				component: slash( frontPageTemplate ),
+				component: slash( archivePageTemplate ),
 				context: {
 					categories,
 					allProducts,

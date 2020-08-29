@@ -136,8 +136,6 @@ const CheckoutForm = () => {
     }
   }, [orderData]);
 
-  console.warn( 'input', input );
-
   return (
     <>
       {cart ? (
