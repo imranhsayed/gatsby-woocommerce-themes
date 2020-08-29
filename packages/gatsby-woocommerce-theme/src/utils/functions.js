@@ -427,3 +427,42 @@ export const isUserValidated = () => {
 
   return userLoggedInData;
 };
+
+
+/**
+ * Function to get opengraph image.
+ *
+ * @param {Object} seo Seo data.
+ *
+ * @return {void}
+ */
+export const getOgImage = ( seo ) => {
+
+	if ( isEmpty( seo ) || isEmpty( seo.opengraphImage ) || isEmpty( seo.opengraphImage.sourceUrl ) ) {
+		return getDefaultOgImage( seo );
+	}
+
+	return seo.opengraphImage.sourceUrl;
+};
+
+/**
+ * Function to get opengraph default image.
+ *
+ * @param {Object} seo Seo data.
+ *
+ * @return {void}
+ */
+export const getDefaultOgImage = ( seo ) => {
+
+	if (
+		isEmpty( seo ) ||
+		isEmpty( seo.social ) ||
+		isEmpty( seo.social.facebook ) ||
+		isEmpty( seo.social.facebook.defaultImage ) ||
+		isEmpty( seo.social.facebook.defaultImage.sourceUrl )
+	) {
+		return '';
+	}
+
+	return seo.social.facebook.defaultImage.sourceUrl;
+};

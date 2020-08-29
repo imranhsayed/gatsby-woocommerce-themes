@@ -3,7 +3,6 @@
  * Internal dependencies.
  */
 import { siteURL } from '../../client-config';
-
 import fetch from 'isomorphic-fetch';
 import { ApolloClient, createHttpLink, InMemoryCache, ApolloLink } from '@apollo/client';
 import { isEmpty } from 'lodash';

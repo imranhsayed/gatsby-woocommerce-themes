@@ -20,7 +20,6 @@ const Orders = ({ authData }) => {
     return null;
   }
 
-  console.warn("data", data);
   const {
     customer: { orders },
   } = data;

@@ -140,20 +140,22 @@ const Nav = ( props ) => {
 
 				</div>
 			</nav>
-			<CartIcon/>
-			{/*Burger menu*/}
-			<button
-				className={ menuButtonClasses }
-				type="button"
-				onClick={ toggleMenu }
-				onKeyDown={ toggleMenu }
-			>
+			<div className="cart-icon-wrap">
+				<CartIcon/>
+				{/*Burger menu*/}
+				<button
+					className={ menuButtonClasses }
+					type="button"
+					onClick={ toggleMenu }
+					onKeyDown={ toggleMenu }
+				>
 				<span className="hamburger-box">
 					<span className="hamburger-inner">
 						<span className="screen-reader-text">Toogle Menu</span>
 					</span>
 				</span>
-			</button>
+				</button>
+			</div>
 		</>
 	);
 };

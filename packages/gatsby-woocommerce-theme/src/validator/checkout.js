@@ -92,8 +92,6 @@ const validateAndSanitizeCheckoutForm = ( data ) => {
 	// The data.createAccount is a boolean value.
 	sanitizedData.createAccount = data.createAccount;
 
-	console.warn( 'data', data );
-
 	// If create accoun is true.
 	if ( data.createAccount ) {
 		addErrorAndSanitizedData( 'username', 'Username', 2, 35, 'string', true );

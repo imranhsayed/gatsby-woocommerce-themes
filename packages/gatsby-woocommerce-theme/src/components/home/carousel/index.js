@@ -19,8 +19,6 @@ const Carousel = ({ categories }) => {
     pauseOnFocus: true,
   };
 
-  console.warn("cate", categories);
-
   return (
     <div>
       <Slider {...settings}>
