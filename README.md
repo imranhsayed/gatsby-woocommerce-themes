@@ -45,7 +45,7 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 
 ### Gatsby Setup
 * Rename `.env-example` file to `.env` and add your WordPress SITE_URL in `site` directory : 
-- `SITE_URL=https://example.com`
+- `WORDPRESS_SITE_URL=https://example.com`
 - `GATSBY_SITE_URL=https://example.com`
 - `GOOGLE_TAGMANAGER_ID=xxx`
 

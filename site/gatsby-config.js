@@ -6,7 +6,7 @@ module.exports = {
 		{
 		resolve: "gatsby-woocommerce-theme",
 		options: {
-			wordPressUrl: `${ process.env.SITE_URL }`,
+			wordPressUrl: `${ process.env.WORDPRESS_SITE_URL }`,
 			gatsbySiteUrl: `${ process.env.GATSBY_SITE_URL }`,
 			googleTagManagerId: `${ process.env.GOOGLE_TAGMANAGER_ID }`
 		}
