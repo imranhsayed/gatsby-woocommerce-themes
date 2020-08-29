@@ -53,49 +53,51 @@
     width: 100%;
     max-width: 750px;
     background: #f5f5f6;
-    padding: 10px 25px;
-    color: $black;
+    padding: 16px 28px;
     border: none;
     border-radius: 5px;
-    font-size: 24px;
+    font-size: 20px;
     position: absolute;
+	color: #757575;
     top: 0;
     left: 0;
     z-index: 9;
+	  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
     &:focus {
       outline: none;
       background: #f5f5f6;
-      color: $black;
+      color: rgba(0, 0, 0, 0.5);
+
       &::placeholder {
         /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: $black;
-        opacity: 1; /* Firefox */
+        color: #757575;
+	      opacity: .5;; /* Firefox */
       }
 
       &:-ms-input-placeholder {
         /* Internet Explorer 10-11 */
-        color: $black;
+        color: #757575;
       }
 
       &::-ms-input-placeholder {
         /* Microsoft Edge */
-        color: $black;
+        color: #757575;
       }
     }
     &::placeholder {
       /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: $black;
+	    color: #757575;
       opacity: 1; /* Firefox */
     }
 
     &:-ms-input-placeholder {
       /* Internet Explorer 10-11 */
-      color: $black;
+      color: #757575;
     }
 
     &::-ms-input-placeholder {
       /* Microsoft Edge */
-      color: $black;
+      color: #757575;
     }
   }
 }

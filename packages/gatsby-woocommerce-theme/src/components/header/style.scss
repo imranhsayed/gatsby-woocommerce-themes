@@ -5,6 +5,12 @@
 .site-header-container {
   padding-right: 5px;
 
+	&.container {
+		@include mq($until: medium) {
+			max-width: initial;
+		}
+	}
+
   @include mq(medium) {
     padding-right: $container-padding;
   }
@@ -14,7 +20,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: static;
   padding: 10px 0;
   position: relative;
 
@@ -33,7 +38,7 @@
     margin-left: 10px;
 	  @include mq($until: small) {
 		  width: 150px;
-		  font-size: 12px;
+		  font-size: 14px;
 	  }
   }
 
@@ -146,10 +151,21 @@
         margin-right: 16px;
       }
 
+	    &:hover {
+		    background-color: #343a40;
+		    border-color: #343a40;
+		    a {
+			    color: $white;
+		    }
+	    }
+
       a {
         padding: 4px 0;
         display: flex;
         justify-content: center;
+	      &:after {
+		      background-color: transparent;
+	      }
       }
     }
 
@@ -167,6 +183,26 @@
       @include mq(large) {
         display: inline-block;
         padding: 0;
+
+	      &:after {
+		      content: '';
+		      position: absolute;
+		      top: 55px;
+		      left: 0;
+		      right: 0;
+		      width: 71%;
+		      margin: auto;
+		      height: 1px;
+		      transform: scaleX(0);
+		      background-color: #757575;
+		      transition: transform 0.3s;
+	      }
+
+	      &:hover {
+		      &:after {
+			      transform: scaleX(1);
+		      }
+	      }
       }
     }
   }
@@ -239,4 +275,9 @@
 .header-nav__menu-link-container-with-arrow {
   display: flex;
   justify-content: space-between;
+}
+
+.cart-icon-wrap {
+	display: flex;
+	align-items: center;
 }

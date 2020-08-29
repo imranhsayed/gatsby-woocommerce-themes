@@ -39,8 +39,14 @@
 	}
 
 	a {
-		@include mq( $until: medium ) {
-			font-size: 12px;
-		}
+		transition: 0.5s;
 	}
 }
+
+.slick-track {
+	.slick-slide.slick-active {
+		z-index: 2;
+	}
+}
+
+

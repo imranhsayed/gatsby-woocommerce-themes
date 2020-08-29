@@ -18,6 +18,7 @@
     display: inline-block;
     padding: 8px 16px;
     transition: 0.3s;
+	  position: relative;
 
     color: #91969a;
     font-weight: 700;
@@ -25,5 +26,25 @@
     &:hover {
       color: #555;
     }
+
+	  &:after {
+		  content: '';
+		  position: absolute;
+		  top: 34px;
+		  left: 0;
+		  right: 0;
+		  width: 71%;
+		  margin: auto;
+		  height: 1px;
+		  transform: scaleX(0);
+		  background-color: #757575;
+		  transition: transform 0.3s;
+	  }
+
+	  &:hover {
+		  &:after {
+			  transform: scaleX(1);
+		  }
+	  }
   }
 }
