@@ -2,6 +2,7 @@ import React from "react";
 import Search from "../../components/home/search";
 import { isEmpty } from 'lodash';
 import Layout from "../../components/layout";
+import Carousel from "../../components/home/carousel";
 
 const ArchivePage = ( props ) => {
 
@@ -18,6 +19,7 @@ const ArchivePage = ( props ) => {
 			{
 				! isEmpty( props.pageContext ) ? (
 					<>
+						<Carousel categories={ categories }/>
 						<Search
 							products={ products }
 							initialProducts={ category.products.nodes }

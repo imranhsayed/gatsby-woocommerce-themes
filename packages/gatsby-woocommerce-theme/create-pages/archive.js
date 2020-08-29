@@ -10,6 +10,7 @@ query GET_ARCHIVES {
       id
       name
       uri
+      description
       image {
         ...ImageFragment
       }
