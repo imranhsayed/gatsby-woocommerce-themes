@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "./style.scss";
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
 
 import { isEmpty } from "lodash";
 
@@ -15,7 +17,7 @@ const ProductCarousel = ( { galleryImages } ) => {
 	useEffect( () => {
 		setNav1( slider1 )
 		setNav2( slider2 )
-	}, [slider1, slider2 ] );
+	}, [slider1, slider2] );
 
 	if ( isEmpty( galleryImages.nodes ) ) {
 		return null;
@@ -23,7 +25,7 @@ const ProductCarousel = ( { galleryImages } ) => {
 
 	return (
 		<div>
-			{/*First slider*/}
+			{/*First slider*/ }
 			<Slider
 				asNavFor={ nav2 }
 				ref={ slider => ( slider1 = slider ) }
@@ -34,21 +36,23 @@ const ProductCarousel = ( { galleryImages } ) => {
 						<div key={ galleryImage.id } className="top-product-carousel">
 							<div className="carousel-img-wrap carousel-img-wrap--product">
 								{ !isEmpty( galleryImage.mediaItemUrl ) ? (
-									<img
-										src={ galleryImage.mediaItemUrl }
-										alt={
-											!isEmpty( galleryImage.altText )
-												? galleryImage.altText
-												: galleryImage.title
-										}
-									/>
+									<Zoom>
+										<img
+											src={ galleryImage.mediaItemUrl }
+											alt={
+												!isEmpty( galleryImage.altText )
+													? galleryImage.altText
+													: galleryImage.title
+											}
+										/>
+									</Zoom>
 								) : null }
 							</div>
 						</div>
 					)
 				} ) }
 			</Slider>
-			{/*Second Slider*/}
+			{/*Second Slider*/ }
 			<Slider
 				asNavFor={ nav1 }
 				ref={ slider => ( slider2 = slider ) }

@@ -53,6 +53,7 @@
     "react-helmet": "^6.1.0",
     "react-js-pagination": "^3.0.3",
     "react-lazy-load-image-component": "^1.5.0",
+    "react-medium-image-zoom": "^4.3.1",
     "react-responsive": "^8.1.0",
     "react-slick": "^0.27.10",
     "sass-mq": "^5.0.1",
