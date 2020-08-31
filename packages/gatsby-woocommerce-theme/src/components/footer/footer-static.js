@@ -47,7 +47,7 @@ const Footer = ( { data } ) => {
 
 					{ footerMenuItems.edges.length ? (
 						<div className="footer-menu-items footer-widget">
-							<h6>About the site</h6>
+							<h2>About the site</h2>
 							<ul>
 								{ footerMenuItems.edges.map( ( menu ) => (
 									<li key={ menu.node.databaseId }>

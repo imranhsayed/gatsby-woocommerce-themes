@@ -7,6 +7,14 @@ fragment ProductsFragment on WpProduct {
         nodeType
         link
         description
+        galleryImages {
+          nodes {
+            id
+            title
+            altText
+            mediaItemUrl
+          }
+        }
         image {
 		  ...ImageFragment
 		}

@@ -230,7 +230,7 @@ const Register = ({ setLoggedIn }) => {
         {/* Submit Button */}
         <div className="form-group">
           <button
-            className="btn btn-primary"
+            className="btn btn-dark"
             disabled={registerLoading ? "disabled" : ""}
             type="submit"
           >

@@ -31,9 +31,9 @@ const Product = (props) => {
           {!isEmpty(product.image) ? (
             <LazyLoadImage
               alt={product.image.altText ? product.image.altText : ""}
-              height={imgWidth}
+              height={imgHeight}
               src={imgSrcUrl} // use normal <img> attributes as props
-              width={imgHeight}
+              width={imgWidth}
               effect="blur"
             />
           ) : !isEmpty(productImagePlaceholder) ? (
