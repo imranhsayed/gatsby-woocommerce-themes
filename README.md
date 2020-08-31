@@ -39,9 +39,20 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 |--------------------------------------------------------|-----------------|
 | [Imran Sayed](mailto:codeytek.academy@gmail.com)       |  @imranhsayed   |
 
-![](demos/demo1.gif)
+### Home Page demo
+![](demos/home-page.gif)
 
-![](demos/My-account.gif)
+### Serch, Archive, Pagination
+![](demos/search-archive-pagination.gif)
+
+### Add to Cart, Cart page, Checkout.
+![](demos/add-to-cart-cart-page-checkout.gif)
+
+### My account: Register
+![](demos/register.gif)
+
+### My account: Login
+![](demos/login.gif)
 
 ## 🚀 Set Up
 
