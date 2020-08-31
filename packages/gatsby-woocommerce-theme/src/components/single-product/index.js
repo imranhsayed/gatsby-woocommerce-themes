@@ -4,11 +4,14 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { isEmpty } from "lodash";
 import SocialShareCard from "../social-share-card";
+import ProductCarousel from "../product-carousel";
 
 const productImagePlaceholder = "https://via.placeholder.com/434";
 
 const SingleProduct = (props) => {
   const { product } = props;
+
+  console.warn( 'product', product );
 
   const hasImagesSizes =
     !isEmpty(product.image) && !isEmpty(product.image.mediaDetails.sizes);
@@ -22,6 +25,34 @@ const SingleProduct = (props) => {
     ? product.image.mediaDetails.sizes[0].height
     : 450;
 
+  const displayProductImages = () => {
+	  if ( !isEmpty( product.galleryImages ) ) {
+		  return <ProductCarousel galleryImages={ product.galleryImages }/>
+	  } else if ( !isEmpty(product.image) ) {
+		  return (
+			  <LazyLoadImage
+				  alt={product.image.altText ? product.image.altText : ""}
+				  height={imgWidth}
+				  src={imgSrcUrl} // use normal <img> attributes as props
+				  width={imgHeight}
+				  effect="blur"
+			  />
+		  )
+	  } else if( !isEmpty(productImagePlaceholder) ){
+	  	return (
+		    <LazyLoadImage
+			    alt="default"
+			    height="450"
+			    src={productImagePlaceholder}
+			    width="450"
+			    effect="blur"
+		    />
+	    )
+	  } else {
+	  	return  null;
+	  }
+  }
+
   return (
     // @TODO Need to handle Group products differently.
     !isEmpty(product) && "GroupProduct" !== product.nodeType ? (
@@ -29,23 +60,7 @@ const SingleProduct = (props) => {
         <div className="row">
           <div className="col-lg-4 col-md-6 mb-5">
             <div className="product-image">
-              {!isEmpty(product.image) ? (
-                <LazyLoadImage
-                  alt={product.image.altText ? product.image.altText : ""}
-                  height={imgWidth}
-                  src={imgSrcUrl} // use normal <img> attributes as props
-                  width={imgHeight}
-                  effect="blur"
-                />
-              ) : !isEmpty(productImagePlaceholder) ? (
-                <LazyLoadImage
-                  alt="default"
-                  height="450"
-                  src={productImagePlaceholder}
-                  width="450"
-                  effect="blur"
-                />
-              ) : null}
+	            { displayProductImages() }
             </div>
           </div>
           <div className="col-lg-4 col-md-6 mb-5">
