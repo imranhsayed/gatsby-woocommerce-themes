@@ -42,7 +42,7 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 ### Home Page demo
 ![](demos/home-page.gif)
 
-### Serch, Archive, Pagination
+### Search, Archive, Pagination
 ![](demos/search-archive-pagination.gif)
 
 ### Add to Cart, Cart page, Checkout.
