@@ -42,7 +42,7 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 ### Home Page demo
 ![](demos/home-page.gif)
 
-### Search, Archive, Pagination
+### Search, Archive, Pagination.
 ![](demos/search-archive-pagination.gif)
 
 ### Single product page with carousel, social share, image zoom
