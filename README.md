@@ -45,6 +45,9 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 ### Search, Archive, Pagination
 ![](demos/search-archive-pagination.gif)
 
+### Single product page with carousel, social share, image zoom
+![](demos/search-archive-pagination.gif)
+
 ### Add to Cart, Cart page, Checkout.
 ![](demos/add-to-cart-cart-page-checkout.gif)
 
