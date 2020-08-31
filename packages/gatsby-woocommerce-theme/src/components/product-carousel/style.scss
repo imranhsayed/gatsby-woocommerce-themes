@@ -1,35 +1,39 @@
 @import "../../sass/essentials";
 
 
-.product-image .slick-slide {
-	padding: 0 6px;
-	.bottom-product-carousel {
-		border: 1px solid transparent;
-		cursor: pointer;
-	}
+.product-image {
 
-	&.slick-current {
+	.slick-slide {
+		padding: 0 6px;
+
 		.bottom-product-carousel {
-			border: 1px solid $gray-900;
+			border: 1px solid transparent;
+			cursor: pointer;
+		}
+
+		&.slick-current {
+			.bottom-product-carousel {
+				border: 1px solid $gray-900;
+			}
 		}
 	}
-}
 
-.slick-next,
-.slick-prev{
+	.slick-next,
+	.slick-prev{
 
-	&::before {
-		color: $gray-700;
-		font-size: 25px;
+		&::before {
+			color: $gray-700;
+			font-size: 25px;
+		}
 	}
-}
 
-.slick-next {
-	right: 18px;
-	z-index: 2;
-}
+	.slick-next {
+		right: 18px;
+		z-index: 2;
+	}
 
-.slick-prev {
-	left: 12px;
-	z-index: 2;
+	.slick-prev {
+		left: 12px;
+		z-index: 2;
+	}
 }

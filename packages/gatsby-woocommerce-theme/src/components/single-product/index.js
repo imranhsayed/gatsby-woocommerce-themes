@@ -16,7 +16,6 @@ const SingleProduct = (props) => {
   const imgSrcUrl = hasImagesSizes
     ? product.image.sourceUrl
     : "";
-  const imgHeight = 640;
 
   const displayProductImages = () => {
 	  if ( !isEmpty( product.galleryImages.nodes ) ) {
@@ -25,7 +24,6 @@ const SingleProduct = (props) => {
 		  return (
 			  <LazyLoadImage
 				  alt={product.image.altText ? product.image.altText : ""}
-				  height={imgHeight}
 				  src={imgSrcUrl} // use normal <img> attributes as props
 				  effect="blur"
 			  />
