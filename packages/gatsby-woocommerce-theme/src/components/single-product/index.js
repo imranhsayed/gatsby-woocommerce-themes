@@ -16,25 +16,21 @@ const SingleProduct = (props) => {
   const hasImagesSizes =
     !isEmpty(product.image) && !isEmpty(product.image.mediaDetails.sizes);
   const imgSrcUrl = hasImagesSizes
-    ? product.image.mediaDetails.sizes[0].sourceUrl
+    ? product.image.sourceUrl
     : "";
-  const imgWidth = hasImagesSizes
-    ? product.image.mediaDetails.sizes[0].width
-    : 450;
-  const imgHeight = hasImagesSizes
-    ? product.image.mediaDetails.sizes[0].height
-    : 450;
+  const imgHeight = 640;
+
+  console.warn( 'product.image', product.image );
 
   const displayProductImages = () => {
-	  if ( !isEmpty( product.galleryImages ) ) {
+	  if ( !isEmpty( product.galleryImages.nodes ) ) {
 		  return <ProductCarousel galleryImages={ product.galleryImages }/>
 	  } else if ( !isEmpty(product.image) ) {
 		  return (
 			  <LazyLoadImage
 				  alt={product.image.altText ? product.image.altText : ""}
-				  height={imgWidth}
+				  height={imgHeight}
 				  src={imgSrcUrl} // use normal <img> attributes as props
-				  width={imgHeight}
 				  effect="blur"
 			  />
 		  )
@@ -58,12 +54,12 @@ const SingleProduct = (props) => {
     !isEmpty(product) && "GroupProduct" !== product.nodeType ? (
       <div className="single-product-page container py-5">
         <div className="row">
-          <div className="col-lg-4 col-md-6 mb-5">
+          <div className="col-lg-5 col-md-6 mb-5">
             <div className="product-image">
 	            { displayProductImages() }
             </div>
           </div>
-          <div className="col-lg-4 col-md-6 mb-5">
+          <div className="col-lg-7 col-md-6 mb-5">
             <h3>{product.name ? product.name : ""}</h3>
             {!isEmpty(product.description) ? (
               <p dangerouslySetInnerHTML={{ __html: product.description }} />

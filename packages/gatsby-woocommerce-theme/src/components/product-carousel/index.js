@@ -6,20 +6,6 @@ import { isEmpty } from "lodash";
 
 const ProductCarousel = ( { galleryImages } ) => {
 
-
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 300,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: true,
-		arrows: true,
-		fade: true,
-		pauseOnDotsHover: true,
-		pauseOnFocus: true,
-	};
-
 	let slider1 = null;
 	let slider2 = null;
 
@@ -43,6 +29,7 @@ const ProductCarousel = ( { galleryImages } ) => {
 			<Slider
 				asNavFor={ nav2 }
 				ref={ slider => ( slider1 = slider ) }
+				arrows={ true }
 			>
 				{ galleryImages.nodes.map( galleryImage => {
 					return (
@@ -70,7 +57,6 @@ const ProductCarousel = ( { galleryImages } ) => {
 				slidesToShow={ 3 }
 				swipeToSlide={ true }
 				focusOnSelect={ true }
-				dots={true}
 			>
 				{ galleryImages.nodes.map( galleryImage => {
 					return (
