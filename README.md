@@ -31,6 +31,7 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 13. My Account page ( with Login and Registration )
 14. Create an account on checkout.
 15. Social share.
+16. Product Carousel.
 
 ## 👨‍💻 Maintainer
 

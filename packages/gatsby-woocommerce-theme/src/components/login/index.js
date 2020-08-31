@@ -127,7 +127,7 @@ const Login = ({ setLoggedIn }) => {
           />
         </label>
         <br />
-        <button className="btn btn-primary mb-3" type="submit">
+        <button className="btn btn-dark mb-3" type="submit">
           Login
         </button>
         {loginLoading && (

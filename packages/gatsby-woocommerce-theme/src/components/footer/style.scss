@@ -49,8 +49,9 @@
 }
 
 .footer-menu-items {
-  h6 {
+  h2 {
     margin-bottom: 18px;
+	  font-size: 22px;
   }
 
   ul {
@@ -117,6 +118,10 @@
       fill: currentColor;
     }
   }
+
+	.youtube-svg {
+		margin-top: 4px;
+	}
 }
 
 @include mq($from: medium) {
@@ -164,6 +169,21 @@
 				transform: scaleX(1);
 			}
 		}
+	}
+
+	.gallery {
+		display: grid;
+		gap: 5px;
+		grid-template-columns: 2fr 2fr;
+	}
+}
+
+.widget_media_gallery {
+	//.attachment-thumbnail {
+	//	width: 92px !important;
+	//}
+	.widget-title {
+		margin-bottom: 24px;
 	}
 }
 

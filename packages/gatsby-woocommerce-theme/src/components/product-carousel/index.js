@@ -15,9 +15,7 @@ const ProductCarousel = ( { galleryImages } ) => {
 	useEffect( () => {
 		setNav1( slider1 )
 		setNav2( slider2 )
-	}, [] );
-
-	console.warn( 'galleryImages', galleryImages );
+	}, [slider1, slider2 ] );
 
 	if ( isEmpty( galleryImages.nodes ) ) {
 		return null;
@@ -33,8 +31,8 @@ const ProductCarousel = ( { galleryImages } ) => {
 			>
 				{ galleryImages.nodes.map( galleryImage => {
 					return (
-						<div key={ galleryImage.id } className="">
-							<div className="carousel-img-wrap">
+						<div key={ galleryImage.id } className="top-product-carousel">
+							<div className="carousel-img-wrap carousel-img-wrap--product">
 								{ !isEmpty( galleryImage.mediaItemUrl ) ? (
 									<img
 										src={ galleryImage.mediaItemUrl }
@@ -60,7 +58,7 @@ const ProductCarousel = ( { galleryImages } ) => {
 			>
 				{ galleryImages.nodes.map( galleryImage => {
 					return (
-						<div key={ galleryImage.id } className="">
+						<div key={ galleryImage.id } className="bottom-product-carousel">
 							<div className="carousel-img-wrap">
 								{ !isEmpty( galleryImage.mediaItemUrl ) ? (
 									<img

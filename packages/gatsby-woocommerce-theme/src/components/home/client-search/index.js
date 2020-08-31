@@ -3,6 +3,7 @@ import * as JsSearch from "js-search";
 import "./style.scss";
 import SearchResults from "../search-results";
 import Categories from "../categories";
+import SearchIcon from "../../icons/search-icon";
 
 class ClientSearch extends Component {
   state = {
@@ -135,6 +136,7 @@ class ClientSearch extends Component {
             placeholder={placeholder}
             autoComplete="off" // removes the autosearch suggestions
           />
+          <SearchIcon/>
         </form>
         <Categories categories={categories} category={category} />
         <SearchResults
