@@ -1,0 +1,53 @@
+.wishlist-btn {
+	position: relative;
+	padding-left: 34px !important;
+
+	.heart-icon {
+		position: absolute;
+		left: 9px;
+		top: -9px;
+		bottom: 0;
+		margin: auto;
+	}
+}
+
+.heart {
+	display: block;
+	width: 18px;
+	height: 18px;
+	position: relative;
+	margin: 1em auto;
+	transform-origin: 50% 50%;
+	transform: rotate(45deg) scale(1);
+	&:before {
+		content: "";
+		position: absolute;
+		display: block;
+		border-top-left-radius: 6px;
+		border-bottom-left-radius: 6px;
+		width: inherit;
+		height: 12px;
+		top: 6px;
+		left: 0;
+		background-color: #e5e3e3;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 12px;
+		top: 0;
+		left: 6px;
+		height: inherit;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+		background-color: #e5e3e3;
+	}
+
+	&.added {
+		&::after,
+		&:before {
+			background-color: tomato;
+		}
+	}
+}

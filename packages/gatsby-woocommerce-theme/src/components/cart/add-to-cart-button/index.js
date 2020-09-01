@@ -11,7 +11,7 @@ import "./style.scss";
 const AddToCart = (props) => {
   const { product } = props;
 
-  const productQryInput = {
+  const productQtyInput = {
     clientMutationId: v4(), // Generate a unique id.
     productId: product.productId,
   };
@@ -42,7 +42,7 @@ const AddToCart = (props) => {
     { data: addToCartRes, loading: addToCartLoading, error: addToCartError },
   ] = useMutation(ADD_TO_CART, {
     variables: {
-      input: productQryInput,
+      input: productQtyInput,
     },
     onCompleted: () => {
       // If error.

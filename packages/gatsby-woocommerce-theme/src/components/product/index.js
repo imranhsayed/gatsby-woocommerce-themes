@@ -5,6 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import { isEmpty } from "lodash";
 import "./style.scss";
+import AddToWishList from "../wishlist/add-to-wishlist";
 
 const productImagePlaceholder = "https://via.placeholder.com/434";
 
@@ -50,6 +51,7 @@ const Product = (props) => {
           <h3 className="card-header">{product.name ? product.name : ""}</h3>
           <h6 className="card-subtitle">{product.price}</h6>
           <AddToCartButton product={product} />
+          <AddToWishList product={ product } />
         </div>
       </div>
     ) : (

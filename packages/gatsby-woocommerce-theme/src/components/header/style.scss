@@ -281,3 +281,22 @@
 	display: flex;
 	align-items: center;
 }
+
+.wishlist-menu {
+	position: relative;
+	padding-right: 10px;
+}
+
+.wishlist-count {
+	top: -8px;
+	left: 13px;
+	padding-left: 5px;
+	padding-right: 5px;
+	line-height: 16px;
+	color: #fff;
+	min-height: 16px;
+	font-weight: 700;
+	border-radius: 50%;
+	background-color: #868484;
+	position: absolute;
+}

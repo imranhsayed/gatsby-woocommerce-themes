@@ -466,3 +466,62 @@ export const getDefaultOgImage = ( seo ) => {
 
 	return seo.social.facebook.defaultImage.sourceUrl;
 };
+
+/**
+ * Add to wish list
+ * @param {Object} productData Product data.
+ */
+export const addToWishList = ( productData ) => {
+
+	let updatedWishList = null;
+
+	// Get the existing value of wishlist from localStorage.
+	const existingWishList = JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
+
+	/**
+	 * If its the first item
+	 */
+
+	// Set it in localStorage and return.
+	if ( isEmpty( existingWishList ) ) {
+		updatedWishList = localStorage.setItem( 'woo_wishlist', JSON.stringify( {
+			productIds: [ productData.productId ],
+			products: [ productData ]
+			} )
+		);
+		return updatedWishList;
+	}
+
+	/**
+	 * If its not the first item
+	 */
+
+	// First set the updated wishlist to existing one.
+	updatedWishList = existingWishList;
+
+	// Then push the new items to existing array.
+	if ( ! existingWishList.productIds.includes( productData.productId )  ) {
+		updatedWishList.productIds.push( productData.productId );
+		updatedWishList.products.push( productData );
+	}
+
+	// Update the localStorage with updated items.
+	localStorage.setItem( 'woo_wishlist', JSON.stringify( updatedWishList ) )
+
+}
+
+/**
+ * Checks if the product with given id exists in the wishlist.
+ *
+ * @param productId
+ * @returns {boolean}
+ */
+export const isProductInWishList = ( productId ) => {
+	const existingWishList = JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
+
+	if ( ! isEmpty( existingWishList ) ) {
+		return existingWishList.productIds.includes( productId );
+	} else {
+		return false;
+	}
+}
