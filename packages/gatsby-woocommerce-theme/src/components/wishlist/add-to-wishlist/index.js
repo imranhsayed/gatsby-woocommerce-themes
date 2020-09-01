@@ -27,15 +27,17 @@ const AddToWishList = ( { product } ) => {
 		setInWishList( true );
 	}
 return (
-	<div>
+	<div className="wishlist-container">
+		{/*Add ot wishlist buttnon*/}
 		{ ! isInWishList ? (
-			<button onClick={ handleAddToWishList } className="wishlist-btn btn btn-outline-dark -mt-2">
-				<i className="heart-icon"><span className="heart"/></i> Add to Wishlist
+			<button onClick={ handleAddToWishList } className="wishlist-btn btn -mt-2">
+				<i className="heart-icon"><span className="heart"/></i>
 			</button>
 		) : (
+			// View
 			<Link to="/wishlist">
-				<button className="wishlist-btn woo-next-view-cart-btn btn btn-dark">
-					<i className="heart-icon"><span className="heart added"/></i> View WishList
+				<button className="wishlist-btn woo-next-view-cart-btn btn">
+					<i className="heart-icon"><span className="heart added"/></i>
 				</button>
 			</Link>
 		)}
