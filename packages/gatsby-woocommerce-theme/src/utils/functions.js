@@ -525,3 +525,7 @@ export const isProductInWishList = ( productId ) => {
 		return false;
 	}
 }
+
+export const getWishListProducts = () => {
+	return JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
+}
