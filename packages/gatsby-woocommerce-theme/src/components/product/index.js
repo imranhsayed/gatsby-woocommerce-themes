@@ -6,6 +6,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { isEmpty } from "lodash";
 import "./style.scss";
 import AddToWishList from "../wishlist/add-to-wishlist";
+import { configure } from "@storybook/react";
 
 const productImagePlaceholder = "https://via.placeholder.com/434";
 
@@ -30,21 +31,25 @@ const Product = (props) => {
       <div className="col-lg-4 col-md-6 mb-5">
         <Link to={product.link} className="product-image">
           {!isEmpty(product.image) ? (
-            <LazyLoadImage
-              alt={product.image.altText ? product.image.altText : ""}
-              height={imgHeight}
-              src={imgSrcUrl} // use normal <img> attributes as props
-              width={imgWidth}
-              effect="blur"
-            />
+			<figure>
+				<LazyLoadImage
+					alt={product.image.altText ? product.image.altText : ""}
+					height={imgHeight}
+					src={imgSrcUrl} // use normal <img> attributes as props
+					width={imgWidth}
+					effect="blur"
+				/>
+			</figure>
           ) : !isEmpty(productImagePlaceholder) ? (
-            <LazyLoadImage
-              alt="default"
-              height="450"
-              src={productImagePlaceholder}
-              width="450"
-              effect="blur"
-            />
+			<figure>
+				<LazyLoadImage
+					alt="default"
+					height="450"
+					src={productImagePlaceholder}
+					width="450"
+					effect="blur"
+				/>
+			</figure>
           ) : null}
         </Link>
         <div className="card-body text-center">
@@ -54,9 +59,7 @@ const Product = (props) => {
           <AddToWishList product={ product } />
         </div>
       </div>
-    ) : (
-      ""
-    )
+    ) : null
   );
 };
 

@@ -13,7 +13,7 @@ import Link from 'gatsby-link';
  * @return {jsx}
  */
 const WishListIcon = () => {
-	const [wishlistCount, setWishListCount] = useState( 0 );
+	const [wishlistCount, setWishListCount] = useState( null );
 
 	useEffect( () => {
 		const existingWishList = JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
@@ -25,8 +25,16 @@ const WishListIcon = () => {
 
 	return (
 		<Link to="/wishlist" className="wishlist-menu">
-			{ ! wishlistCount ? <HeartIcon/> : <HeartBlackIcon/> }
-			<span className="wishlist-count">{ wishlistCount }</span>
+			{ !wishlistCount ?
+				<HeartIcon/>
+				:
+				(
+					<>
+						<HeartBlackIcon/>
+						<span className="wishlist-count">{ wishlistCount }</span>
+					</>
+				)
+			}
 		</Link>
 	);
 }

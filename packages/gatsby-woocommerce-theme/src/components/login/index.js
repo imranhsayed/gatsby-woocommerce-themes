@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import cartSpinnerGif from "../../images/cart-spinner.gif";
-import { setAuth } from "../../utils/functions";
+import { sanitize, setAuth } from "../../utils/functions";
 import { isEmpty } from 'lodash';
 import { useMutation } from "@apollo/client";
 import LOGIN from "../../mutations/login";
@@ -101,7 +101,7 @@ const Login = ({ setLoggedIn }) => {
       {!isEmpty(errorMessage) && (
         <div
           className="alert alert-danger"
-          dangerouslySetInnerHTML={{ __html: errorMessage }}
+          dangerouslySetInnerHTML={{ __html: sanitize( errorMessage ) }}
         />
       )}
       <form onSubmit={onFormSubmit}>

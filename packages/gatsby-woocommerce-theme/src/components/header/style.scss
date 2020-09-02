@@ -42,6 +42,10 @@
 	  }
   }
 
+	figure {
+		margin-bottom: 0;
+	}
+
   .site-brand__logo {
     @include mq($until: small) {
       width: 50px;
