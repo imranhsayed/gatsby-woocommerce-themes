@@ -32,6 +32,7 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 14. Create an account on checkout.
 15. Social share.
 16. Product Carousel.
+17. Add to wishlist( even works offline )
 
 ## 👨‍💻 Maintainer
 
