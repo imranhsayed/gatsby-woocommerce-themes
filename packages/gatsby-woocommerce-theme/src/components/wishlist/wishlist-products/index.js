@@ -22,9 +22,7 @@ const WishlistProducts = ({ setWishList }) => {
 		notifyOnNetworkStatusChange: true,
 		onCompleted: ( data ) => {
 
-			console.warn( 'comp' );
-
-			// If the request is successfull updated products with fresh data
+			// If the request is sucessfull updated products with fresh data
 			if ( ! isEmpty( data.products.edges ) ) {
 				setProducts( data.products.edges );
 
