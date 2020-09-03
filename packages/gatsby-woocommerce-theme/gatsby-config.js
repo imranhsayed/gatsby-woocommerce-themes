@@ -76,8 +76,8 @@ module.exports = ({ wordPressUrl, gatsbySiteUrl, googleTagManagerId, fbAppId }) 
         short_name: `Phoenix`,
         start_url: `/`,
         background_color: `#eaeaea`,
-        theme_color: `#1e5663`,
-        display: `minimal-ui`,
+        theme_color: `#1e1e1e;`,
+        display: `standalone`,
         icon: `${__dirname}/src/images/favicon.png`, // For favicon- This path is relative to the root of the site.
       },
     },

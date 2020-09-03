@@ -1,5 +1,5 @@
 import Link from "gatsby-link";
-import { normalizePath } from "../../utils/functions";
+import { normalizePath, sanitize } from "../../utils/functions";
 import FacebookIcon from "../icons/facebook-icon";
 import TwitterIcon from "../icons/twitter-icon";
 import InstagramIcon from "../icons/instagram-icon";
@@ -34,13 +34,13 @@ const Footer = ( { data } ) => {
 				<div className="footer__top">
 					{ sidebarOne ? (
 						<div
-							dangerouslySetInnerHTML={ { __html: sidebarOne } }
+							dangerouslySetInnerHTML={ { __html: sanitize( sidebarOne ) } }
 							className="footer__sidebar-one footer-widget"
 						/>
 					) : null }
 					{ sidebarTwo ? (
 						<div
-							dangerouslySetInnerHTML={ { __html: sidebarTwo } }
+							dangerouslySetInnerHTML={ { __html: sanitize( sidebarTwo ) } }
 							className="footer__sidebar-two footer-widget"
 						/>
 					) : null }

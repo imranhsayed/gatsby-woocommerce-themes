@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
-import { isEmpty } from 'lodash';
+import { isEmpty, remove } from 'lodash';
+import DOMPurify from 'dompurify';
 
 export const normalizePath = (path) => {
   const pathStr = path.split("/");
@@ -466,3 +467,115 @@ export const getDefaultOgImage = ( seo ) => {
 
 	return seo.social.facebook.defaultImage.sourceUrl;
 };
+
+/**
+ * Add to wish list
+ * @param {Object} productData Product data.
+ */
+export const addToWishList = ( productData ) => {
+
+	let updatedWishList;
+
+	// Get the existing value of wishlist from localStorage.
+	const existingWishList = JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
+
+	/**
+	 * If its the first item
+	 */
+
+	// Set it in localStorage and return.
+	if ( isEmpty( existingWishList ) ) {
+		updatedWishList = addWishListToLocalStorage( {
+			productIds: [ productData.node.productId ],
+			products: [ productData ]
+		} );
+		return updatedWishList;
+	}
+
+	/**
+	 * If its not the first item
+	 */
+
+	// First set the updated wishlist to existing one.
+	updatedWishList = existingWishList;
+
+	// Then push the new items to existing array.
+	if ( ! existingWishList.productIds.includes( productData.node.productId )  ) {
+		updatedWishList.productIds.push( productData.node.productId );
+		updatedWishList.products.push( productData );
+	}
+
+	// Update the localStorage with updated items.
+	addWishListToLocalStorage( updatedWishList );
+
+}
+
+/**
+ * Remove item from the list.
+ *
+ * @param productId
+ * @param getWishList
+ * @param setWishList
+ */
+export const removeProductFromWishList = ( productId, getWishList, setWishList ) => {
+	const existingWishlist = getWishListProducts();
+	let updatedWishList;
+
+	if ( ! isEmpty( existingWishlist ) ) {
+		const updatedItems = {
+			productIds: remove( existingWishlist.productIds, ( id ) => { return productId !== id } ),
+			products: remove( existingWishlist.products, ( product ) => { return productId !== product.node.productId } )
+		}
+
+		updatedWishList = addWishListToLocalStorage( updatedItems  );
+
+		if ( 0 === updatedItems.productIds.length ) {
+			setWishList(null);
+		} else {
+			getWishList();
+		}
+
+		return updatedWishList;
+	}
+};
+
+/**
+ * Add wishlist products to localStorage.
+ *
+ * @param wishList
+ */
+export const addWishListToLocalStorage = (wishList) => {
+	return localStorage.setItem( 'woo_wishlist', JSON.stringify( wishList ) )
+}
+
+/**
+ * Checks if the product with given id exists in the wishlist.
+ *
+ * @param productId
+ * @returns {boolean}
+ */
+export const isProductInWishList = ( productId ) => {
+	const existingWishList = JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
+
+	if ( ! isEmpty( existingWishList ) ) {
+		return existingWishList.productIds.includes( productId );
+	} else {
+		return false;
+	}
+}
+
+export const getWishListProducts = () => {
+	return JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
+}
+
+/**
+ * Sanitize markup or text when used inside dangerouslysetInnerHTML
+ *
+ * @param {string} content Plain or html string.
+ *
+ * @return {string} Sanitized string
+ */
+export const sanitize = (content) => {
+	return process.browser ? DOMPurify.sanitize(content) : content
+}
+

@@ -32,6 +32,7 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 14. Create an account on checkout.
 15. Social share.
 16. Product Carousel.
+17. Add to wishlist( even works offline )
 
 ## 👨‍💻 Maintainer
 
@@ -73,13 +74,14 @@ rename client-config-example.js in packages/gatsby-woocommerce-theme directory t
 1. Download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
 
 a. [Headless CMS](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/headless-cms.zip)
-b. [wp-graphql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql.zip) - tested on ( v1.0.0 )
-c. [wp-graphiql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphiql.zip)
-d. [wp-graphql-woocommerce](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-woocommerce.zip)
-e. [wp-gatsby](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-gatsby.zip)
-f. [Yoast-SEO](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wordpress-seo.14.5.zip)
-g. [wp-graphql-yoast-seo](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-yoast-seo.zip)
-h. [wp-graphql-jwt-authentication](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-jwt-authentication.zip)
+b. [woocommerce](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/woocommerce.4.4.1.zip)
+c. [wp-graphql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql.zip) - tested on ( v1.0.0 )
+d. [wp-graphiql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphiql.zip)
+e. [wp-graphql-woocommerce](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-woocommerce.zip)
+f. [wp-gatsby](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-gatsby.zip)
+g. [Yoast-SEO](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wordpress-seo.14.5.zip)
+h. [wp-graphql-yoast-seo](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-yoast-seo.zip)
+i. [wp-graphql-jwt-authentication](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-jwt-authentication.zip)
 
 * You can follow the readme to setup [https://github.com/wp-graphql/wp-graphql-jwt-authentication#install-activate--setup](https://github.com/wp-graphql/wp-graphql-jwt-authentication#install-activate--setup)
 
@@ -92,15 +94,13 @@ h. [wp-graphql-jwt-authentication](https://github.com/imranhsayed/gatsby-woocomm
    ![](demos/footer-menu-demo.png)
    
 3. You can also set text widgets in #HCMS Footer #1 and #HCMS Footer #2 under Appearance  > Widgets in WordPress.
-4. Import all the ACF data from `wordpress/acf-data` json file of this repo, into WordPress by going to WordPress Dashboard > Custom Fields > Tools > Import
-5. Create a Home Page ( if there isn't one already )and make sure you have a home page and Location rule is set to Home page.
-![](demos/acf-home-screenshot.png)
-7. If isn't already set your site title, description and logo from WordPress customizer.
-8. Setup WooCommerce:
+4. Create a Home Page ( if there isn't one already )and make sure you have a home page and Location rule is set to Home page.
+5. If isn't already set your site title, description and logo from WordPress customizer.
+6. Setup WooCommerce:
 * Make sure WooCommerce Plugin is active in WordPress and the payment modes have been set from its settings.
 * You can also import default wooCommerce products that come with wooCommerce Plugin for development ( if you don't have any products in your WordPress install ) `WP Dashboard > Tools > Import > WooCommerce products(CSV)`: The WooCommerce default products csv file is available at wp-content/plugins/woocommerce/sample-data/sample_products.csv
 
-9. For home page carousel please upload same size product category images of dimensions `1900x600` 
+7. For home page carousel please upload same size product category images of dimensions `1900x600` 
 
 ## 🚀 Development
 

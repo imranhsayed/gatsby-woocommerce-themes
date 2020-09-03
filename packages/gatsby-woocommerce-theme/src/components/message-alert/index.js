@@ -1,4 +1,5 @@
 import React from 'react';
+import { sanitize } from "../../utils/functions";
 const MessageAlert = ( { message, success, onCloseButtonClick } ) => {
 
 	return (
@@ -9,7 +10,7 @@ const MessageAlert = ( { message, success, onCloseButtonClick } ) => {
 			</button>
 			<span
 				className={ success ? 'text-success' : 'text-danger' }
-				dangerouslySetInnerHTML={ { __html: message } }
+				dangerouslySetInnerHTML={ { __html: sanitize( message ) } }
 			/>
 		</div>
 

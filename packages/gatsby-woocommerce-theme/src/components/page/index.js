@@ -2,6 +2,7 @@ import React from "react";
 import { isEmpty } from "lodash";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "./style.scss";
+import { sanitize } from "../../utils/functions";
 
 const Page = (props) => {
   const { data } = props;
@@ -28,23 +29,25 @@ const Page = (props) => {
           <div className="row">
             <main className="page-content col-md-8">
               {!isEmpty(data.featuredImage) ? (
-                <LazyLoadImage
-                  alt={
-                    data.featuredImage.node.altText
-                      ? data.featuredImage.node.altText
-                      : ""
-                  }
-                  height={imgWidth}
-                  src={imgSrcUrl} // use normal <img> attributes as props
-                  width={imgHeight}
-                  effect="blur"
-                />
+				<figure>
+					<LazyLoadImage
+						alt={
+							data.featuredImage.node.altText
+								? data.featuredImage.node.altText
+								: ""
+						}
+						height={imgWidth}
+						src={imgSrcUrl} // use normal <img> attributes as props
+						width={imgHeight}
+						effect="blur"
+					/>
+				</figure>
               ) : null}
 
               {!isEmpty(data.content) ? (
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: data.content,
+                    __html: sanitize( data.content ),
                   }}
                 />
               ) : null}

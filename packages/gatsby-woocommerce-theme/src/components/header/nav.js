@@ -10,6 +10,7 @@ import classnames from 'classnames';
 import DropdownIcon from '../icons/dropdown-icon';
 import { normalizePath } from "../../utils/functions";
 import CartIcon from "../cart/cart-icon";
+import WishListIcon from "../wishlist/wishlist-icon";
 
 const Nav = ( props ) => {
 
@@ -141,6 +142,7 @@ const Nav = ( props ) => {
 				</div>
 			</nav>
 			<div className="cart-icon-wrap">
+				<WishListIcon/>
 				<CartIcon/>
 				{/*Burger menu*/}
 				<button

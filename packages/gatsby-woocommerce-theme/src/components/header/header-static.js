@@ -22,13 +22,15 @@ const Header = ({ data }) => {
       <div className="site-header">
         <div className="site-brand">
           <Link to="/">
-            <img
-              className="site-brand__logo"
-              src={siteLogoURL}
-              width="68"
-              height="55"
-              alt="header logo"
-            />
+	          <figure>
+		          <img
+			          className="site-brand__logo"
+			          src={siteLogoURL}
+			          width="68"
+			          height="55"
+			          alt="header logo"
+		          />
+	          </figure>
           </Link>
           <div className="site-brand__content">
             <h2 className="screen-reader-text site-brand__title">

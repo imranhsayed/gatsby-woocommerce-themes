@@ -34,6 +34,7 @@
     "bootstrap": "^4.5.2",
     "classnames": "^2.2.6",
     "cross-fetch": "^3.0.5",
+    "dompurify": "^2.0.14",
     "gatsby-link": "^2.4.13",
     "gatsby-plugin-google-tagmanager": "^2.3.11",
     "gatsby-plugin-manifest": "^2.4.18",
