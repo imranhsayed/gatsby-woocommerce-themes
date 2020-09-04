@@ -109,40 +109,17 @@ const CartItemsContainer = () => {
           <h1 className="mt-5 woo-next-cart-heading">Cart</h1>
           <div className="woo-next-cart-table-row row">
             <div className="woo-next-cart-table col-md-8 mb-md-0 mb-5">
-              <table className="table table-hover">
-                <thead>
-                  {/* eslint-disable */}
-                  <tr className="woo-next-cart-head-container">
-                    <th className="woo-next-cart-heading-el" scope="col" />
-                    <th className="woo-next-cart-heading-el" scope="col" />
-                    <th className="woo-next-cart-heading-el" scope="col">
-                      Product
-                    </th>
-                    <th className="woo-next-cart-heading-el" scope="col">
-                      Price
-                    </th>
-                    <th className="woo-next-cart-heading-el" scope="col">
-                      Quantity
-                    </th>
-                    <th className="woo-next-cart-heading-el" scope="col">
-                      Total
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {cart.products.length &&
-                    cart.products.map((item) => (
-                      <CartItem
-                        key={item.productId}
-                        item={item}
-                        updateCartProcessing={updateCartProcessing}
-                        products={cart.products}
-                        handleRemoveProductClick={handleRemoveProductClick}
-                        updateCart={updateCart}
-                      />
-                    ))}
-                </tbody>
-              </table>
+	            {cart.products.length &&
+	            cart.products.map((item) => (
+		            <CartItem
+			            key={item.productId}
+			            item={item}
+			            updateCartProcessing={updateCartProcessing}
+			            products={cart.products}
+			            handleRemoveProductClick={handleRemoveProductClick}
+			            updateCart={updateCart}
+		            />
+	            ))}
 
               {/*Clear entire cart*/}
               <div className="clear-cart">
