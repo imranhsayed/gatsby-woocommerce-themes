@@ -555,6 +555,9 @@ export const addWishListToLocalStorage = (wishList) => {
  * @returns {boolean}
  */
 export const isProductInWishList = ( productId ) => {
+	if ( ! process.browser ) {
+		return null;
+	}
 	const existingWishList = JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
 
 	if ( ! isEmpty( existingWishList ) ) {
@@ -565,6 +568,9 @@ export const isProductInWishList = ( productId ) => {
 }
 
 export const getWishListProducts = () => {
+	if ( ! process.browser ) {
+		return null;
+	}
 	return JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
 }
 
