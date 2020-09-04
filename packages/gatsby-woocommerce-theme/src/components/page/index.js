@@ -3,6 +3,7 @@ import { isEmpty } from "lodash";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "./style.scss";
 import { sanitize } from "../../utils/functions";
+import Aside from "../aside";
 
 const Page = (props) => {
   const { data } = props;
@@ -52,11 +53,7 @@ const Page = (props) => {
                 />
               ) : null}
             </main>
-            <aside className="aside col-md-4">
-              {/* @TODO Widget */}
-              <h4>Sidebar</h4>
-              <p>lorem ipsum</p>
-            </aside>
+			<Aside categories={ data.categories }/>
           </div>
         </div>
       ) : (

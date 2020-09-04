@@ -156,7 +156,7 @@ const CheckoutForm = () => {
               <PaymentModes input={input} handleOnChange={handleOnChange} />
               <div className="woo-next-place-order-btn-wrap mt-5">
                 <button
-                  className="woo-next-large-black-btn woo-next-place-order-btn btn btn-primary"
+                  className="woo-next-large-black-btn woo-next-place-order-btn btn btn-dark"
                   type="submit"
                 >
                   Place Order

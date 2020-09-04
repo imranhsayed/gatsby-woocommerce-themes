@@ -60,8 +60,8 @@ module.exports = async ( { actions, graphql } ) => {
 					let productsData = product.node;
 					productsData.categoriesData = [];
 
-					productsData.productCategories.nodes.map( category => {
-						productsData.categoriesData.push( category.name );
+					productsData.productCategories.nodes.map( categoryItem => {
+						productsData.categoriesData.push( categoryItem.name );
 					} );
 
 					allTheProducts.push( productsData );
@@ -84,7 +84,7 @@ module.exports = async ( { actions, graphql } ) => {
 				page,
 				categories,
 				allProducts,
-				category: 'all',
+				categoryName: 'all',
 				postSearchData: {
 					products: allProducts,
 					options: {

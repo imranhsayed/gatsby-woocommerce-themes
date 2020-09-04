@@ -62,7 +62,7 @@ const WishlistProducts = ({ setWishList }) => {
 								/>
 							)
 						})}
-						{ loading && <span>Loading...</span> }
+						{ loading && <div style={{ height: '630px' }}>Loading...</div> }
 					</div>
 				</div>
 			</div>

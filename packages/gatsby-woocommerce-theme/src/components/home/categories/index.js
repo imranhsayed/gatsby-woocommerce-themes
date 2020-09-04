@@ -12,12 +12,12 @@ const Categories = (props) => {
   }
 
   return (
-    <div className="categories-list-wrap">
+    <div className="categories-list-wrap" id="archive">
       {categories.nodes.length ? (
         <ul className="categories-list">
           <Link
             className={`categories-link ${"all" === category ? "active" : ""}`}
-            to="/"
+            to="/#archive"
           >
             All
           </Link>
@@ -27,7 +27,7 @@ const Categories = (props) => {
               className={`categories-link ${
                 category.uri === categoryItem.uri ? "active" : ""
               } `}
-              to={categoryItem.uri}
+              to={`${categoryItem.uri}#archive`}
             >
               {categoryItem.name}
             </Link>

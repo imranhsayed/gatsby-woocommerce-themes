@@ -12,7 +12,7 @@ const FrontPage = ( props ) => {
 		      pageContext: {
 			      page: { title, seo, uri },
 			      categories,
-			      category,
+			      categoryName,
 			      postSearchData: { products, options }
 		      }
 	      } = props;
@@ -34,7 +34,7 @@ const FrontPage = ( props ) => {
 							products={ products }
 							initialProducts={ products }
 							engine={ options }
-							category={ category }
+							category={ categoryName }
 							categories={ categories }
 						/>
 					</>

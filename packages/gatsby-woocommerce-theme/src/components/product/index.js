@@ -11,17 +11,18 @@ const productImagePlaceholder = "https://via.placeholder.com/434";
 
 const Product = (props) => {
   const { product } = props;
+  console.warn( 'ppr', product );
 
   const hasImagesSizes =
     !isEmpty(product.image) && !isEmpty(product.image.mediaDetails.sizes);
   const imgSrcUrl = hasImagesSizes
-    ? product.image.mediaDetails.sizes[0].sourceUrl
+    ? product.image.mediaDetails.sizes[3].sourceUrl
     : "";
   const imgWidth = hasImagesSizes
-    ? product.image.mediaDetails.sizes[0].width
+    ? product.image.mediaDetails.sizes[3].width
     : 450;
   const imgHeight = hasImagesSizes
-    ? product.image.mediaDetails.sizes[0].height
+    ? product.image.mediaDetails.sizes[3].height
     : 450;
 
   return (

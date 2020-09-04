@@ -192,7 +192,7 @@ const CartItemsContainer = () => {
                 </tbody>
               </table>
               <Link to="/checkout">
-                <button className="btn btn-primary woo-next-large-black-btn">
+                <button className="btn btn-dark woo-next-large-black-btn">
                   <span className="woo-next-cart-checkout-txt">
                     Proceed to Checkout
                   </span>

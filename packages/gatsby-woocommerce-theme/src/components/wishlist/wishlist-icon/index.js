@@ -31,7 +31,8 @@ const WishListIcon = () => {
 				(
 					<>
 						<HeartBlackIcon/>
-						<span className="wishlist-count">{ wishlistCount }</span>
+						{/* TODO to be handled later to use React Context API, to store these information globally*/}
+						{/*<span className="wishlist-count">{ wishlistCount }</span>*/}
 					</>
 				)
 			}

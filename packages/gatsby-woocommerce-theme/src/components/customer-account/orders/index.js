@@ -3,8 +3,10 @@ import { useQuery } from "@apollo/client";
 import GET_CUSTOMER_ORDER from "../../../queries/get-customer-orders";
 import { isEmpty } from "lodash";
 import { getFormattedDate } from "../../../utils/functions";
+import Link from 'gatsby-link'
 
 const Orders = ({ authData }) => {
+
   const {
     user: { id },
   } = authData;
@@ -24,9 +26,11 @@ const Orders = ({ authData }) => {
     customer: { orders },
   } = data;
 
+	console.warn( 'prder', orders );
+
   return (
     <div className="">
-      {!isEmpty(orders)
+      {!isEmpty(orders.edges)
         ? orders.edges.map((order) => {
             return (
               <div className="" key={order.node.orderId}>
@@ -49,7 +53,12 @@ const Orders = ({ authData }) => {
               </div>
             );
           })
-        : null}
+        : (
+        	<div className="p-3">
+		        <h4 className="mb-3">No orders found</h4>
+		        <Link to="/"><button className="btn-outline-dark" style={{ fontSize: '12px', padding: '8px 12px' }}>Shop now</button></Link>
+	        </div>
+	      )}
     </div>
   );
 };

@@ -77,15 +77,15 @@ module.exports = async ( { actions, graphql } ) => {
 	// When the above fetchPosts is resolved, then create page and pass the data as pageContext to the page template.
 	await fetchPosts().then( ( { categories, allProducts } ) => {
 
-		categories.nodes.length && categories.nodes.map( ( category ) => {
+		categories.nodes.length && categories.nodes.map( ( categoryItem ) => {
 
 			createPage( {
-				path: category.uri,
+				path: categoryItem.uri,
 				component: slash( archivePageTemplate ),
 				context: {
 					categories,
 					allProducts,
-					category,
+					category: categoryItem,
 					postSearchData: {
 						products: allProducts,
 						options: {

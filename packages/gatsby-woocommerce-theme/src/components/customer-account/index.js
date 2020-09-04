@@ -38,7 +38,7 @@ const tabItems = [
     id: 5,
     title: "Logout",
     icon: "tabitem__icon tab-logout",
-    content: null,
+	content: "",
   },
 ];
 
@@ -62,7 +62,7 @@ const TabItemComponent = ({
 };
 
 const CustomerAccount = ({ handleLogout }) => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(1);
 
   return (
     <div className="row">

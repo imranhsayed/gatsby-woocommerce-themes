@@ -28,6 +28,13 @@ query GET_PAGES {
       }
     }
   }
+  categories: allWpProductCategory(limit: 5) {
+    nodes {
+      id
+      name
+      uri
+    }
+  }
 }
 ${ ImageFragment }
 ${ SeoFragment }
@@ -43,14 +50,14 @@ module.exports = async ( { actions, graphql } ) => {
 		return await graphql( GET_PAGES )
 			.then( ( { data } ) => {
 
-				const { pages } = data;
+				const { pages, categories } = data;
 
-				return { pages: pages.nodes };
+				return { pages: pages.nodes, categories: categories.nodes };
 			} );
 	};
 
 	// When the above fetchPosts is resolved, then loop through the results i.e pages to create pages.
-	await fetchPosts().then( ( { pages } ) => {
+	await fetchPosts().then( ( { pages, categories } ) => {
 
 		// 2. Create Single PAGE: Loop through all pages and create single pages for pages.
 		pages &&
@@ -62,7 +69,7 @@ module.exports = async ( { actions, graphql } ) => {
 				createPage( {
 					path: `${ page.uri }`,
 					component: slash( singlePageTemplate ),
-					context: { ...page }, // pass single page data in context, so its available in the singlePageTemplate in props.pageContext.
+					context: { ...page, categories }, // pass single page data in context, so its available in the singlePageTemplate in props.pageContext.
 				} );
 
 			}
