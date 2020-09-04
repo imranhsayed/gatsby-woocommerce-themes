@@ -73,7 +73,7 @@ module.exports = ({ wordPressUrl, gatsbySiteUrl, googleTagManagerId, fbAppId }) 
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Gatsby WooCommerce Theme`,
-        short_name: `Phoenix`,
+        short_name: `Electra`,
         start_url: `/`,
         background_color: `#eaeaea`,
         theme_color: `#1e1e1e`,
