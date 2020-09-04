@@ -1,8 +1,14 @@
+@import "../../../sass/essentials";
+
 .product-container > div {
 	position: relative;
 	.wishlist-container {
-		opacity: 0;
+		opacity: 1;
 		transition: 0.5s;
+
+		@include mq( large ) {
+			opacity: 0;
+		}
 	}
 	&:hover {
 		.wishlist-container {
@@ -47,7 +53,7 @@
 		top: 6px;
 		left: 0;
 		background-color: #343b3f;
-		box-shadow: 0px 0px 15px #999;
+		box-shadow: 0 0 15px #999;
 	}
 	&:after {
 		content: "";
