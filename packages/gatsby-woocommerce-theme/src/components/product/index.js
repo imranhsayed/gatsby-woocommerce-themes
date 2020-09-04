@@ -11,7 +11,6 @@ const productImagePlaceholder = "https://via.placeholder.com/434";
 
 const Product = (props) => {
   const { product } = props;
-  console.warn( 'ppr', product );
 
   const hasImagesSizes =
     !isEmpty(product.image) && !isEmpty(product.image.mediaDetails.sizes);

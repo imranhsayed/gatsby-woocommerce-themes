@@ -1,18 +1,19 @@
-import React, { useContext } from 'react';
-import { AppContext } from "./../../context/AppContext";
-import Link from 'gatsby-link';
+import React, { useContext, useState } from 'react';
 import './style.scss';
+import CartDropDown from "../cart-dropdown";
+import { AppContext } from "../../context/AppContext";
 
 const CartIcon = () => {
 
 	const [ cart ] = useContext( AppContext );
+	const [ isDropdownOpen, setIsDropdownOpen ] = useState( false );
 
 	const productsCount = ( null !== cart && Object.keys( cart ).length ) ? cart.totalProductsCount : '';
 	const totalPrice = ( null !== cart && Object.keys( cart ).length ) ? cart.totalProductsPrice : '';
 
 	return (
 		<>
-			<Link to="/cart">
+			<button className="woo-menu-cart-icon" onClick={ () => setIsDropdownOpen( ! isDropdownOpen ) }>
 					<div className="woo-next-cart-wrap">
 						{ totalPrice ? <span className="woo-next-cart-price mr-2">{ totalPrice }</span> : '' }
 						<span className="woo-next-cart-icon-container">
@@ -20,7 +21,8 @@ const CartIcon = () => {
 							{ productsCount ? <span className="woo-next-cart-count">{ productsCount }</span> : '' }
 						</span>
 					</div>
-			</Link>
+			</button>
+			<CartDropDown isDropdownOpen={ isDropdownOpen }/>
 		</>
 
 	)

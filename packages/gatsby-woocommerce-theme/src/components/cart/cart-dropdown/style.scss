@@ -1,0 +1,120 @@
+@import "../../../sass/essentials";
+
+.shopping-cart {
+	margin: 20px 0;
+	float: right;
+	background: white;
+	width: 320px;
+	border-radius: 3px;
+	padding: 20px;
+	position: absolute;
+	top: 72px;
+	right: 0;
+	z-index: 2;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	opacity: 0;
+	transition: opacity 0.3s linear;
+
+	&.is-open {
+		opacity: 1;
+	}
+
+	@include mq( small ) {
+		right: -15px;
+	}
+
+	.shopping-cart-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.shopping-cart-header {
+		border-bottom: 1px solid #E8E8E8;
+		padding-bottom: 15px;
+	}
+
+	.cart-icon {
+		color: #515783;
+		font-size: 24px;
+		margin-right: 7px;
+	}
+
+	.badge {
+		background-color: #6394F8;
+		border-radius: 10px;
+		color: white;
+		display: inline-block;
+		font-size: 12px;
+		line-height: 1;
+		padding: 3px 7px;
+		text-align: center;
+		vertical-align: middle;
+		white-space: nowrap;
+	}
+
+	.lighter-text {
+		color: #ABB0BE;
+	}
+
+	.main-color-text {
+		color: #6394F8;
+	}
+
+	.shopping-cart-items {
+		padding-top: 20px;
+	}
+
+	.shopping-cart-items {
+		li {
+			margin-bottom: 18px;
+		}
+
+		figure {
+			float: left;
+			margin-right: 12px;
+		}
+
+		.item-name {
+			display: block;
+			padding-top: 10px;
+			font-size: 16px;
+		}
+
+		.item-price {
+			color: #6394F8;
+			margin-right: 8px;
+		}
+
+		.item-quantity {
+			color: #ABB0BE;
+		}
+	}
+
+	&::after {
+		bottom: 100%;
+		left: 89%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-bottom-color: white;
+		border-width: 8px;
+		margin-left: -8px;
+	}
+
+	.button {
+		background: #6394F8;
+		color: white;
+		text-align: center;
+		padding: 12px;
+		text-decoration: none;
+		display: block;
+		border-radius: 3px;
+		font-size: 16px;
+		margin: 25px 0 15px 0;
+	}
+
+}

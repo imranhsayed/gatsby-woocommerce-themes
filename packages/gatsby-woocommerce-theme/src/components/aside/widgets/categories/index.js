@@ -5,8 +5,6 @@ import './style.scss'
 
 const CategoryWidget = ( { categories } ) => {
 
-	console.warn( 'categories', categories );
-
 	if ( isEmpty( categories ) ) {
 		return null;
 	}
