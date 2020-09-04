@@ -4,6 +4,7 @@ import { getUpdatedItems } from "../../../utils/functions";
 
 import cartSpinnerGif from '../../../images/cart-spinner.gif';
 import './style.scss';
+import isEmpty from "validator/es/lib/isEmpty";
 
 const CartItem = ( {
 	                   item,
@@ -23,19 +24,24 @@ const CartItem = ( {
 	 *
 	 * @return {void}
 	 */
-	const handleQtyChange = ( event, cartKey ) => {
+	const handleQtyChange = ( event, cartKey, type ) => {
 
 		if ( process.browser ) {
 
 			event.stopPropagation();
+			let newQty;
 
 			// If the previous update cart mutation request is still processing, then return.
-			if ( updateCartProcessing ) {
+			if ( updateCartProcessing || ( 'decrement' === type && 1 === productCount ) ) {
 				return;
 			}
 
-			// If the user tries to delete the count of product, set that to 1 by default ( This will not allow him to reduce it less than zero )
-			const newQty = ( event.target.value ) ? parseInt( event.target.value ) : 1;
+			if ( ! isEmpty( type ) ) {
+				newQty = 'increment' === type ? productCount + 1 : productCount -1;
+			} else {
+				// If the user tries to delete the count of product, set that to 1 by default ( This will not allow him to reduce it less than zero )
+				newQty = ( event.target.value ) ? parseInt( event.target.value ) : 1;
+			}
 
 			// Set the new qty in state.
 			setProductCount( newQty );
@@ -75,18 +81,22 @@ const CartItem = ( {
 			<td className="woo-next-cart-element">{ ( 'string' !== typeof item.price ) ? item.price.toFixed( 2 ) : item.price }</td>
 
 			{/* Qty Input */ }
-			<td className="woo-next-cart-element woo-next-cart-qty">
-				{/* @TODO Need to update this with graphQL query */ }
-				<input
-					type="number"
-					min="1"
-					data-cart-key={ item.cartKey }
-					className={ `woo-next-cart-qty-input form-control ${ updateCartProcessing ? 'woo-next-cart-disabled' : '' } ` }
-					value={ productCount }
-					onChange={ ( event ) => handleQtyChange( event, item.cartKey ) }
-				/>
-				{ updateCartProcessing ?
-					<img className="woo-next-cart-item-spinner" src={ cartSpinnerGif } alt="spinner"/> : '' }
+			<td className="woo-next-cart-element woo-next-cart-qty" >
+				<div style={{ display: 'flex', alignItems: 'center' }}>
+					<button className="increment-btn" onClick={( event ) => handleQtyChange( event, item.cartKey, 'decrement' )} >-</button>
+					<input
+						type="number"
+						min="1"
+						style={{ textAlign: 'center', width: '60px', margin: '0 8px 0 8px' }}
+						data-cart-key={ item.cartKey }
+						className={ `woo-next-cart-qty-input form-control ${ updateCartProcessing ? 'woo-next-cart-disabled' : '' } ` }
+						value={ productCount }
+						onChange={ ( event ) => handleQtyChange( event, item.cartKey, '' ) }
+					/>
+					<button className="decrement-btn" onClick={( event ) => handleQtyChange( event, item.cartKey, 'increment' )}>+</button>
+					{ updateCartProcessing ?
+						<img className="woo-next-cart-item-spinner" src={ cartSpinnerGif } alt="spinner"/> : '' }
+				</div>
 			</td>
 			<td className="woo-next-cart-element">{ ( 'string' !== typeof item.totalPrice ) ? item.totalPrice.toFixed( 2 ) : item.totalPrice }</td>
 		</tr>
