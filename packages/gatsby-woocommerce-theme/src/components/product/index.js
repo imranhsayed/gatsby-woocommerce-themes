@@ -6,7 +6,6 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import { isEmpty } from "lodash";
 import "./style.scss";
 import AddToWishList from "../wishlist/add-to-wishlist";
-import { configure } from "@storybook/react";
 
 const productImagePlaceholder = "https://via.placeholder.com/434";
 

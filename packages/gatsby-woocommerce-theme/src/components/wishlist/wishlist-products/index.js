@@ -39,6 +39,7 @@ const WishlistProducts = ({ setWishList }) => {
 		}
 	});
 
+	/* eslint-disable */
 	useEffect(() => {
 		getWishList()
 	}, [])

@@ -52,7 +52,7 @@ const WishlistProduct = (props) => {
 					<h6 className="card-subtitle">{product.price}</h6>
 					{ 'EXTERNAL' !== product.type ? <AddToCartButton product={product} /> : (
 						<div className="mb-5">
-							<a href={product.externalUrl} target="_blank">
+							<a href={product.externalUrl} target="_blank" rel="noreferrer nofollow">
 								<button className="btn btn-outline-dark">Buy Now</button>
 							</a>
 						</div>

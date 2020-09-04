@@ -49,12 +49,14 @@ const TabItemComponent = ({
   isActive = false,
 }) => {
   return (
-    <div
-      className={isActive ? "tabitem" : "tabitem tabitem--inactive"}
-      onClick={onItemClicked}
-    >
-      <i className={icon} />
-      <p className="tabitem__title">{title}</p>
+  	<div className={isActive ? "tabitem" : "tabitem tabitem--inactive"}>
+	    <button
+		    onClick={onItemClicked}
+		    style={{ width: '100%' }}
+	    >
+		    <i className={icon} />
+		    <p className="tabitem__title">{title}</p>
+	    </button>
     </div>
   );
 };

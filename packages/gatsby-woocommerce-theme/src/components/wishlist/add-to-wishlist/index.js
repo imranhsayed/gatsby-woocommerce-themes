@@ -8,6 +8,7 @@ const AddToWishList = ( { product } ) => {
 
 	const [isInWishList, setInWishList] = useState( false );
 
+	/* eslint-disable */
 	useEffect( () => {
 		const isItemInWishList = isProductInWishList( product.productId );
 		setInWishList( isItemInWishList );
