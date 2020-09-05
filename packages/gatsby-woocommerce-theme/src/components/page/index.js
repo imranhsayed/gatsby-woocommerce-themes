@@ -53,7 +53,7 @@ const Page = (props) => {
                 />
               ) : null}
             </main>
-			<Aside categories={ data.categories }/>
+			<Aside categories={ data.categoriesData }/>
           </div>
         </div>
       ) : (

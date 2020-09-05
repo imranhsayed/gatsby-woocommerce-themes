@@ -52,12 +52,12 @@ module.exports = async ( { actions, graphql } ) => {
 
 				const { pages, categories } = data;
 
-				return { pages: pages.nodes, categories: categories.nodes };
+				return { pages: pages.nodes, categoriesData: categories.nodes };
 			} );
 	};
 
 	// When the above fetchPosts is resolved, then loop through the results i.e pages to create pages.
-	await fetchPosts().then( ( { pages, categories } ) => {
+	await fetchPosts().then( ( { pages, categoriesData } ) => {
 
 		// 2. Create Single PAGE: Loop through all pages and create single pages for pages.
 		pages &&
@@ -69,7 +69,7 @@ module.exports = async ( { actions, graphql } ) => {
 				createPage( {
 					path: `${ page.uri }`,
 					component: slash( singlePageTemplate ),
-					context: { ...page, categories }, // pass single page data in context, so its available in the singlePageTemplate in props.pageContext.
+					context: { ...page, categoriesData }, // pass single page data in context, so its available in the singlePageTemplate in props.pageContext.
 				} );
 
 			}

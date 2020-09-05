@@ -23,7 +23,8 @@ const CartDropDown = ({ isDropdownOpen }) => {
 			<div className="shopping-cart-header">
 				<div className="cart-icon-wrp">
 					<Link to="/cart">
-						<i className="cart-icon">🛒</i>
+						{/* eslint-disable */}
+						<span className="cart-icon" role="img">🛒</span>
 						<span className="badge">{ productsCount }</span>
 					</Link>
 				</div>

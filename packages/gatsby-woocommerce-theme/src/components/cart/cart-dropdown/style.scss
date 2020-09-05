@@ -14,6 +14,8 @@
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	opacity: 0;
 	transition: opacity 0.3s linear;
+	color: #222222;
+	font-weight: bold;
 
 	&.is-open {
 		opacity: 1;
@@ -41,7 +43,7 @@
 	}
 
 	.badge {
-		background-color: #6394F8;
+		background-color: #fd7e35;
 		border-radius: 10px;
 		color: white;
 		display: inline-block;
@@ -58,7 +60,7 @@
 	}
 
 	.main-color-text {
-		color: #6394F8;
+		color: #222222;
 	}
 
 	.shopping-cart-items {
@@ -84,12 +86,13 @@
 		}
 
 		.item-price {
-			color: #6394F8;
 			margin-right: 8px;
+			color: #222222;
 		}
 
 		.item-quantity {
 			color: #ABB0BE;
+			font-weight: normal;
 		}
 	}
 
@@ -108,7 +111,7 @@
 	}
 
 	.button {
-		background: #6394F8;
+		background: #FD7E35;
 		color: white;
 		text-align: center;
 		padding: 12px;
