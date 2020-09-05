@@ -5,7 +5,7 @@
 ![Contributors](https://img.shields.io/github/contributors/imranhsayed/gatsby-woocommerce-themes?color=blue)
 ![Follow](https://img.shields.io/github/followers/imranhsayed?label=Please%20follow%20%20to%20support%20my%20work%20%F0%9F%99%8F&style=social)
 
-- A Gatsby theme for WooCommerce, using Decoupled Architecture.
+- A Gatsby theme for WooCommerce, using Decoupled Architecture
 - Front end in React
 - Backend in WordPress.
 
