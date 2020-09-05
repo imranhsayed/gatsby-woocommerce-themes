@@ -1,11 +1,16 @@
-@import "../../../sass/0-settings/colors";
+@import "../../../sass/essentials";
+
 .categories-list-wrap {
   -webkit-box-shadow: 0 8px 8px -4px rgba(40, 44, 63, 0.04);
   box-shadow: 0 8px 8px -4px rgba(40, 44, 63, 0.04);
   width: 100%;
-  margin-top: 100px;
   display: flex;
-	padding-bottom: 16px;
+  padding-bottom: 16px;
+	margin-top: 24px;
+
+	@include mq( small ) {
+		margin-top: 100px;
+	}
 
   .categories-list {
     display: flex;

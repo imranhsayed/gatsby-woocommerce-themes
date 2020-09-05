@@ -64,7 +64,7 @@ const CartItem = ( {
 	};
 
 	return (
-		<div className="row">
+		<div className="row cart-items-wrap">
 			<div className="col-md-3 cart-left-col">
 				<figure>
 					<LazyLoadImage

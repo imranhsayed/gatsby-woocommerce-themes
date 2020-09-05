@@ -39,6 +39,14 @@
 	}
 }
 
+.cart-items-wrap {
+	margin-bottom: 60px;
+
+	@include mq( small ) {
+		margin-bottom: 20px;
+	}
+}
+
 .cart-product-price {
 	background: #fcfcfc;
 	color: #000;

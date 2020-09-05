@@ -16,8 +16,11 @@
 	transition: opacity 0.3s linear;
 	color: #222222;
 	font-weight: bold;
+	display: none;
+
 
 	&.is-open {
+		display: block;
 		opacity: 1;
 	}
 
