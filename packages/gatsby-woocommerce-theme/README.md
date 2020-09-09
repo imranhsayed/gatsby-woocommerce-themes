@@ -1,4 +1,4 @@
-## 🎨 [Gatsby WooCommerce themes - Electra](https://gatsby-woocommerce-theme.netlify.app/)
+## 🎨 [Gatsby WooCommerce theme - Electra](https://gatsby-woocommerce-theme.netlify.app/)
 [![Project Status: Active.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 ![Stars](https://img.shields.io/github/stars/imranhsayed/gatsby-woocommerce-themes?label=%E2%AD%90%20Stars)
 ![Forks](https://img.shields.io/github/forks/imranhsayed/gatsby-woocommerce-themes?color=%23ff69b4)

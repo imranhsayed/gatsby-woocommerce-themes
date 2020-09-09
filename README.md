@@ -64,7 +64,10 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 
 ## 🚀 Set Up
 
-### Gatsby Setup
+* Fork/clone the repo
+* yarn install
+
+### Gatsby Setup ( when using this repo as your project)
 1. Server Side Enviromnent Variables.
 Create a file called `.env` taking example from `.env-example` and add the following into `site` directory :
  
@@ -81,9 +84,6 @@ GATSBY_WORDPRESS_SITE_URL=https://example.com
 ``` 
 
 Env variables from these file will be consumed by Apollo client on client side.
-
-### WordPress Setup
-1. On your WordPress Site download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
 
 ### WordPress Setup
 1. On your WordPress site, download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
@@ -228,6 +228,9 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 * development command: `npm run dev` 
 * root directory: `/`
 
+### Using as theme ( for existing gatsby project )
+[https://www.npmjs.com/package/gatsby-woocommerce-theme](https://www.npmjs.com/package/gatsby-woocommerce-theme)
+Follow its readme on npm.js
 
 ## Helpful Tools:
 1. [Apollo Client Developer Tools Chrome Extension](https://chrome.google.com/webstore/detail/apollo-client-developer-t/jdkknkkbebbapilgoeccciglkfbmbnfm/related)
