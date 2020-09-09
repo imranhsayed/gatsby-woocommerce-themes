@@ -53,6 +53,8 @@ typings/
 
 # dotenv environment variable files
 .env
+.env.development
+.env.production
 
 client-config.js
 

@@ -1,7 +1,7 @@
 {
   "name": "gatsby-woocommerce-theme",
-  "version": "1.0.0",
-  "description": "Gatsby WooCommerce Theme",
+  "version": "1.0.1",
+  "description": "Gatsby WooCommerce Theme - Electra",
   "main": "index.js",
   "author": "Imran Sayed",
   "license": "MIT",
@@ -77,6 +77,11 @@
     "react",
     "javascript"
   ],
+  "homepage": "https://github.com/imranhsayed/gatsby-woocommerce-themes#readme",
+  "repository": {
+	"type": "git",
+	"url": "git+https://github.com/imranhsayed/gatsby-woocommerce-themes.git"
+  },
   "bugs": {
     "url": "https://github.com/imranhsayed/gatsby-woocommerce-themes/issues"
   },
