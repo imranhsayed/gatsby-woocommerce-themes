@@ -1,6 +1,8 @@
 import validator from 'validator';
 import { isEmpty } from 'lodash';
-import { postCodeLocale } from '../../client-config';
+
+// @TODO to be revisited for updating for other countries.
+const postCodeLocale = "IN"
 
 
 const validateAndSanitizeCheckoutForm = ( data ) => {

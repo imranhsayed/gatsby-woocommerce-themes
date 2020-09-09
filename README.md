@@ -15,6 +15,10 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 
 *** 👨‍💻 Please star my repo to support my work 🙏 ***
 
+<a href="https://youtu.be/ygaE8ZdPEX8" target="_blank">
+<img src="https://codeytek.com/wp-content/uploads/2020/09/Screenshot-2020-09-09-at-11.05.27-PM.png" alt="gatsby woocommerce theme electra hero image" />
+</a>
+
 ## 🔥 Features
 1. Uses React with Gatsby ( Blazing Fast )
 2. PWA ( Works Offline )
@@ -61,26 +65,45 @@ This theme uses `gatsby-source-wordpress@v4 BETA`
 ## 🚀 Set Up
 
 ### Gatsby Setup
-* Create a file called `.env` taking example from `.env-example` and add the following into `site` directory : 
+1. Server Side Enviromnent Variables.
+Create a file called `.env` taking example from `.env-example` and add the following into `site` directory :
+ 
 - `WORDPRESS_SITE_URL=https://example.com`
 - `GATSBY_SITE_URL=https://example.com`
 - `GOOGLE_TAGMANAGER_ID=xxx`
 - `FB_APP_ID=xxx`
 
-### Client config. 
-rename client-config-example.js in packages/gatsby-woocommerce-theme directory to client-config.js and add your WordPress Site URL. 
+2. Client Side Environment Variables.
+Create two more files called `.env.development` `.env.production` and into 'site' directory and add your WordPress site url liks so.
+
+```shell script
+GATSBY_WORDPRESS_SITE_URL=https://example.com
+``` 
+
+Env variables from these file will be consumed by Apollo client on client side.
 
 ### WordPress Setup
-1. Download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
+1. On your WordPress Site download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
+
+### WordPress Setup
+1. On your WordPress site, download, Upload and activate all the plugins from wordpress/plugins folder of this repo, into your WordPress Site.
 
 a. [Headless CMS](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/headless-cms.zip)
+
 b. [woocommerce](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/woocommerce.4.4.1.zip)
+
 c. [wp-graphql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql.zip) - tested on ( v1.0.0 )
+
 d. [wp-graphiql](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphiql.zip)
+
 e. [wp-graphql-woocommerce](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-woocommerce.zip)
+
 f. [wp-gatsby](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-gatsby.zip)
+
 g. [Yoast-SEO](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wordpress-seo.14.5.zip)
+
 h. [wp-graphql-yoast-seo](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-yoast-seo.zip)
+
 i. [wp-graphql-jwt-authentication](https://github.com/imranhsayed/gatsby-woocommerce-themes/blob/master/wordpress/plugins/wp-graphql-jwt-authentication.zip)
 
 * You can follow the readme to setup [https://github.com/wp-graphql/wp-graphql-jwt-authentication#install-activate--setup](https://github.com/wp-graphql/wp-graphql-jwt-authentication#install-activate--setup)

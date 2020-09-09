@@ -2,10 +2,13 @@
 /**
  * Internal dependencies.
  */
-import { siteURL } from '../../client-config';
 import fetch from 'isomorphic-fetch';
 import { ApolloClient, createHttpLink, InMemoryCache, ApolloLink } from '@apollo/client';
 import { isEmpty } from 'lodash';
+
+// if ( process.browser ) {
+// 	console.warn( 'hey', process.env.GATSBY_WORDPRESS_SITE_URL );
+// }
 
 /**
  * Middleware operation
@@ -89,7 +92,7 @@ export const afterware = new ApolloLink( ( operation, forward ) => {
 // Apollo GraphQL client.
 export const client = new ApolloClient({
 	link: middleware.concat( afterware.concat( createHttpLink({
-		uri: `${siteURL}/graphql`,
+		uri: `${process.env.GATSBY_WORDPRESS_SITE_URL}/graphql`,
 		fetch: fetch
 	}) ) ),
 	cache: new InMemoryCache()
