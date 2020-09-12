@@ -207,14 +207,14 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 2. [Installing a gatsby theme](https://www.gatsbyjs.org/docs/themes/using-a-gatsby-theme/) and setting it up.
 
 ### Deployment
-#### With vercel
+#### [With vercel](https://gatsby-woocommerce-themes.vercel.app/)
 
 - Signup on [vercel.com](https://vercel.com/)
 - Click on Import Project and then add the configurations.
-![](demos/vercel-setting-one.png)
+![](demos/build-commands.png)
 
-- On [vercel](https://vercel.com/), make sure you add these from settings of the project:
-![](demos/vercel-settings.png)
+- On [vercel](https://vercel.com/), make sure you add these evn vars from settings of the project:
+![](demos/env-vars.png)
 
 
 #### From CLI:
