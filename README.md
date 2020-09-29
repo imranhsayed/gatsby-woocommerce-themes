@@ -3,6 +3,7 @@
 ![Stars](https://img.shields.io/github/stars/imranhsayed/gatsby-woocommerce-themes?label=%E2%AD%90%20Stars)
 ![Forks](https://img.shields.io/github/forks/imranhsayed/gatsby-woocommerce-themes?color=%23ff69b4)
 ![Contributors](https://img.shields.io/github/contributors/imranhsayed/gatsby-woocommerce-themes?color=blue)
+[![Download counter](https://img.shields.io/npm/dt/gatsby-woocommerce-theme.svg)](https://www.npmjs.com/package/gatsby-woocommerce-theme)
 ![Follow](https://img.shields.io/github/followers/imranhsayed?label=Please%20follow%20%20to%20support%20my%20work%20%F0%9F%99%8F&style=social)
 
 - A Gatsby theme for WooCommerce, using Decoupled Architecture
