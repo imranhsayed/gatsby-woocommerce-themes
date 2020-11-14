@@ -2,12 +2,14 @@ const path = require( 'path' );
 const createFrontPage = require( './create-pages/front-page' );
 const createArchivePages = require( './create-pages/archive' );
 const createPages = require( './create-pages/pages' );
+const createPosts = require( './create-pages/posts' );
 
 // Create all pages.
 exports.createPages = async ( { actions, graphql } ) => {
 	await createFrontPage( { actions, graphql } );
 	await createArchivePages( { actions, graphql } );
 	await createPages( { actions, graphql } );
+	await createPosts( { actions, graphql } );
 };
 
 /**
