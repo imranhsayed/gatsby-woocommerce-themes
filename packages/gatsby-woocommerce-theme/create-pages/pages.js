@@ -46,7 +46,7 @@ module.exports = async ( { actions, graphql } ) => {
 
 	const fetchPosts = async () => {
 
-		// Do query to get all posts and pages, this will return the posts and pages.
+		// Do query to get all pages and categories, this will return the pages and categories.
 		return await graphql( GET_PAGES )
 			.then( ( { data } ) => {
 
