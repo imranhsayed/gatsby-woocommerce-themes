@@ -51,7 +51,7 @@ module.exports = async ( { actions, graphql } ) => {
 
                 const { posts, categories } = data;
 
-                return { posts: posts?.nodes, categoriesData: categories?.nodes };
+                return { posts: posts.nodes, categoriesData: categories.nodes };
             } );
     };
 
@@ -63,10 +63,10 @@ module.exports = async ( { actions, graphql } ) => {
         posts.map( ( post ) => {
 
             // If its not a custom template, create the page.
-            if ( ! customTemplatesUris.includes( post?.uri ) &&! customTemplateSlugs.includes( post?.slug )  ) {
+            if ( ! customTemplatesUris.includes( post.uri ) &&! customTemplateSlugs.includes( post.slug )  ) {
 
                 createPage( {
-                    path: `${ post?.uri }`,
+                    path: `${ post.uri }`,
                     component: slash( singlePostTemplate ),
                     context: { ...post, categoriesData }, // pass single page data in context, so its available in the singlePostTemplate in props.pageContext.
                 } );

@@ -1,6 +1,6 @@
 {
   "name": "gatsby-woocommerce-themes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "description": "Gatsby WooCommerce Theme Project",
   "main": "index.js",
