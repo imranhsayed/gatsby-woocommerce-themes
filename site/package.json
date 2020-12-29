@@ -1,17 +1,17 @@
 {
 	"name": "site",
-	"version": "0.0.1",
+	"version": "2.0.1",
 	"description": "Site to test the Gatsby WooCommerce Theme",
 	"main": "gatsby-config.js",
 	"scripts": {
 		"build": "gatsby build",
-	  	"build:clean": "npm run clean && npm run build",
+		"build:clean": "npm run clean && npm run build",
 		"dev": "gatsby develop",
-	  	"dev:clean": "npm run clean && npm run dev",
-	  	"clean": "gatsby clean",
+		"dev:clean": "npm run clean && npm run dev",
+		"clean": "gatsby clean",
 		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
 		"start": "npm run dev",
-		"serve": "npm run clean && gatsby serve",
+		"serve": "gatsby serve",
 		"test": "jest",
 		"test:debug": "jest --runInBand",
 		"test:watch": "jest --watch",
@@ -22,9 +22,9 @@
 	"license": "MIT",
 	"dependencies": {
 		"dotenv": "^8.2.0",
-		"gatsby": "^2.24.2",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1"
+		"gatsby": "^2.29.1",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1"
 	},
 	"devDependencies": {}
 }

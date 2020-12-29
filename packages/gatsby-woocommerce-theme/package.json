@@ -1,6 +1,6 @@
 {
   "name": "gatsby-woocommerce-theme",
-  "version": "1.0.4",
+  "version": "2.0.1",
   "description": "Gatsby WooCommerce Theme - Electra",
   "main": "index.js",
   "author": "Imran Sayed",
@@ -21,20 +21,21 @@
     "gatsby": "^2.24.2",
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-test-renderer": "^16.13.1",
     "sass-loader": "^9.0.2",
     "styled-components": "^5.1.1"
   },
   "dependencies": {
     "@apollo/client": "^3.1.3",
-    "@wordpress/base-styles": "^2.0.0",
-    "@wordpress/block-library": "^2.22.0",
+    "@wordpress/base-styles": "^3.3.0",
+    "@wordpress/block-library": "^2.27.0",
     "bootstrap": "^4.5.2",
     "classnames": "^2.2.6",
     "cross-fetch": "^3.0.5",
     "dompurify": "^2.0.14",
+    "gatsby": "2.24.74",
     "gatsby-link": "^2.4.13",
     "gatsby-plugin-google-tagmanager": "^2.3.11",
     "gatsby-plugin-manifest": "^2.4.18",
@@ -44,13 +45,15 @@
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sharp": "^2.6.19",
     "gatsby-source-filesystem": "^2.3.19",
-    "gatsby-source-wordpress-experimental": "1.3.6",
+    "gatsby-source-wordpress-experimental": "^6.0.0",
     "gatsby-transformer-sharp": "^2.5.11",
     "isomorphic-fetch": "^2.2.1",
     "js-search": "^2.0.0",
     "lodash": "^4.17.19",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "react-helmet": "^6.1.0",
     "react-js-pagination": "^3.0.3",
     "react-lazy-load-image-component": "^1.5.0",
@@ -63,9 +66,9 @@
     "validator": "^13.1.1"
   },
   "peerDependencies": {
-    "gatsby": "^2.21.33",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "gatsby": "^2.24.74",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "keywords": [
     "gatsby",
@@ -79,8 +82,8 @@
   ],
   "homepage": "https://github.com/imranhsayed/gatsby-woocommerce-themes#readme",
   "repository": {
-	"type": "git",
-	"url": "git+https://github.com/imranhsayed/gatsby-woocommerce-themes.git"
+    "type": "git",
+    "url": "git+https://github.com/imranhsayed/gatsby-woocommerce-themes.git"
   },
   "bugs": {
     "url": "https://github.com/imranhsayed/gatsby-woocommerce-themes/issues"

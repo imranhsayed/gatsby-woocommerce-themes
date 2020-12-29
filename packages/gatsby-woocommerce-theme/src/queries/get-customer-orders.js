@@ -8,7 +8,7 @@ const GET_CUSTOMER_ORDER = gql`
                 edges {
                     node {
 	                    id
-                        orderId
+                        orderKey
                         date
                         status
                         total
