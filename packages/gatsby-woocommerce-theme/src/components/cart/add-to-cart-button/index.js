@@ -13,7 +13,7 @@ const AddToCart = (props) => {
 
   const productQtyInput = {
     clientMutationId: v4(), // Generate a unique id.
-    productId: product.productId,
+    productId: product?.databaseId,
   };
 
   /* eslint-disable */
@@ -27,12 +27,19 @@ const AddToCart = (props) => {
     onCompleted: () => {
       // console.warn( 'completed GET_CART' );
 
+      console.log( 'data', data );
+
       // Update cart in the localStorage.
-      const updatedCart = getFormattedCart(data);
-      localStorage.setItem("woo-next-cart", JSON.stringify(updatedCart));
+      // const updatedCart = getFormattedCart(data);
+      // localStorage.setItem("woo-next-cart", JSON.stringify(updatedCart));
 
       // Update cart data in React Context.
-      setCart(updatedCart);
+      // setCart(updatedCart);
+    },
+    onError: (error) => {
+      if (error) {
+        console.log( 'error.graphQLErrors[0].message', error.graphQLErrors[0].message );
+      }
     },
   });
 
@@ -44,21 +51,23 @@ const AddToCart = (props) => {
     variables: {
       input: productQtyInput,
     },
-    onCompleted: () => {
+    onCompleted: (datat) => {
       // If error.
       if (addToCartError) {
         setRequestError(addToCartError.graphQLErrors[0].message);
       }
 
+      console.log( 'datat', datat );
       // On Success:
       // 1. Make the GET_CART query to update the cart with new values in React context.
-      refetch();
+      // refetch();
 
       // 2. Show View Cart Button
       setShowViewCart(true);
     },
     onError: (error) => {
       if (error) {
+        console.log( 'error.graphQLErrors[0].message', error );
         setRequestError(error.graphQLErrors[0].message);
       }
     },

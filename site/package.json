@@ -5,10 +5,10 @@
 	"main": "gatsby-config.js",
 	"scripts": {
 		"build": "gatsby build",
-	  	"build:clean": "npm run clean && npm run build",
+		"build:clean": "npm run clean && npm run build",
 		"dev": "gatsby develop",
-	  	"dev:clean": "npm run clean && npm run dev",
-	  	"clean": "gatsby clean",
+		"dev:clean": "npm run clean && npm run dev",
+		"clean": "gatsby clean",
 		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
 		"start": "npm run dev",
 		"serve": "npm run clean && gatsby serve",
@@ -22,9 +22,9 @@
 	"license": "MIT",
 	"dependencies": {
 		"dotenv": "^8.2.0",
-		"gatsby": "^2.24.2",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1"
+		"gatsby": "^2.29.1",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1"
 	},
 	"devDependencies": {}
 }
