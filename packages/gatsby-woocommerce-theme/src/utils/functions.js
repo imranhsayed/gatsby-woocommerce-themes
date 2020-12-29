@@ -258,7 +258,7 @@ export const removeItemFromCart = (productId) => {
 export const getFormattedCart = (data) => {
   let formattedCart = null;
 
-  if (undefined === data || !data.cart.contents.nodes.length) {
+  if (undefined === data || !data?.cart?.contents?.nodes?.length) {
     return formattedCart;
   }
 
@@ -274,9 +274,9 @@ export const getFormattedCart = (data) => {
     const product = {};
     const total = getFloatVal(givenProducts[i].total);
 
-    product.productId = givenProduct.productId;
+    product.productId = givenProduct?.node?.databaseId;
     product.cartKey = givenProducts[i].key;
-    product.name = givenProduct.name;
+    product.name = givenProduct?.node?.name;
     product.qty = givenProducts[i].quantity;
     product.price = total / product.qty;
     product.totalPrice = givenProducts[i].total;
@@ -284,14 +284,14 @@ export const getFormattedCart = (data) => {
     // Ensure we can add products without images to the cart
     !isEmpty(givenProduct.image)
       ? (product.image = {
-          sourceUrl: givenProduct.image.sourceUrl,
-          srcSet: givenProduct.image.srcSet,
-          title: givenProduct.image.title,
+          sourceUrl: givenProduct?.node?.image.sourceUrl,
+          srcSet: givenProduct?.node?.image.srcSet,
+          title: givenProduct?.node?.image.title,
         })
       : (product.image = {
           sourceUrl: "https://via.placeholder.com/434",
           srcSet: "https://via.placeholder.com/434",
-          title: givenProduct.name,
+          title: givenProduct?.node?.name,
         });
 
     totalProductsCount += givenProducts[i].quantity;

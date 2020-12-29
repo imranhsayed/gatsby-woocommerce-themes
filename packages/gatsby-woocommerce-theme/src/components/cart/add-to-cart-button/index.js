@@ -27,10 +27,11 @@ const AddToCart = (props) => {
     onCompleted: () => {
       // console.warn( 'completed GET_CART' );
 
-      console.log( 'data', data );
+      console.log( 'datassss', data );
 
       // Update cart in the localStorage.
-      // const updatedCart = getFormattedCart(data);
+      const updatedCart = getFormattedCart(data);
+      console.log( 'updatedCart', updatedCart );
       // localStorage.setItem("woo-next-cart", JSON.stringify(updatedCart));
 
       // Update cart data in React Context.
@@ -51,23 +52,21 @@ const AddToCart = (props) => {
     variables: {
       input: productQtyInput,
     },
-    onCompleted: (datat) => {
+    onCompleted: () => {
       // If error.
       if (addToCartError) {
         setRequestError(addToCartError.graphQLErrors[0].message);
       }
 
-      console.log( 'datat', datat );
       // On Success:
       // 1. Make the GET_CART query to update the cart with new values in React context.
-      // refetch();
+      refetch();
 
       // 2. Show View Cart Button
       setShowViewCart(true);
     },
     onError: (error) => {
       if (error) {
-        console.log( 'error.graphQLErrors[0].message', error );
         setRequestError(error.graphQLErrors[0].message);
       }
     },
