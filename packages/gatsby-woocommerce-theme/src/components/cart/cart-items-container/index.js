@@ -180,7 +180,7 @@ const CartItemsContainer = () => {
           </div>
         </div>
       ) : (
-        <div className="container mt-5">
+        <div className="container mt-5" style={{height: '72vh'}}>
           <h2>No items in the cart</h2>
           <Link to="/">
             <button className="btn btn-secondary woo-next-large-black-btn">

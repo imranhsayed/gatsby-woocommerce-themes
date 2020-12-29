@@ -7,86 +7,96 @@ import { gql } from "@apollo/client";
  * When the cart item needs to be deleted, we should pass quantity as 0 in the input along with other fields.
  */
 const UPDATE_CART = gql`
-  mutation ($input: UpdateItemQuantitiesInput!) {
-    updateItemQuantities(input: $input) {
-		items {
-        key
-        product {
-          id
-          productId
-          name
-          description
-          type
-          onSale
-          slug
-          averageRating
-          reviewCount
-          image {
-            id
-            sourceUrl
-            altText      
-          }
-          galleryImages {
-            nodes {
+    mutation ($input: UpdateItemQuantitiesInput!) {
+      updateItemQuantities(input: $input) {
+        items {
+          key
+          product {
+            node {
               id
-              sourceUrl
-              altText
+              databaseId
+              name
+              description
+              type
+              onSale
+              slug
+              averageRating
+              reviewCount
+              image {
+                id
+                sourceUrl
+                altText
+              }
+              galleryImages {
+                nodes {
+                  id
+                  sourceUrl
+                  altText
+                }
+              }
             }
           }
-        }
-        variation {
-          id
-          variationId
-          name
-          description
-          type
-          onSale
-          price
-          regularPrice
-          salePrice
-          image {
-            id
-            sourceUrl
-            altText      
-          }
-              attributes {
-            nodes {
+          variation {
+            node {
               id
-          attributeId
+              databaseId
+              name
+              description
+              type
+              onSale
+              price
+              regularPrice
+              salePrice
+              image {
+                id
+                sourceUrl
+                altText
+              }
+            }
+            attributes {
+              id
+              attributeId
               name
               value
             }
           }
+          quantity
+          total
+          subtotal
+          subtotalTax
         }
-        quantity
-        total
-        subtotal
-        subtotalTax
-      }
-      removed {
-        key
-        product {
-          id
-              productId
+        removed {
+          key
+          product {
+            node {
+              id
+              databaseId
+            }
+          }
+          variation {
+            node {
+              id
+              databaseId
+            }
+          }
         }
-        variation {
-          id
-          variationId
-        }
-      }
-      updated {
-        key
-        product {
-          id
-      productId
-        }
-        variation {
-          id
-          variationId
+        updated {
+          key
+          product {
+            node {
+              id
+              databaseId
+            }
+          }
+          variation {
+            node {
+              id
+              databaseId
+            }
+          }
         }
       }
     }
-  }
 `;
 
 export default UPDATE_CART;

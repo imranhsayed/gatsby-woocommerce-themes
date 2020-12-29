@@ -8,8 +8,6 @@ import Link from "gatsby-link";
 const CartDropDown = ({ isDropdownOpen }) => {
 
 	const [ cart ] = useContext( AppContext );
-	
-	console.log( 'cart', cart );
 
 	if ( null === cart || ! Object.keys( cart ).length ) {
 		return null;
