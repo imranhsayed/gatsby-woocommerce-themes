@@ -282,7 +282,7 @@ export const getFormattedCart = (data) => {
     product.totalPrice = givenProducts[i].total;
 
     // Ensure we can add products without images to the cart
-    !isEmpty(givenProduct.image)
+    !isEmpty(givenProduct?.node?.image)
       ? (product.image = {
           sourceUrl: givenProduct?.node?.image.sourceUrl,
           srcSet: givenProduct?.node?.image.srcSet,

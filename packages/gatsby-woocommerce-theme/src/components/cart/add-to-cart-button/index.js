@@ -32,10 +32,10 @@ const AddToCart = (props) => {
       // Update cart in the localStorage.
       const updatedCart = getFormattedCart(data);
       console.log( 'updatedCart', updatedCart );
-      // localStorage.setItem("woo-next-cart", JSON.stringify(updatedCart));
+      localStorage.setItem("woo-next-cart", JSON.stringify(updatedCart));
 
       // Update cart data in React Context.
-      // setCart(updatedCart);
+      setCart(updatedCart);
     },
     onError: (error) => {
       if (error) {

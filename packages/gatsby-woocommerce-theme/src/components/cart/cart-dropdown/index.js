@@ -8,6 +8,8 @@ import Link from "gatsby-link";
 const CartDropDown = ({ isDropdownOpen }) => {
 
 	const [ cart ] = useContext( AppContext );
+	
+	console.log( 'cart', cart );
 
 	if ( null === cart || ! Object.keys( cart ).length ) {
 		return null;
@@ -34,7 +36,7 @@ const CartDropDown = ({ isDropdownOpen }) => {
 				</div>
 			</div>
 			<ul className="shopping-cart-items">
-				{ cart.products.map( product => (
+				{ cart?.products.map( product => (
 					<li className="clearfix" key={ product.productId }>
 						{!isEmpty(product.image) ? (
 							<figure>
