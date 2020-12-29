@@ -1,6 +1,6 @@
 {
 	"name": "site",
-	"version": "0.0.1",
+	"version": "2.0.0",
 	"description": "Site to test the Gatsby WooCommerce Theme",
 	"main": "gatsby-config.js",
 	"scripts": {
@@ -11,7 +11,7 @@
 		"clean": "gatsby clean",
 		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
 		"start": "npm run dev",
-		"serve": "npm run clean && gatsby serve",
+		"serve": "gatsby serve",
 		"test": "jest",
 		"test:debug": "jest --runInBand",
 		"test:watch": "jest --watch",

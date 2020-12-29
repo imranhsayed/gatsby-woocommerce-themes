@@ -27,21 +27,14 @@ const AddToCart = (props) => {
     onCompleted: () => {
       // console.warn( 'completed GET_CART' );
 
-      console.log( 'datassss', data );
-
       // Update cart in the localStorage.
       const updatedCart = getFormattedCart(data);
-      console.log( 'updatedCart', updatedCart );
+
       localStorage.setItem("woo-next-cart", JSON.stringify(updatedCart));
 
       // Update cart data in React Context.
       setCart(updatedCart);
-    },
-    onError: (error) => {
-      if (error) {
-        console.log( 'error.graphQLErrors[0].message', error.graphQLErrors[0].message );
-      }
-    },
+    }
   });
 
   // Add to Cart Mutation.

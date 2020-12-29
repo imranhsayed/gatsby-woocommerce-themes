@@ -26,8 +26,6 @@ const Orders = ({ authData }) => {
     customer: { orders },
   } = data;
 
-	console.warn( 'prder', orders );
-
   return (
     <div className="">
       {!isEmpty(orders.edges)
