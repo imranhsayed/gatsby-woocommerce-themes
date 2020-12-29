@@ -12,46 +12,46 @@ import CHECKOUT_MUTATION from "../../../mutations/checkout";
 import CheckoutError from "../checkout-error";
 
 const CheckoutForm = () => {
-  const initialState = {
-  	firstName: '',
-  	lastName: '',
-  	company: '',
-  	country: '',
-  	address1: '',
-  	address2: '',
-  	city: '',
-  	state: '',
-  	postcode: '',
-  	phone: '',
-  	email: '',
-  	createAccount: false,
-  	username: '',
-  	password: '',
-  	customerNote: '',
-  	paymentMethod: '',
-  	errors: null
-  };
+  // const initialState = {
+  // 	firstName: '',
+  // 	lastName: '',
+  // 	company: '',
+  // 	country: '',
+  // 	address1: '',
+  // 	address2: '',
+  // 	city: '',
+  // 	state: '',
+  // 	postcode: '',
+  // 	phone: '',
+  // 	email: '',
+  // 	createAccount: false,
+  // 	username: '',
+  // 	password: '',
+  // 	customerNote: '',
+  // 	paymentMethod: '',
+  // 	errors: null
+  // };
 
   // Use this for testing purposes, so you dont have to fill the checkout form over an over again.
-  // const initialState = {
-  //   firstName: "Imran",
-  //   lastName: "Sayed",
-  //   address1: "109 Hills Road Valley",
-  //   address2: "Station Road",
-  //   city: "Pune",
-  //   state: "Maharastra",
-  //   country: "IN",
-  //   postcode: "400298",
-  //   phone: "9959338989",
-  //   email: "codeytek.academy@gmail.com",
-  //   company: "Tech",
-  //   createAccount: false,
-	// username: '',
-	// password: '',
-	// customerNote: "My Order notes",
-  //   paymentMethod: "cod",
-  //   errors: null,
-  // };
+  const initialState = {
+    firstName: "Imran",
+    lastName: "Sayed",
+    address1: "109 Hills Road Valley",
+    address2: "Station Road",
+    city: "Pune",
+    state: "Maharastra",
+    country: "IN",
+    postcode: "400298",
+    phone: "9959338989",
+    email: "codeytek.academy@gmail.com",
+    company: "Tech",
+    createAccount: false,
+	username: '',
+	password: '',
+	customerNote: "My Order notes",
+    paymentMethod: "cod",
+    errors: null,
+  };
 
   const [cart, setCart] = useContext(AppContext);
   const [input, setInput] = useState(initialState);
