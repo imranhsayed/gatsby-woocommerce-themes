@@ -7,6 +7,8 @@ import YouTubeIcon from "../icons/youtube-icon";
 import PropTypes from "prop-types";
 import React from "react";
 
+const config = require('../../../config/site');
+
 const Footer = ( { data } ) => {
 	const {
 		      wp: {
@@ -16,13 +18,10 @@ const Footer = ( { data } ) => {
 	      } = data;
 
 	const staticSocialLink = [
-		{ iconName: "facebook", iconUrl: "https://facebook.com/codeytek" },
-		{ iconName: "twitter", iconUrl: "https://twitter.com/codeytek" },
-		{
-			iconName: "instagram",
-			iconUrl: "https://www.instagram.com/codeytek_academy",
-		},
-		{ iconName: "youtube", iconUrl: "https://youtube.com/ImranSayedDev" },
+		{ iconName: "facebook", iconUrl: config.facebook },
+		{ iconName: "twitter", iconUrl: config.twitter },
+		{ iconName: "instagram", iconUrl: config.instagram },
+		{ iconName: "youtube", iconUrl: config.youtube },
 	];
 
 	const socialLinksData = socialLinks.length ? socialLinks : staticSocialLink;
@@ -70,9 +69,9 @@ const Footer = ( { data } ) => {
 				<div className="footer__bottom">
 					<div className="copyright-text">
 						{ copyrightText ? (
-							<a href="https://codeytek.com" target="_blank" rel="noreferrer">{ copyrightText }</a>
+							<Link to={"/"}>© {new Date().getFullYear()}{" "}{config.company}</Link>
 						) : (
-							<a href="https://codeytek.com" target="_blank" rel="noreferrer">Codeytek Academy 2020</a>
+							<Link to={"/"}>© {new Date().getFullYear()}{" "}{config.company}</Link>
 						) }
 					</div>
 					{ socialLinksData.length ? (
@@ -104,7 +103,7 @@ Footer.propTypes = {
 };
 
 Footer.defaultProps = {
-	copyrightText: `Codeytek Academy ${ new Date().getFullYear() }`,
+	copyrightText: `${ new Date().getFullYear() } ${config.company}`,
 };
 
 /**
