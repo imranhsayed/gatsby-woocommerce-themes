@@ -15546,6 +15546,11 @@ react-spring@^8.0.19, react-spring@^8.0.20:
     "@babel/runtime" "^7.3.1"
     prop-types "^15.5.8"
 
+react-ssg-netlify-forms@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-ssg-netlify-forms/-/react-ssg-netlify-forms-1.0.3.tgz#4d240bcdea5a08b4de79671eed2ef95323c84f33"
+  integrity sha512-olk43Ujip3hP1dmWIKpH0g7cMjstNOWOWabnY7UfbTNqhlBbxvb+vXPAKp6qS+4gaF0n58739gzl5hUYB5YMyQ==
+
 react-syntax-highlighter@^11.0.2:
   version "11.0.2"
   resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-11.0.2.tgz#4e3f376e752b20d2f54e4c55652fd663149e4029"

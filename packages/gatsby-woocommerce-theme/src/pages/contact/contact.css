@@ -1,0 +1,39 @@
+/* CONTACT FORM */
+.contact-page {
+  width: 80%;
+  margin: 4rem auto 2rem;
+}
+@media (min-width: 700px) {
+  .contact-page .contact-form {
+    width: 80%;
+    margin: 0px auto;
+  }
+}
+.contact-page .form-field-wrapper label {
+  display: none;
+}
+.contact-page .form-field-wrapper input {
+  margin: 1rem 0px;
+}
+.contact-page ul.form-field-wrapper.actions {
+  margin: 1rem 0px;
+  list-style: none;
+}
+.contact-page ul.form-field-wrapper.actions li {
+  margin: 0px;
+}
+.contact-page ul.form-field-wrapper.actions li button {
+  width: 100%;
+}
+.contact-page label {
+  margin-top: 1em;
+}
+.contact-page button {
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  background-color: var(--primaryColor);
+}
+.contact-page button:hover {
+  background-color: var(--secondaryColor);
+}
