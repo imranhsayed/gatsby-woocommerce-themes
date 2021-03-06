@@ -26,16 +26,14 @@ const Orders = ({ authData }) => {
     customer: { orders },
   } = data;
 
-	console.warn( 'prder', orders );
-
   return (
     <div className="">
       {!isEmpty(orders.edges)
         ? orders.edges.map((order) => {
             return (
-              <div className="" key={order.node.orderId}>
+              <div className="" key={order.node.orderKey}>
                 <div className="card-header">
-                  <h4>Order #{order.node.orderId}</h4>
+                  <h4>Order #{order.node.orderKey}</h4>
                   <time>Order Placed: {getFormattedDate(order.node.date)}</time>
                   <div>Payment Method: {order.node.paymentMethodTitle}</div>
                   <div>Order Status: {order.node.status}</div>

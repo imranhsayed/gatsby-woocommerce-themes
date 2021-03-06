@@ -34,7 +34,7 @@ const CartDropDown = ({ isDropdownOpen }) => {
 				</div>
 			</div>
 			<ul className="shopping-cart-items">
-				{ cart.products.map( product => (
+				{ cart?.products.map( product => (
 					<li className="clearfix" key={ product.productId }>
 						{!isEmpty(product.image) ? (
 							<figure>

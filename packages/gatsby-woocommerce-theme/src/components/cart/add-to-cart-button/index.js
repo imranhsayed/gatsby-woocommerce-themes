@@ -13,7 +13,7 @@ const AddToCart = (props) => {
 
   const productQtyInput = {
     clientMutationId: v4(), // Generate a unique id.
-    productId: product.productId,
+    productId: product?.databaseId,
   };
 
   /* eslint-disable */
@@ -29,11 +29,12 @@ const AddToCart = (props) => {
 
       // Update cart in the localStorage.
       const updatedCart = getFormattedCart(data);
+
       localStorage.setItem("woo-next-cart", JSON.stringify(updatedCart));
 
       // Update cart data in React Context.
       setCart(updatedCart);
-    },
+    }
   });
 
   // Add to Cart Mutation.

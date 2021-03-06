@@ -3,7 +3,7 @@ const { ImageFragment } = require('../image/index.js');
 const ProductsFragment = `
 fragment ProductsFragment on WpProduct {
         id
-        productId
+        databaseId
         nodeType
         link
         description
