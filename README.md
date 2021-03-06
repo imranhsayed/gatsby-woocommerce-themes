@@ -8,7 +8,7 @@ A custom fork of [@imranhasayed/gatsby-woocommerce-themes](https://github.com/im
 
 ## Additional Features
 
-- 
+-
 
 ## TODO
 
