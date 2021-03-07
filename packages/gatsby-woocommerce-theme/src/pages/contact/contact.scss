@@ -1,0 +1,29 @@
+$primary-color: #dcae23;
+$secondary-color: grey;
+
+.contact-page form {
+  margin: 3rem auto;
+}
+@media (max-width: 900px) {
+  .form-wrapper {
+    margin: 2rem;
+  }
+}
+
+.contact-page input,
+.contact-page textarea,
+.contact-page button {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+.contact-page button {
+  padding: 1rem 0px;
+  background-color: $primary-color;
+  border: 0px;
+  font-weight: bold;
+}
+.contact-page label {
+  color: $primary-color;
+  font-weight: bold;
+}
