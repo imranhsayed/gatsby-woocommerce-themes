@@ -8,7 +8,8 @@ A custom fork of [@imranhasayed/gatsby-woocommerce-themes](https://github.com/im
 
 ## Additional Features
 
--
+- Updated `gatsby-source-wordpress-experimental` to `gatsby-source-wordpress`
+- Netlify forms
 
 ## TODO
 
