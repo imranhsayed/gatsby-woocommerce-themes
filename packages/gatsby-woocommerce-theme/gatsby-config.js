@@ -27,7 +27,7 @@ module.exports = ({ wordPressUrl, gatsbySiteUrl, googleTagManagerId, fbAppId }) 
       },
     },
     {
-      resolve: `gatsby-source-wordpress-experimental`,
+      resolve: `gatsby-source-wordpress`,
       options: {
         url: `${wordPressUrl}/graphql`,
         verbose: true,

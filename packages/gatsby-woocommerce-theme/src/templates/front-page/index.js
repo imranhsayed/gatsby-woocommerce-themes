@@ -7,7 +7,6 @@ import SEO from "../../components/seo";
 import { getOgImage } from "../../utils/functions";
 
 const FrontPage = ( props ) => {
-
 	const {
 		      pageContext: {
 			      page: { title, seo, uri },
