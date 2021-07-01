@@ -21,10 +21,16 @@
 	"author": "Imran Sayed",
 	"license": "MIT",
 	"dependencies": {
-		"dotenv": "^8.2.0",
+		"dotenv": "^10.0.0",
 		"gatsby": "^3.8.1",
+		"mini-css-extract-plugin": "0.4.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"
+	},
+	"resolutions": {
+		"graphql": "^15.4.0",
+		"graphql-compose": "^7.25.0",
+		"webpack": "^5.24.2"
 	},
 	"devDependencies": {}
 }
