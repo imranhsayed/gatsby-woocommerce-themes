@@ -214,7 +214,7 @@ const isProductInCart = (existingProductsInCart, productId) => {
  * @return {any | string} Updated cart
  */
 export const removeItemFromCart = (productId) => {
-  if (!undefined !== window) {
+  if (undefined === window) {
     return null;
   }
 
@@ -556,7 +556,7 @@ export const addWishListToLocalStorage = (wishList) => {
  * @returns {boolean}
  */
 export const isProductInWishList = ( productId ) => {
-	if ( undefined !== window ) {
+	if ( undefined === window ) {
 		return null;
 	}
 	const existingWishList = JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
@@ -569,7 +569,7 @@ export const isProductInWishList = ( productId ) => {
 }
 
 export const getWishListProducts = () => {
-	if ( ! undefined == window ) {
+	if ( undefined === window ) {
 		return null;
 	}
 	return JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
