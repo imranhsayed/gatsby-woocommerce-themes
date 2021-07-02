@@ -3,14 +3,14 @@
  */
 import React from 'react';
 import { useEffect, useState } from 'react';
-import  Link from 'gatsby-link';
 import { each, isEmpty } from 'lodash';
 import classnames from 'classnames';
+import { normalizePath } from "../../utils/functions";
+import  Link from 'gatsby-link';
 
 import DropdownIcon from '../icons/dropdown-icon';
-import { normalizePath } from "../../utils/functions";
-import CartIcon from "../cart/cart-icon";
 import WishListIcon from "../wishlist/wishlist-icon";
+import CartIcon from "../cart/cart-icon";
 
 const Nav = ( props ) => {
 

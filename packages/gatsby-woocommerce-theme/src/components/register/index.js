@@ -22,7 +22,7 @@ const Register = ({ setLoggedIn }) => {
   const [showAlertBar, setShowAlertBar] = useState(true);
 
   // Check if the user is validated already.
-  if (process.browser) {
+  if (undefined !== window) {
     const userValidated = isUserValidated();
 
     // Redirect the user to My Account page if user is already validated.
@@ -112,7 +112,7 @@ const Register = ({ setLoggedIn }) => {
    * @return {void}
    */
   const handleRegister = async (event) => {
-    if (process.browser) {
+    if (undefined !== window) {
       event.preventDefault();
 
       // Validation and Sanitization.

@@ -214,7 +214,7 @@ const isProductInCart = (existingProductsInCart, productId) => {
  * @return {any | string} Updated cart
  */
 export const removeItemFromCart = (productId) => {
-  if (!process.browser) {
+  if (undefined === window) {
     return null;
   }
 
@@ -393,7 +393,7 @@ export const getUpdatedItems = (products, newQty, cartKey) => {
 export const isUserLoggedIn = () => {
   let authData = null;
 
-  if (process.browser) {
+  if (undefined !== window) {
     authData = JSON.parse(localStorage.getItem("auth"));
   }
   return authData;
@@ -415,7 +415,7 @@ export const setAuth = (authData) => {
 export const isUserValidated = () => {
   let userLoggedInData = "";
 
-  if (process.browser) {
+  if (undefined !== window) {
     let authTokenData = localStorage.getItem("auth");
 
     if (!isEmpty(authTokenData)) {
@@ -556,7 +556,7 @@ export const addWishListToLocalStorage = (wishList) => {
  * @returns {boolean}
  */
 export const isProductInWishList = ( productId ) => {
-	if ( ! process.browser ) {
+	if ( undefined === window ) {
 		return null;
 	}
 	const existingWishList = JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
@@ -569,7 +569,7 @@ export const isProductInWishList = ( productId ) => {
 }
 
 export const getWishListProducts = () => {
-	if ( ! process.browser ) {
+	if ( undefined === window ) {
 		return null;
 	}
 	return JSON.parse( localStorage.getItem( 'woo_wishlist' ) );
@@ -583,6 +583,7 @@ export const getWishListProducts = () => {
  * @return {string} Sanitized string
  */
 export const sanitize = (content) => {
-	return process.browser ? DOMPurify.sanitize(content) : content
+
+	return undefined !== window ? DOMPurify?.sanitize(content) : content
 }
 

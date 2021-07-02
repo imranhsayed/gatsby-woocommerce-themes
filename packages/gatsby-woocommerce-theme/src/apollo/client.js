@@ -6,7 +6,7 @@ import fetch from 'isomorphic-fetch';
 import { ApolloClient, createHttpLink, InMemoryCache, ApolloLink } from '@apollo/client';
 import { isEmpty } from 'lodash';
 
-// if ( process.browser ) {
+// if ( undefined !== window ) {
 // 	console.warn( 'hey', process.env.GATSBY_WORDPRESS_SITE_URL );
 // }
 
@@ -23,7 +23,7 @@ export const middleware = new ApolloLink( ( operation, forward ) => {
 	/**
 	 * If session data exist in local storage, set value as session header.
 	 */
-	const session = ( process.browser ) ?  localStorage.getItem( "woo-session" ) : null;
+	const session = ( undefined !== window ) ?  localStorage.getItem( "woo-session" ) : null;
 
 	if ( ! isEmpty( session ) ) {
 		headersData = {
@@ -34,7 +34,7 @@ export const middleware = new ApolloLink( ( operation, forward ) => {
 	/**
 	 * If auth token exist in local storage, set value as authorization header.
 	 */
-	const auth = ( process.browser ) ?  JSON.parse( localStorage.getItem( "auth" ) ) : null;
+	const auth = ( undefined !== window ) ?  JSON.parse( localStorage.getItem( "auth" ) ) : null;
 	const token = ( ! isEmpty( auth ) ) ? auth.authToken : null;
 
 	if ( ! isEmpty( token ) ) {

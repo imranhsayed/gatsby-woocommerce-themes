@@ -96,16 +96,16 @@ function SEO( { description, lang, meta, title, header: { siteTitle }, seoData, 
 		};
 	}
 
-	const seoTitle = seoData.title || title;
-	const seoDescription = seoData.metaDesc || description || site.siteMetadata.description;
-	const ogDesc = seoData.opengraphDescription || seoDescription;
-	const twitterDesc = seoData.twitterDescription || seoDescription;
-	const ogTitle = seoData.opengraphTitle || seoTitle;
-	const twitterTitle = seoData.twitterTitle || seoTitle;
-	const googleVerify = seo.webmaster.googleVerify || '';
-	const ogURL = `${ site.siteMetadata.siteUrl }${ uri }`;
-	const fbAppId = site.siteMetadata.fbAppId;
-	const canonical = `${ site.siteMetadata.siteUrl }${ uri }`;
+	const seoTitle = seoData?.title ?? title;
+	const seoDescription = ( seoData?.metaDesc ?? description ) || ( site?.siteMetadata?.description ?? '');
+	const ogDesc = seoData?.opengraphDescription ?? seoDescription;
+	const twitterDesc = seoData?.twitterDescription ?? seoDescription;
+	const ogTitle = seoData?.opengraphTitle ?? seoTitle;
+	const twitterTitle = seoData?.twitterTitle ?? seoTitle;
+	const googleVerify = seo?.webmaster?.googleVerify ?? '';
+	const ogURL = `${ site?.siteMetadata?.siteUrl ?? '' }${ uri }`;
+	const fbAppId = site?.siteMetadata?.fbAppId ?? '';
+	const canonical = `${ site?.siteMetadata?.siteUrl ?? '' }${ uri }`;
 
 	return (
 		<Helmet
