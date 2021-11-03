@@ -63,7 +63,7 @@
     "sass-mq": "^5.0.1",
     "slick-carousel": "^1.8.1",
     "uuid": "^8.3.0",
-    "validator": "^13.1.1"
+    "validator": "^13.7.0"
   },
   "peerDependencies": {
     "gatsby": "^2.24.74",
