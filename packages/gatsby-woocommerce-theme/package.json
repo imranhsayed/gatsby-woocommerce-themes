@@ -33,7 +33,7 @@
     "@wordpress/block-library": "^2.27.0",
     "bootstrap": "^4.5.2",
     "classnames": "^2.2.6",
-    "cross-fetch": "^3.0.5",
+    "cross-fetch": "^3.1.5",
     "dompurify": "^2.0.14",
     "gatsby": "2.24.74",
     "gatsby-link": "^2.4.13",
