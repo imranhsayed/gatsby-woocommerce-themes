@@ -43,7 +43,7 @@
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sass": "^2.3.12",
-    "gatsby-plugin-image": "^1.21.1",
+    "gatsby-plugin-image": "^2.21.0",
     "gatsby-plugin-sharp": "^2.6.19",
     "gatsby-source-filesystem": "^2.3.19",
     "gatsby-source-wordpress": "^4.0.0",
