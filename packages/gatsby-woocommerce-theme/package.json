@@ -46,7 +46,7 @@
     "gatsby-plugin-image": "^2.21.0",
     "gatsby-plugin-sharp": "^2.6.19",
     "gatsby-source-filesystem": "^2.3.19",
-    "gatsby-source-wordpress": "^4.0.0",
+    "gatsby-source-wordpress": "^5.0.0",
     "gatsby-transformer-sharp": "^2.5.11",
     "isomorphic-fetch": "^2.2.1",
     "js-search": "^2.0.0",

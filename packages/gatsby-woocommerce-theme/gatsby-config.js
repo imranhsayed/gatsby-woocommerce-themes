@@ -35,6 +35,12 @@ module.exports = ({ wordPressUrl, gatsbySiteUrl, googleTagManagerId, fbAppId }) 
           nodeUpdateInterval: 3000,
           hardCacheMediaFiles: true,
         },
+        schema: {
+          timeout: 30000,
+          perPage: 15,
+          requestConcurrency: 5, // Set to 15 by default
+          previewRequestConcurrency: 2, // set to 5 by default
+        },
         production: {
           hardCacheMediaFiles: false,
         },
