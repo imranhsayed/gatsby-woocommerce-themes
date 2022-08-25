@@ -29,7 +29,7 @@ module.exports = ({ wordPressUrl, gatsbySiteUrl, googleTagManagerId, fbAppId }) 
     {
       resolve: `gatsby-source-wordpress`,
       options: {
-        url: `${wordPressUrl}/wp/graphql`,
+        url: `${wordPressUrl}/graphql`,
         verbose: true,
         develop: {
           nodeUpdateInterval: 3000,
