@@ -289,8 +289,8 @@ export const getFormattedCart = (data) => {
           title: givenProduct?.node?.image.title,
         })
       : (product.image = {
-          sourceUrl: "https://via.placeholder.com/434",
-          srcSet: "https://via.placeholder.com/434",
+          sourceUrl: "https://placeholder.photo/434",
+          srcSet: "https://placeholder.photo/434",
           title: givenProduct?.node?.name,
         });
 
